@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PharmacyManagement.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace PharmacyManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Pharmacytiboiz());
+            Application.Run(new frmPharmacy());
         }
     }
 }

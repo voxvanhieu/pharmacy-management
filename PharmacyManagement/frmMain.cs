@@ -2,6 +2,7 @@
 using DevExpress.XtraBars.Docking2010.Views;
 using DevExpress.XtraBars.Navigation;
 using DevExpress.XtraEditors;
+using PharmacyManagement.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,11 +15,11 @@ using System.Windows.Forms;
 
 namespace PharmacyManagement
 {
-    public partial class Pharmacytiboiz : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class frmPharmacy : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         XtraUserControl employeesUserControl;
         XtraUserControl customersUserControl;
-        public Pharmacytiboiz()
+        public frmPharmacy()
         {
             InitializeComponent();
             employeesUserControl = CreateUserControl("Employees");
@@ -74,6 +75,13 @@ namespace PharmacyManagement
         {
             if (e.Document.Caption == "Employees") employeesUserControl = CreateUserControl("Employees");
             else customersUserControl = CreateUserControl("Customers");
+        }
+
+        private void frmPharmacy_Load(object sender, EventArgs e)
+        {
+            var a = PharmacyDbContext.Create();
+
+            MessageBox.Show(a.Users.Any().ToString());
         }
     }
 }
