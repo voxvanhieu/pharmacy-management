@@ -1,4 +1,5 @@
-﻿using PharmacyManagement.Models;
+﻿using PharmacyManagement.Migrations;
+using PharmacyManagement.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,18 @@ namespace PharmacyManagement
         [STAThread]
         static void Main()
         {
+            InitDbContext();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmPharmacy());
         }
+
+        static void InitDbContext()
+        {
+            var context = PharmacyDbContext.Create();
+            context.Roles.Any();
+        }
+
     }
 }

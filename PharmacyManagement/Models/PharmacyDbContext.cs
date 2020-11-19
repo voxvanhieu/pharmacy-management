@@ -65,7 +65,7 @@ namespace PharmacyManagement.Models
 
                 dbContext.Users.Add(user);
 
-                dbContext.SaveChangesAsync();
+                dbContext.SaveChanges();
             }
             else
             {
@@ -73,9 +73,24 @@ namespace PharmacyManagement.Models
             }
         }
 
-        public async void RegisterUserAsync(User user, string password, string roleName)
+        public async Task<int> RegisterUserAsync(User user, string password, string roleName)
         {
-            await Task.Run(() => RegisterUser(user, password, roleName));
+            user.PasswordHash = GetPasswordHash(password);
+            if (dbContext.Roles.Any(r => r.Name == roleName))
+            {
+                int roleId = dbContext.Roles.Single(r => r.Name == roleName).Id;
+                user.RoleId = roleId;
+
+                dbContext.Users.Add(user);
+
+                await dbContext.SaveChangesAsync();
+
+                return user.Id;
+            }
+            else
+            {
+                throw new ArgumentException($"Role {roleName} is not in the database.");
+            }
         }
 
         public int CreateRole(string roleName)
@@ -87,6 +102,21 @@ namespace PharmacyManagement.Models
                 role = new Role { Name = roleName };
                 dbContext.Roles.Add(role);
                 dbContext.SaveChanges();
+                return role.Id;
+            }
+            else return role.Id;
+        }
+
+        public async Task<int> CreateRoleAsync(string roleName)
+        {
+
+            var role = await dbContext.Roles.SingleOrDefaultAsync(r => r.Name == roleName);
+
+            if (role is null)
+            {
+                role = new Role { Name = roleName };
+                dbContext.Roles.Add(role);
+                await dbContext.SaveChangesAsync();
                 return role.Id;
             }
             else return role.Id;
