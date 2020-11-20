@@ -15,11 +15,6 @@
             //AutomaticMigrationDataLossAllowed = true;
         }
 
-        public void SeedData(PharmacyDbContext context)
-        {
-            Seed(context);
-        }
-
         protected override void Seed(PharmacyManagement.Models.PharmacyDbContext context)
         {
             //  This method will be called after migrating to the latest version.
@@ -50,7 +45,7 @@
                 {
                     var roleAdmin = identityService.CreateRole("Admin");
                     var roleStaff = identityService.CreateRole("Staff");
-                    identityService.RegisterUserAsync(
+                    identityService.RegisterUser(
                         password: "123@123a", roleName: "Admin",
                         user: new User
                         {
@@ -61,8 +56,8 @@
                             Birthday = new DateTime(1989, 8, 21),
                             Image = "",
                             RoleId = roleAdmin
-                        }).Wait();
-                    identityService.RegisterUserAsync(
+                        });
+                    identityService.RegisterUser(
                         password: "123@123a", roleName: "Staff",
                         user: new User
                         {
@@ -73,7 +68,7 @@
                             Birthday = new DateTime(1999, 9, 26),
                             Image = "",
                             RoleId = roleAdmin,
-                        }).Wait();
+                        });
                 }
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method

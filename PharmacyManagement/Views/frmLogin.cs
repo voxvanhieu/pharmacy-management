@@ -20,18 +20,6 @@ namespace PharmacyManagement.Views
         public frmLogin()
         {
             InitializeComponent();
-
-            var lstUsername = context.Users.Select(u => u.UserName)?.ToList();
-            if (lstUsername != null)
-            {
-                cmbUsername.Properties.Items.AddRange(lstUsername);
-                cmbUsername.Text = lstUsername[0];
-            }
-            else
-            {
-                XtraMessageBox.Show("There are no user in database", "Error");
-                btnExit_Click(this, null);
-            }
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -60,6 +48,21 @@ namespace PharmacyManagement.Views
         {
             this.DialogResult = dialogResult;
             this.Close();
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            var lstUsername = context.Users.Select(u => u.UserName)?.ToList();
+            if (lstUsername != null)
+            {
+                cmbUsername.Properties.Items.AddRange(lstUsername);
+                cmbUsername.Text = lstUsername[0];
+            }
+            else
+            {
+                XtraMessageBox.Show("There are no user in database", "Error");
+                btnExit_Click(this, null);
+            }
         }
     }
 }

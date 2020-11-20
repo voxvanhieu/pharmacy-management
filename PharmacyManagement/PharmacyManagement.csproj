@@ -158,6 +158,12 @@
   <ItemGroup>
     <Folder Include="Views\UserControl\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\015-woman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pharmacy.svg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

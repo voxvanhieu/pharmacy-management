@@ -17,18 +17,9 @@ namespace PharmacyManagement
         [STAThread]
         static void Main()
         {
-            InitDbContext();
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmMain());
         }
-
-        static void InitDbContext()
-        {
-            var context = PharmacyDbContext.Create();
-            context.Roles.Any();
-        }
-
     }
 }

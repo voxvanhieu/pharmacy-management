@@ -130,6 +130,7 @@ namespace PharmacyManagement.Views
                 employeesUserControl = CreateUserControl("Employees");
                 customersUserControl = CreateUserControl("Customers");
                 accordionControl.SelectedElement = employeesAccordionControlElement;
+                this.WindowState = FormWindowState.Maximized;
                 this.Enabled = true;
                 this.Show();
 

@@ -66,7 +66,7 @@ namespace PharmacyManagement.Views
             this.toolbarFormControl1.Manager = this.toolbarFormManager1;
             this.toolbarFormControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.toolbarFormControl1.Name = "toolbarFormControl1";
-            this.toolbarFormControl1.Size = new System.Drawing.Size(424, 31);
+            this.toolbarFormControl1.Size = new System.Drawing.Size(422, 31);
             this.toolbarFormControl1.TabIndex = 0;
             this.toolbarFormControl1.TabStop = false;
             this.toolbarFormControl1.ToolbarForm = this;
@@ -87,16 +87,16 @@ namespace PharmacyManagement.Views
             this.barDockControlTop.Location = new System.Drawing.Point(0, 31);
             this.barDockControlTop.Manager = this.toolbarFormManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlTop.Size = new System.Drawing.Size(424, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(422, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 227);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 215);
             this.barDockControlBottom.Manager = this.toolbarFormManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(424, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(422, 0);
             // 
             // barDockControlLeft
             // 
@@ -105,22 +105,22 @@ namespace PharmacyManagement.Views
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 31);
             this.barDockControlLeft.Manager = this.toolbarFormManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 196);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 184);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(424, 31);
+            this.barDockControlRight.Location = new System.Drawing.Point(422, 31);
             this.barDockControlRight.Manager = this.toolbarFormManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 196);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 184);
             // 
             // btnLogin
             // 
             this.btnLogin.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnLogin.Appearance.Options.UseFont = true;
-            this.btnLogin.Location = new System.Drawing.Point(110, 182);
+            this.btnLogin.Location = new System.Drawing.Point(110, 172);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(87, 30);
@@ -132,7 +132,7 @@ namespace PharmacyManagement.Views
             // 
             this.btnExit.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnExit.Appearance.Options.UseFont = true;
-            this.btnExit.Location = new System.Drawing.Point(216, 182);
+            this.btnExit.Location = new System.Drawing.Point(216, 172);
             this.btnExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(87, 30);
@@ -147,7 +147,7 @@ namespace PharmacyManagement.Views
             this.svgImageBox1.Name = "svgImageBox1";
             this.svgImageBox1.Size = new System.Drawing.Size(126, 116);
             this.svgImageBox1.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Zoom;
-            this.svgImageBox1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageBox1.SvgImage")));
+            this.svgImageBox1.SvgImage = global::PharmacyManagement.Properties.Resources.pharmacy;
             this.svgImageBox1.TabIndex = 11;
             this.svgImageBox1.Text = "svgImageBox1";
             // 
@@ -191,13 +191,15 @@ namespace PharmacyManagement.Views
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.Controls.Add(this.svgImageBox2);
             this.flowLayoutPanel1.Controls.Add(this.cmbUsername);
             this.flowLayoutPanel1.Controls.Add(this.svgImageBox3);
             this.flowLayoutPanel1.Controls.Add(this.txbPassword);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(149, 55);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(263, 109);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(261, 93);
             this.flowLayoutPanel1.TabIndex = 21;
             // 
             // cmbUsername
@@ -236,7 +238,7 @@ namespace PharmacyManagement.Views
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(424, 227);
+            this.ClientSize = new System.Drawing.Size(422, 215);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.svgImageBox1);
             this.Controls.Add(this.btnExit);
@@ -247,13 +249,18 @@ namespace PharmacyManagement.Views
             this.Controls.Add(this.barDockControlTop);
             this.Controls.Add(this.toolbarFormControl1);
             this.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.IconOptions.SvgImage = global::PharmacyManagement.Properties.Resources.pharmacy;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmLogin";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pharmacy Manager Login";
             this.ToolbarFormControl = this.toolbarFormControl1;
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageBox1)).EndInit();
