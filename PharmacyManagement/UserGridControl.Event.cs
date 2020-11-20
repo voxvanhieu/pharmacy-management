@@ -24,7 +24,7 @@ namespace PharmacyManagement
                 // Process Started!
 
                 // some code here..
-                
+
                 data.UserName = gridView1.GetRowCellValue(e.FocusedRowHandle, "UserName")?.ToString();
 
                 OnGridSelectedRowChanged(data);

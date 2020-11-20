@@ -39,6 +39,8 @@ namespace PharmacyManagement.Models
         private bool _disposed;
         private PharmacyDbContext dbContext;
 
+        public static User SessionUser { get; set; }
+
         public UserIdentity()
         {
             dbContext = PharmacyDbContext.Create();

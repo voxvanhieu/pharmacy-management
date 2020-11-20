@@ -14,21 +14,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PharmacyManagement
+namespace PharmacyManagement.Views
 {
-    public partial class frmPharmacy : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
 
         UserGridControl userGridControl;
 
         XtraUserControl employeesUserControl;
         XtraUserControl customersUserControl;
-        public frmPharmacy()
+        public frmMain()
         {
             InitializeComponent();
-            employeesUserControl = CreateUserControl("Employees");
-            customersUserControl = CreateUserControl("Customers");
-            accordionControl.SelectedElement = employeesAccordionControlElement;
         }
         XtraUserControl CreateUserControl(string text)
         {
@@ -39,6 +36,7 @@ namespace PharmacyManagement
             userGridControl = new UserGridControl();
             userGridControl.Dock = DockStyle.Fill;
             userGridControl.Parent = result;
+            userGridControl.GridSelectedRowChanged += userGridControl_SelectedRowChanged;
 
             //LabelControl label = new LabelControl();
             //label.Parent = result;
@@ -110,36 +108,47 @@ namespace PharmacyManagement
                                             Created = u.Created,
                                             Role = u.Role
                                         }).FirstOrDefault();
-                lblUsername.Text = user.UserName;
-                lblFullName.Text = user.FullName;
-                lblAddress.Text = user.Address;
-                lblBirthDay.Text = user.Birthday.ToString("dd/mm/yyy");
-                lblRole.Text = user.Role.Name;
+                if(user != null)
+                {
+                    lblUsername.Text = user.UserName;
+                    lblFullName.Text = user.FullName;
+                    lblAddress.Text = user.Address;
+                    lblBirthDay.Text = user.Birthday.ToString("dd/mm/yyy");
+                    lblRole.Text = user.Role.Name;
+                }
+                else
+                {
+                    lblUsername.Text = "Sellect a user";
+                    lblFullName.Text = "";
+                    lblAddress.Text = "";
+                    lblBirthDay.Text = "";
+                    lblRole.Text = "";
+                }
             }
         }
 
         private void frmPharmacy_Load(object sender, EventArgs e)
         {
-            var ctx = PharmacyDbContext.Create();
+            var frmLogin = new frmLogin();
+            frmLogin.ShowDialog();
+            if (frmLogin.DialogResult == DialogResult.OK)
+            {
+                XtraMessageBox.Show($"Hello {UserIdentity.SessionUser.UserName}!");
+                // OK
+                employeesUserControl = CreateUserControl("Employees");
+                customersUserControl = CreateUserControl("Customers");
+                accordionControl.SelectedElement = employeesAccordionControlElement;
+                this.Enabled = true;
+                this.Show();
 
-            //using (UserIdentity uIdentity = new UserIdentity())
-            //{
-            //    uIdentity.CreateRole("admin");
-            //    var user = new User
-            //    {
-            //        UserName = "admin",
-            //        FullName = "Vo Van Hieu",
-            //        Address = "Address",
-            //        Birthday = DateTime.Now.AddDays(30),
-            //        Gender = true
-            //    };
-
-            //    uIdentity.RegisterUser(user: user, password: "password", roleName: "admin");
-            //}
-
-            //MessageBox.Show(ctx.Users.First().Role.Name);
-            //ctx.Users.First();
-
+                // Clean resource
+                frmLogin.Dispose();
+                frmLogin = null;    // Help GC to clean this guy
+            }
+            else
+            {
+                this.Close();
+            }
         }
     }
 }
