@@ -39,7 +39,7 @@ namespace PharmacyManagement.Views
             this.skinDropDownButtonItem = new DevExpress.XtraBars.SkinDropDownButtonItem();
             this.skinPaletteRibbonGalleryBarItem = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barbtbAllUsers = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
@@ -54,8 +54,7 @@ namespace PharmacyManagement.Views
             this.ribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.dockManager = new DevExpress.XtraBars.Docking.DockManager(this.components);
-            this.hideContainerRight = new DevExpress.XtraBars.Docking.AutoHideContainer();
-            this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockpnlUser = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.lblBirthDay = new DevExpress.XtraEditors.LabelControl();
             this.lblRole = new DevExpress.XtraEditors.LabelControl();
@@ -71,10 +70,14 @@ namespace PharmacyManagement.Views
             this.customersAccordionControlElement = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.tabbedView = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.documentManager = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
+            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.barLinkContainerItem1 = new DevExpress.XtraBars.BarLinkContainerItem();
+            this.barWorkspaceMenuItem1 = new DevExpress.XtraBars.BarWorkspaceMenuItem();
+            this.hideContainerRight = new DevExpress.XtraBars.Docking.AutoHideContainer();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager)).BeginInit();
-            this.hideContainerRight.SuspendLayout();
-            this.dockPanel1.SuspendLayout();
+            this.dockpnlUser.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.dockPanel.SuspendLayout();
@@ -82,6 +85,7 @@ namespace PharmacyManagement.Views
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager)).BeginInit();
+            this.hideContainerRight.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -97,12 +101,16 @@ namespace PharmacyManagement.Views
             this.skinDropDownButtonItem,
             this.skinPaletteRibbonGalleryBarItem,
             this.barButtonItem1,
-            this.barButtonItem2,
+            this.barbtbAllUsers,
             this.barButtonItem3,
             this.barButtonItem4,
-            this.barButtonItem5});
+            this.barButtonItem5,
+            this.barStaticItem1,
+            this.barButtonItem6,
+            this.barLinkContainerItem1,
+            this.barWorkspaceMenuItem1});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 53;
+            this.ribbonControl.MaxItemId = 58;
             this.ribbonControl.MdiMergeStyle = DevExpress.XtraBars.Ribbon.RibbonMdiMergeStyle.Always;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -162,12 +170,13 @@ namespace PharmacyManagement.Views
             this.barButtonItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
             this.barButtonItem1.Name = "barButtonItem1";
             // 
-            // barButtonItem2
+            // barbtbAllUsers
             // 
-            this.barButtonItem2.Caption = "All users";
-            this.barButtonItem2.Id = 49;
-            this.barButtonItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.barbtbAllUsers.Caption = "All users";
+            this.barbtbAllUsers.Id = 49;
+            this.barbtbAllUsers.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
+            this.barbtbAllUsers.Name = "barbtbAllUsers";
+            this.barbtbAllUsers.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtbAllUsers_ItemClick);
             // 
             // barButtonItem3
             // 
@@ -220,7 +229,7 @@ namespace PharmacyManagement.Views
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem3);
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem2);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barbtbAllUsers);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "User management";
             // 
@@ -279,28 +288,19 @@ namespace PharmacyManagement.Views
             "DevExpress.XtraBars.Navigation.OfficeNavigationBar",
             "DevExpress.XtraBars.Navigation.TileNavPane"});
             // 
-            // hideContainerRight
+            // dockpnlUser
             // 
-            this.hideContainerRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.hideContainerRight.Controls.Add(this.dockPanel1);
-            this.hideContainerRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.hideContainerRight.Location = new System.Drawing.Point(759, 160);
-            this.hideContainerRight.Name = "hideContainerRight";
-            this.hideContainerRight.Size = new System.Drawing.Size(31, 417);
-            // 
-            // dockPanel1
-            // 
-            this.dockPanel1.Controls.Add(this.dockPanel1_Container);
-            this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
-            this.dockPanel1.ID = new System.Guid("2c167bcd-bc1e-40f3-947c-e2e8bc570987");
-            this.dockPanel1.Location = new System.Drawing.Point(0, 0);
-            this.dockPanel1.Name = "dockPanel1";
-            this.dockPanel1.OriginalSize = new System.Drawing.Size(200, 200);
-            this.dockPanel1.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Right;
-            this.dockPanel1.SavedIndex = 1;
-            this.dockPanel1.Size = new System.Drawing.Size(200, 417);
-            this.dockPanel1.Text = "Nhan vien";
-            this.dockPanel1.Visibility = DevExpress.XtraBars.Docking.DockVisibility.AutoHide;
+            this.dockpnlUser.Controls.Add(this.dockPanel1_Container);
+            this.dockpnlUser.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
+            this.dockpnlUser.ID = new System.Guid("2c167bcd-bc1e-40f3-947c-e2e8bc570987");
+            this.dockpnlUser.Location = new System.Drawing.Point(0, 0);
+            this.dockpnlUser.Name = "dockpnlUser";
+            this.dockpnlUser.OriginalSize = new System.Drawing.Size(200, 200);
+            this.dockpnlUser.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Right;
+            this.dockpnlUser.SavedIndex = 1;
+            this.dockpnlUser.Size = new System.Drawing.Size(200, 417);
+            this.dockpnlUser.Text = "User Information";
+            this.dockpnlUser.Visibility = DevExpress.XtraBars.Docking.DockVisibility.AutoHide;
             // 
             // dockPanel1_Container
             // 
@@ -327,7 +327,7 @@ namespace PharmacyManagement.Views
             this.lblBirthDay.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblBirthDay.Location = new System.Drawing.Point(6, 234);
             this.lblBirthDay.Name = "lblBirthDay";
-            this.lblBirthDay.Size = new System.Drawing.Size(190, 33);
+            this.lblBirthDay.Size = new System.Drawing.Size(192, 33);
             this.lblBirthDay.TabIndex = 5;
             this.lblBirthDay.Text = "Birthday";
             // 
@@ -343,7 +343,7 @@ namespace PharmacyManagement.Views
             this.lblRole.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblRole.Location = new System.Drawing.Point(6, 273);
             this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(190, 26);
+            this.lblRole.Size = new System.Drawing.Size(192, 26);
             this.lblRole.TabIndex = 4;
             this.lblRole.Text = "Role";
             // 
@@ -471,6 +471,41 @@ namespace PharmacyManagement.Views
             this.documentManager.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView});
             // 
+            // barStaticItem1
+            // 
+            this.barStaticItem1.Caption = "barStaticItem1";
+            this.barStaticItem1.Id = 54;
+            this.barStaticItem1.Name = "barStaticItem1";
+            // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "barButtonItem6";
+            this.barButtonItem6.Id = 55;
+            this.barButtonItem6.Name = "barButtonItem6";
+            this.barButtonItem6.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // barLinkContainerItem1
+            // 
+            this.barLinkContainerItem1.Caption = "barLinkContainerItem1";
+            this.barLinkContainerItem1.Id = 56;
+            this.barLinkContainerItem1.Name = "barLinkContainerItem1";
+            // 
+            // barWorkspaceMenuItem1
+            // 
+            this.barWorkspaceMenuItem1.Caption = "barWorkspaceMenuItem1";
+            this.barWorkspaceMenuItem1.Id = 57;
+            this.barWorkspaceMenuItem1.Name = "barWorkspaceMenuItem1";
+            // 
+            // hideContainerRight
+            // 
+            this.hideContainerRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.hideContainerRight.Controls.Add(this.dockpnlUser);
+            this.hideContainerRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.hideContainerRight.Location = new System.Drawing.Point(763, 160);
+            this.hideContainerRight.Name = "hideContainerRight";
+            this.hideContainerRight.Size = new System.Drawing.Size(27, 417);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -489,8 +524,7 @@ namespace PharmacyManagement.Views
             this.Load += new System.EventHandler(this.frmPharmacy_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager)).EndInit();
-            this.hideContainerRight.ResumeLayout(false);
-            this.dockPanel1.ResumeLayout(false);
+            this.dockpnlUser.ResumeLayout(false);
             this.dockPanel1_Container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.dockPanel.ResumeLayout(false);
@@ -498,6 +532,7 @@ namespace PharmacyManagement.Views
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager)).EndInit();
+            this.hideContainerRight.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -528,7 +563,7 @@ namespace PharmacyManagement.Views
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-        private DevExpress.XtraBars.Docking.DockPanel dockPanel1;
+        private DevExpress.XtraBars.Docking.DockPanel dockpnlUser;
         private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
         private DevExpress.XtraEditors.LabelControl lblRole;
         private DevExpress.XtraEditors.LabelControl lblAddress;
@@ -536,13 +571,17 @@ namespace PharmacyManagement.Views
         private DevExpress.XtraEditors.LabelControl lblFullName;
         private DevExpress.XtraEditors.LabelControl lblBirthDay;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barbtbAllUsers;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem1;
+        private DevExpress.XtraBars.BarLinkContainerItem barLinkContainerItem1;
+        private DevExpress.XtraBars.BarWorkspaceMenuItem barWorkspaceMenuItem1;
         private DevExpress.XtraBars.Docking.AutoHideContainer hideContainerRight;
     }
 }

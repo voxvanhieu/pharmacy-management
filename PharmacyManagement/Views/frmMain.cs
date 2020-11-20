@@ -18,9 +18,6 @@ namespace PharmacyManagement.Views
 {
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-
-        UserGridControl userGridControl;
-
         XtraUserControl employeesUserControl;
         XtraUserControl customersUserControl;
         public frmMain()
@@ -33,20 +30,15 @@ namespace PharmacyManagement.Views
             result.Name = text.ToLower() + "UserControl";
             result.Text = text;
 
-            userGridControl = new UserGridControl();
-            userGridControl.Dock = DockStyle.Fill;
-            userGridControl.Parent = result;
-            userGridControl.GridSelectedRowChanged += userGridControl_SelectedRowChanged;
-
-            //LabelControl label = new LabelControl();
-            //label.Parent = result;
-            //label.Appearance.Font = new Font("Tahoma", 25.25F);
-            //label.Appearance.ForeColor = Color.Gray;
-            //label.Dock = System.Windows.Forms.DockStyle.Fill;
-            //label.AutoSizeMode = LabelAutoSizeMode.None;
-            //label.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            //label.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            //label.Text = text;
+            LabelControl label = new LabelControl();
+            label.Parent = result;
+            label.Appearance.Font = new Font("Tahoma", 25.25F);
+            label.Appearance.ForeColor = Color.Gray;
+            label.Dock = System.Windows.Forms.DockStyle.Fill;
+            label.AutoSizeMode = LabelAutoSizeMode.None;
+            label.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            label.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            label.Text = text;
 
             return result;
         }
@@ -88,6 +80,7 @@ namespace PharmacyManagement.Views
         private void userGridControl_SelectedRowChanged(object sender, HieuVVCustomSelectedRowChangedEventArgs e)
         {
             UpdateUserDetails(e.UserName);
+            dockpnlUser.ShowSliding();
         }
 
         private void UpdateUserDetails(string userName)
@@ -133,7 +126,6 @@ namespace PharmacyManagement.Views
             frmLogin.ShowDialog();
             if (frmLogin.DialogResult == DialogResult.OK)
             {
-                XtraMessageBox.Show($"Hello {UserIdentity.SessionUser.UserName}!");
                 // OK
                 employeesUserControl = CreateUserControl("Employees");
                 customersUserControl = CreateUserControl("Customers");
@@ -149,6 +141,30 @@ namespace PharmacyManagement.Views
             {
                 this.Close();
             }
+        }
+
+        private UserGridControl userGridControl;
+        private XtraUserControl tabAllUsers;
+        private void barbtbAllUsers_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if(tabAllUsers is null)
+            {
+                tabAllUsers = new XtraUserControl();
+                tabAllUsers.Name = "TabAllUsersControl";
+                tabAllUsers.Text = "Users";
+            }
+
+            if (userGridControl is null)
+            {
+                userGridControl = new UserGridControl();
+
+                userGridControl.Dock = DockStyle.Fill;
+                userGridControl.Parent = tabAllUsers;
+                userGridControl.GridSelectedRowChanged += userGridControl_SelectedRowChanged;
+            }
+
+            tabbedView.AddDocument(tabAllUsers);
+            tabbedView.ActivateDocument(tabAllUsers);
         }
     }
 }
