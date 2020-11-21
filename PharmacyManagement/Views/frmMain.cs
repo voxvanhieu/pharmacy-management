@@ -39,8 +39,14 @@ namespace PharmacyManagement.Views
             label.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             label.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             label.Text = text;
-
+            tabbedView.DocumentClosing += TabbedView_DocumentClosing;
             return result;
+        }
+
+        private string closedTabControl = "";
+        private void TabbedView_DocumentClosing(object sender, DocumentCancelEventArgs e)
+        {
+            closedTabControl =  e.Document.Control.Name;
         }
 
         void accordionControl_SelectedElementChanged(object sender, SelectedElementChangedEventArgs e)
@@ -106,7 +112,7 @@ namespace PharmacyManagement.Views
                     lblUsername.Text = user.UserName;
                     lblFullName.Text = user.FullName;
                     lblAddress.Text = user.Address;
-                    lblBirthDay.Text = user.Birthday.ToString("dd/mm/yyy");
+                    lblBirthDay.Text = user.Birthday.ToString("D");
                     lblRole.Text = user.Role.Name;
                 }
                 else
@@ -122,7 +128,7 @@ namespace PharmacyManagement.Views
 
         private void frmPharmacy_Load(object sender, EventArgs e)
         {
-            var frmLogin = new frmLogin();
+            var frmLogin = new frmLogin(this);
             frmLogin.ShowDialog();
             if (frmLogin.DialogResult == DialogResult.OK)
             {
@@ -148,14 +154,14 @@ namespace PharmacyManagement.Views
         private XtraUserControl tabAllUsers;
         private void barbtbAllUsers_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if(tabAllUsers is null)
+            if (tabAllUsers is null || tabAllUsers.IsDisposed)
             {
                 tabAllUsers = new XtraUserControl();
                 tabAllUsers.Name = "TabAllUsersControl";
                 tabAllUsers.Text = "Users";
             }
 
-            if (userGridControl is null)
+            if (userGridControl is null || userGridControl.IsDisposed)
             {
                 userGridControl = new UserGridControl();
 
@@ -166,6 +172,24 @@ namespace PharmacyManagement.Views
 
             tabbedView.AddDocument(tabAllUsers);
             tabbedView.ActivateDocument(tabAllUsers);
+        }
+
+        private void barbtnNewUser_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var result = new frmNewUser().ShowDialog();
+            if(result == DialogResult.OK)
+            {
+                userGridControl?.RefillGrid();
+            }
+        }
+
+        private void barbtnChangeRole_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var result = new frmChangeUserRole().ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                userGridControl?.RefillGrid();
+            }
         }
     }
 }

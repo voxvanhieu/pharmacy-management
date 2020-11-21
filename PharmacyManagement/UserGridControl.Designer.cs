@@ -91,6 +91,7 @@ namespace PharmacyManagement
             this.gridView1.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
             this.gridView1.OptionsFind.AlwaysVisible = true;
             this.gridView1.OptionsFind.FindDelay = 500;
+            this.gridView1.OptionsView.ColumnAutoWidth = false;
             this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // colId
@@ -99,6 +100,7 @@ namespace PharmacyManagement
             this.colId.Name = "colId";
             this.colId.Visible = true;
             this.colId.VisibleIndex = 0;
+            this.colId.Width = 56;
             // 
             // colUserName
             // 
@@ -106,6 +108,7 @@ namespace PharmacyManagement
             this.colUserName.Name = "colUserName";
             this.colUserName.Visible = true;
             this.colUserName.VisibleIndex = 1;
+            this.colUserName.Width = 99;
             // 
             // colFullName
             // 
@@ -113,6 +116,7 @@ namespace PharmacyManagement
             this.colFullName.Name = "colFullName";
             this.colFullName.Visible = true;
             this.colFullName.VisibleIndex = 2;
+            this.colFullName.Width = 151;
             // 
             // colAddress
             // 
@@ -120,6 +124,7 @@ namespace PharmacyManagement
             this.colAddress.Name = "colAddress";
             this.colAddress.Visible = true;
             this.colAddress.VisibleIndex = 3;
+            this.colAddress.Width = 146;
             // 
             // colGender
             // 
@@ -127,6 +132,7 @@ namespace PharmacyManagement
             this.colGender.Name = "colGender";
             this.colGender.Visible = true;
             this.colGender.VisibleIndex = 4;
+            this.colGender.Width = 49;
             // 
             // colBirthday
             // 
@@ -134,6 +140,7 @@ namespace PharmacyManagement
             this.colBirthday.Name = "colBirthday";
             this.colBirthday.Visible = true;
             this.colBirthday.VisibleIndex = 5;
+            this.colBirthday.Width = 86;
             // 
             // colCreated
             // 
@@ -141,6 +148,7 @@ namespace PharmacyManagement
             this.colCreated.Name = "colCreated";
             this.colCreated.Visible = true;
             this.colCreated.VisibleIndex = 6;
+            this.colCreated.Width = 94;
             // 
             // usersTableAdapter
             // 

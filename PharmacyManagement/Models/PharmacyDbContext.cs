@@ -75,26 +75,6 @@ namespace PharmacyManagement.Models
             }
         }
 
-        public async Task<int> RegisterUserAsync(User user, string password, string roleName)
-        {
-            user.PasswordHash = GetPasswordHash(password);
-            if (dbContext.Roles.Any(r => r.Name == roleName))
-            {
-                int roleId = dbContext.Roles.Single(r => r.Name == roleName).Id;
-                user.RoleId = roleId;
-
-                dbContext.Users.Add(user);
-
-                await dbContext.SaveChangesAsync();
-
-                return user.Id;
-            }
-            else
-            {
-                throw new ArgumentException($"Role {roleName} is not in the database.");
-            }
-        }
-
         public int CreateRole(string roleName)
         {
             var role = dbContext.Roles.SingleOrDefault(r => r.Name == roleName);
@@ -109,19 +89,43 @@ namespace PharmacyManagement.Models
             else return role.Id;
         }
 
-        public async Task<int> CreateRoleAsync(string roleName)
+        public bool IsInRole(User user, string roleName)
         {
+            return user.Role.Name.Equals(roleName, StringComparison.OrdinalIgnoreCase);
+        }
 
-            var role = await dbContext.Roles.SingleOrDefaultAsync(r => r.Name == roleName);
-
-            if (role is null)
+        public bool ChangeRole(string username, string roleName)
+        {
+            var user = dbContext.Users.SingleOrDefault(u => u.UserName.Equals(username, StringComparison.OrdinalIgnoreCase));
+            if (user != null)
             {
-                role = new Role { Name = roleName };
-                dbContext.Roles.Add(role);
-                await dbContext.SaveChangesAsync();
-                return role.Id;
+                user.Role = dbContext.Roles.SingleOrDefault(r => r.Name.Equals(roleName, StringComparison.OrdinalIgnoreCase));
+                if (user.Role != null)
+                {
+                    dbContext.SaveChanges();
+                    return true;
+                }
             }
-            else return role.Id;
+            return false;
+        }
+
+        public bool ChangePassword(string username, string oldPassword, string newPassword)
+        {
+            if (Validate(username, oldPassword))
+            {
+                User user = dbContext.Users
+                            .Where(u => u.UserName == username)
+                            .FirstOrDefault();
+
+                if (user is null) return false;
+
+                user.PasswordHash = GetPasswordHash(newPassword);
+
+                dbContext.SaveChanges();
+
+                return true;
+            }
+            return false;
         }
 
         private string GetPasswordHash(string password)

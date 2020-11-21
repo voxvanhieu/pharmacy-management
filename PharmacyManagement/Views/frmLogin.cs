@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.XtraBars.Ribbon;
+using DevExpress.XtraEditors;
 using PharmacyManagement.Models;
 using System;
 using System.Collections.Generic;
@@ -17,9 +18,16 @@ namespace PharmacyManagement.Views
         PharmacyDbContext context = PharmacyDbContext.Create();
         UserIdentity userIdentity = new UserIdentity();
 
+        frmMain frmMain;
+
         public frmLogin()
         {
             InitializeComponent();
+        }
+
+        public frmLogin(frmMain frmMain) : this()
+        {
+            this.frmMain = frmMain;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -27,6 +35,22 @@ namespace PharmacyManagement.Views
             if (userIdentity.Validate(cmbUsername.Text, txbPassword.Text))
             {
                 UserIdentity.SessionUser = context.Users.First(u => u.UserName == cmbUsername.Text);
+
+                if (!userIdentity.IsInRole(UserIdentity.SessionUser, "Admin"))
+                {
+                    frmMain.ribbonPageHumanManager.Visible = false;
+                }
+
+                UserIdentity.SessionUser = new User
+                {
+                    Id = UserIdentity.SessionUser.Id,
+                    UserName = UserIdentity.SessionUser.UserName,
+                    FullName = UserIdentity.SessionUser.FullName,
+                    Address = UserIdentity.SessionUser.Address,
+                    Birthday = UserIdentity.SessionUser.Birthday,
+                    Gender = UserIdentity.SessionUser.Gender,
+                    Role = new Role { Name = UserIdentity.SessionUser.Role.Name }
+                };
 
                 //Cleanup data
                 userIdentity.Dispose();

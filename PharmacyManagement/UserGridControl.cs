@@ -16,7 +16,7 @@ namespace PharmacyManagement
         public UserGridControl()
         {
             InitializeComponent();
-            FillGrid();
+            RefillGrid();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -40,7 +40,7 @@ namespace PharmacyManagement
             _gridSelectedRowChanged(sender, e);
         }
 
-        public void FillGrid()
+        public void RefillGrid()
         {
             usersTableAdapter.Fill(pharmacyDbDataSet.Users);
         }
