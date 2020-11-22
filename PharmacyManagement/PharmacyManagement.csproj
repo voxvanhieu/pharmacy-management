@@ -83,6 +83,18 @@
     <Compile Include="Views\frmChangeUserRole.Designer.cs">
       <DependentUpon>frmChangeUserRole.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\frmEditUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmEditUser.Designer.cs">
+      <DependentUpon>frmEditUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmListAllRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmListAllRole.Designer.cs">
+      <DependentUpon>frmListAllRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +119,12 @@
     <Compile Include="Views\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\frmNewRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmNewRole.Designer.cs">
+      <DependentUpon>frmNewRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\frmNewUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +136,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmChangeUserRole.resx">
       <DependentUpon>frmChangeUserRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmEditUser.resx">
+      <DependentUpon>frmEditUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmListAllRole.resx">
+      <DependentUpon>frmListAllRole.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -138,6 +162,9 @@
     </Compile>
     <EmbeddedResource Include="UserGridControl.resx">
       <DependentUpon>UserGridControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmNewRole.resx">
+      <DependentUpon>frmNewRole.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmNewUser.resx">
       <DependentUpon>frmNewUser.cs</DependentUpon>
