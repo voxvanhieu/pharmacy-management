@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PharmacyManagement.Models
 {
-    public class Commodity
+    public class Commodity // caccc
     {
 
         [Key]
