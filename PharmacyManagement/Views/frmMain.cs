@@ -206,5 +206,10 @@ namespace PharmacyManagement.Views
                 userGridControl?.RefillGrid();
             }
         }
+
+        private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            new frmChangePassword().ShowDialog();
+        }
     }
 }
