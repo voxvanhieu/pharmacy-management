@@ -40,7 +40,7 @@ namespace PharmacyManagement.Views
             this.skinDropDownButtonItem = new DevExpress.XtraBars.SkinDropDownButtonItem();
             this.skinPaletteRibbonGalleryBarItem = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barbtbAllUsers = new DevExpress.XtraBars.BarButtonItem();
+            this.barbtnAllUsers = new DevExpress.XtraBars.BarButtonItem();
             this.barbtnNewUser = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
@@ -51,14 +51,25 @@ namespace PharmacyManagement.Views
             this.workspaceManager1 = new DevExpress.Utils.WorkspaceManager(this.components);
             this.barbtnChangeRole = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageHumanManager = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupNavigation = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -70,9 +81,10 @@ namespace PharmacyManagement.Views
             this.lblBirthDay = new DevExpress.XtraEditors.LabelControl();
             this.lblRole = new DevExpress.XtraEditors.LabelControl();
             this.lblAddress = new DevExpress.XtraEditors.LabelControl();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picAvatar = new System.Windows.Forms.PictureBox();
             this.lblUsername = new DevExpress.XtraEditors.LabelControl();
             this.lblFullName = new DevExpress.XtraEditors.LabelControl();
+            this.hideContainerLeft = new DevExpress.XtraBars.Docking.AutoHideContainer();
             this.dockPanel = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.accordionControl = new DevExpress.XtraBars.Navigation.AccordionControl();
@@ -81,15 +93,13 @@ namespace PharmacyManagement.Views
             this.customersAccordionControlElement = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.tabbedView = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.documentManager = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager)).BeginInit();
             this.hideContainerRight.SuspendLayout();
             this.dockpnlUser.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
+            this.hideContainerLeft.SuspendLayout();
             this.dockPanel.SuspendLayout();
             this.dockPanel_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl)).BeginInit();
@@ -110,7 +120,7 @@ namespace PharmacyManagement.Views
             this.skinDropDownButtonItem,
             this.skinPaletteRibbonGalleryBarItem,
             this.barButtonItem1,
-            this.barbtbAllUsers,
+            this.barbtnAllUsers,
             this.barbtnNewUser,
             this.barButtonItem4,
             this.barButtonItem5,
@@ -121,13 +131,20 @@ namespace PharmacyManagement.Views
             this.barbtnChangeRole,
             this.barButtonItem2,
             this.barButtonItem3,
-            this.barButtonItem7});
+            this.barButtonItem7,
+            this.barButtonItem8,
+            this.barButtonItem9,
+            this.barButtonItem10,
+            this.barButtonItem11,
+            this.barSubItem1,
+            this.barButtonItem12});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 63;
+            this.ribbonControl.MaxItemId = 70;
             this.ribbonControl.MdiMergeStyle = DevExpress.XtraBars.Ribbon.RibbonMdiMergeStyle.Always;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
+            this.ribbonPage2,
             this.ribbonPageHumanManager,
             this.ribbonPage3,
             this.ribbonPage});
@@ -179,18 +196,18 @@ namespace PharmacyManagement.Views
             // 
             // barButtonItem1
             // 
-            this.barButtonItem1.Caption = "Them don hang";
+            this.barButtonItem1.Caption = "New invoice";
             this.barButtonItem1.Id = 48;
             this.barButtonItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
             this.barButtonItem1.Name = "barButtonItem1";
             // 
-            // barbtbAllUsers
+            // barbtnAllUsers
             // 
-            this.barbtbAllUsers.Caption = "All users";
-            this.barbtbAllUsers.Id = 49;
-            this.barbtbAllUsers.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barbtbAllUsers.ImageOptions.SvgImage")));
-            this.barbtbAllUsers.Name = "barbtbAllUsers";
-            this.barbtbAllUsers.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtbAllUsers_ItemClick);
+            this.barbtnAllUsers.Caption = "All users";
+            this.barbtnAllUsers.Id = 49;
+            this.barbtnAllUsers.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barbtnAllUsers.ImageOptions.SvgImage")));
+            this.barbtnAllUsers.Name = "barbtnAllUsers";
+            this.barbtnAllUsers.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtbAllUsers_ItemClick);
             // 
             // barbtnNewUser
             // 
@@ -261,24 +278,101 @@ namespace PharmacyManagement.Views
             this.barButtonItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
             this.barButtonItem2.Name = "barButtonItem2";
             // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Change password";
+            this.barButtonItem3.Id = 61;
+            this.barButtonItem3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem3.ImageOptions.SvgImage")));
+            this.barButtonItem3.Name = "barButtonItem3";
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "User report";
+            this.barButtonItem7.Id = 62;
+            this.barButtonItem7.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem7.ImageOptions.SvgImage")));
+            this.barButtonItem7.Name = "barButtonItem7";
+            // 
+            // barButtonItem8
+            // 
+            this.barButtonItem8.Caption = "Envoices";
+            this.barButtonItem8.Id = 63;
+            this.barButtonItem8.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem8.ImageOptions.SvgImage")));
+            this.barButtonItem8.Name = "barButtonItem8";
+            // 
+            // barButtonItem9
+            // 
+            this.barButtonItem9.Caption = "Nhập kho";
+            this.barButtonItem9.Id = 64;
+            this.barButtonItem9.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem9.ImageOptions.SvgImage")));
+            this.barButtonItem9.Name = "barButtonItem9";
+            // 
+            // barButtonItem10
+            // 
+            this.barButtonItem10.Caption = "All records";
+            this.barButtonItem10.Id = 65;
+            this.barButtonItem10.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem10.ImageOptions.SvgImage")));
+            this.barButtonItem10.Name = "barButtonItem10";
+            this.barButtonItem10.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
+            // 
+            // barButtonItem11
+            // 
+            this.barButtonItem11.Caption = "Báo cáo";
+            this.barButtonItem11.Id = 66;
+            this.barButtonItem11.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem11.ImageOptions.SvgImage")));
+            this.barButtonItem11.Name = "barButtonItem11";
+            this.barButtonItem11.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
+            // 
+            // barSubItem1
+            // 
+            this.barSubItem1.Caption = "Report";
+            this.barSubItem1.Id = 67;
+            this.barSubItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barSubItem1.ImageOptions.SvgImage")));
+            this.barSubItem1.Name = "barSubItem1";
+            this.barSubItem1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
+            // 
+            // barButtonItem12
+            // 
+            this.barButtonItem12.Caption = "Để cho đẹp";
+            this.barButtonItem12.Id = 69;
+            this.barButtonItem12.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem12.ImageOptions.SvgImage")));
+            this.barButtonItem12.Name = "barButtonItem12";
+            this.barButtonItem12.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
             this.ribbonPageGroup2});
             this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "ribbonPage1";
+            this.ribbonPage1.Text = "Home";
             // 
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem8);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "Sale";
             // 
             // ribbonPageGroup2
             // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem9);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem10);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barSubItem1);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem12);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "Warehouse";
+            // 
+            // ribbonPage2
+            // 
+            this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup7});
+            this.ribbonPage2.Name = "ribbonPage2";
+            this.ribbonPage2.Text = "Medicine";
+            // 
+            // ribbonPageGroup7
+            // 
+            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            this.ribbonPageGroup7.Text = "ribbonPageGroup7";
             // 
             // ribbonPageHumanManager
             // 
@@ -291,7 +385,7 @@ namespace PharmacyManagement.Views
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.barbtnNewUser);
-            this.ribbonPageGroup3.ItemLinks.Add(this.barbtbAllUsers);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barbtnAllUsers);
             this.ribbonPageGroup3.ItemLinks.Add(this.barbtnChangeRole);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "User management";
@@ -317,6 +411,11 @@ namespace PharmacyManagement.Views
             this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem3);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Text = "Account settings";
+            // 
+            // ribbonPageGroup6
+            // 
+            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem7);
+            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             // 
             // ribbonPage
             // 
@@ -351,10 +450,9 @@ namespace PharmacyManagement.Views
             // dockManager
             // 
             this.dockManager.AutoHideContainers.AddRange(new DevExpress.XtraBars.Docking.AutoHideContainer[] {
-            this.hideContainerRight});
+            this.hideContainerRight,
+            this.hideContainerLeft});
             this.dockManager.Form = this;
-            this.dockManager.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
-            this.dockPanel});
             this.dockManager.TopZIndexControls.AddRange(new string[] {
             "DevExpress.XtraBars.BarDockControl",
             "DevExpress.XtraBars.StandaloneBarDockControl",
@@ -385,7 +483,7 @@ namespace PharmacyManagement.Views
             this.dockpnlUser.OriginalSize = new System.Drawing.Size(200, 200);
             this.dockpnlUser.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Right;
             this.dockpnlUser.SavedIndex = 1;
-            this.dockpnlUser.Size = new System.Drawing.Size(200, 417);
+            this.dockpnlUser.Size = new System.Drawing.Size(200, 452);
             this.dockpnlUser.Text = "User Information";
             this.dockpnlUser.Visibility = DevExpress.XtraBars.Docking.DockVisibility.AutoHide;
             // 
@@ -394,12 +492,12 @@ namespace PharmacyManagement.Views
             this.dockPanel1_Container.Controls.Add(this.lblBirthDay);
             this.dockPanel1_Container.Controls.Add(this.lblRole);
             this.dockPanel1_Container.Controls.Add(this.lblAddress);
-            this.dockPanel1_Container.Controls.Add(this.pictureBox1);
+            this.dockPanel1_Container.Controls.Add(this.picAvatar);
             this.dockPanel1_Container.Controls.Add(this.lblUsername);
             this.dockPanel1_Container.Controls.Add(this.lblFullName);
             this.dockPanel1_Container.Location = new System.Drawing.Point(4, 46);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(193, 368);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(193, 403);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // lblBirthDay
@@ -450,15 +548,17 @@ namespace PharmacyManagement.Views
             this.lblAddress.TabIndex = 3;
             this.lblAddress.Text = "Address";
             // 
-            // pictureBox1
+            // picAvatar
             // 
-            this.pictureBox1.Image = global::PharmacyManagement.Properties.Resources._016_man;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(184, 121);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.picAvatar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.picAvatar.Image = global::PharmacyManagement.Properties.Resources._016_man;
+            this.picAvatar.Location = new System.Drawing.Point(6, 0);
+            this.picAvatar.Name = "picAvatar";
+            this.picAvatar.Size = new System.Drawing.Size(184, 121);
+            this.picAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAvatar.TabIndex = 4;
+            this.picAvatar.TabStop = false;
             // 
             // lblUsername
             // 
@@ -492,16 +592,28 @@ namespace PharmacyManagement.Views
             this.lblFullName.TabIndex = 1;
             this.lblFullName.Text = "Full name";
             // 
+            // hideContainerLeft
+            // 
+            this.hideContainerLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.hideContainerLeft.Controls.Add(this.dockPanel);
+            this.hideContainerLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.hideContainerLeft.Location = new System.Drawing.Point(0, 160);
+            this.hideContainerLeft.Name = "hideContainerLeft";
+            this.hideContainerLeft.Size = new System.Drawing.Size(27, 452);
+            // 
             // dockPanel
             // 
             this.dockPanel.Controls.Add(this.dockPanel_Container);
             this.dockPanel.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left;
             this.dockPanel.ID = new System.Guid("a045df26-1503-4d9a-99c1-a531310af22b");
-            this.dockPanel.Location = new System.Drawing.Point(0, 160);
+            this.dockPanel.Location = new System.Drawing.Point(0, 0);
             this.dockPanel.Name = "dockPanel";
             this.dockPanel.OriginalSize = new System.Drawing.Size(200, 200);
+            this.dockPanel.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Left;
+            this.dockPanel.SavedIndex = 0;
             this.dockPanel.Size = new System.Drawing.Size(200, 452);
             this.dockPanel.Text = "Navigation";
+            this.dockPanel.Visibility = DevExpress.XtraBars.Docking.DockVisibility.AutoHide;
             // 
             // dockPanel_Container
             // 
@@ -558,32 +670,12 @@ namespace PharmacyManagement.Views
             this.documentManager.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView});
             // 
-            // barButtonItem3
-            // 
-            this.barButtonItem3.Caption = "Change password";
-            this.barButtonItem3.Id = 61;
-            this.barButtonItem3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem3.ImageOptions.SvgImage")));
-            this.barButtonItem3.Name = "barButtonItem3";
-            // 
-            // ribbonPageGroup6
-            // 
-            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem7);
-            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
-            this.ribbonPageGroup6.Text = "ribbonPageGroup6";
-            // 
-            // barButtonItem7
-            // 
-            this.barButtonItem7.Caption = "User report";
-            this.barButtonItem7.Id = 62;
-            this.barButtonItem7.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem7.ImageOptions.SvgImage")));
-            this.barButtonItem7.Name = "barButtonItem7";
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(904, 634);
-            this.Controls.Add(this.dockPanel);
+            this.Controls.Add(this.hideContainerLeft);
             this.Controls.Add(this.hideContainerRight);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbonControl);
@@ -600,7 +692,8 @@ namespace PharmacyManagement.Views
             this.hideContainerRight.ResumeLayout(false);
             this.dockpnlUser.ResumeLayout(false);
             this.dockPanel1_Container.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();
+            this.hideContainerLeft.ResumeLayout(false);
             this.dockPanel.ResumeLayout(false);
             this.dockPanel_Container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl)).EndInit();
@@ -643,8 +736,8 @@ namespace PharmacyManagement.Views
         private DevExpress.XtraEditors.LabelControl lblUsername;
         private DevExpress.XtraEditors.LabelControl lblFullName;
         private DevExpress.XtraEditors.LabelControl lblBirthDay;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private DevExpress.XtraBars.BarButtonItem barbtbAllUsers;
+        private System.Windows.Forms.PictureBox picAvatar;
+        private DevExpress.XtraBars.BarButtonItem barbtnAllUsers;
         private DevExpress.XtraBars.BarButtonItem barbtnNewUser;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
@@ -664,5 +757,14 @@ namespace PharmacyManagement.Views
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         internal DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageHumanManager;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem9;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem10;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem11;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
+        private DevExpress.XtraBars.Docking.AutoHideContainer hideContainerLeft;
+        private DevExpress.XtraBars.BarSubItem barSubItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem12;
     }
 }

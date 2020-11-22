@@ -39,14 +39,7 @@ namespace PharmacyManagement.Views
             label.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             label.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             label.Text = text;
-            tabbedView.DocumentClosing += TabbedView_DocumentClosing;
             return result;
-        }
-
-        private string closedTabControl = "";
-        private void TabbedView_DocumentClosing(object sender, DocumentCancelEventArgs e)
-        {
-            closedTabControl =  e.Document.Control.Name;
         }
 
         void accordionControl_SelectedElementChanged(object sender, SelectedElementChangedEventArgs e)
@@ -86,7 +79,8 @@ namespace PharmacyManagement.Views
         private void userGridControl_SelectedRowChanged(object sender, HieuVVCustomSelectedRowChangedEventArgs e)
         {
             UpdateUserDetails(e.UserName);
-            dockpnlUser.ShowSliding();
+            //dockpnlUser.ShowSliding();
+            dockpnlUser.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Visible;
         }
 
         private void UpdateUserDetails(string userName)

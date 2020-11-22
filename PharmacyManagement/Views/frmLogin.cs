@@ -25,10 +25,7 @@ namespace PharmacyManagement.Views
             InitializeComponent();
         }
 
-        public frmLogin(frmMain frmMain) : this()
-        {
-            this.frmMain = frmMain;
-        }
+        public frmLogin(frmMain frmMain) : this() => this.frmMain = frmMain;
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
