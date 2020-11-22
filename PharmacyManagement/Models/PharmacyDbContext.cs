@@ -39,6 +39,8 @@ namespace PharmacyManagement.Models
         private bool _disposed;
         private PharmacyDbContext dbContext;
 
+        public static User SessionUser { get; set; }
+
         public UserIdentity()
         {
             dbContext = PharmacyDbContext.Create();
@@ -65,17 +67,12 @@ namespace PharmacyManagement.Models
 
                 dbContext.Users.Add(user);
 
-                dbContext.SaveChangesAsync();
+                dbContext.SaveChanges();
             }
             else
             {
                 throw new ArgumentException($"Role {roleName} is not in the database.");
             }
-        }
-
-        public async void RegisterUserAsync(User user, string password, string roleName)
-        {
-            await Task.Run(() => RegisterUser(user, password, roleName));
         }
 
         public int CreateRole(string roleName)
@@ -90,6 +87,45 @@ namespace PharmacyManagement.Models
                 return role.Id;
             }
             else return role.Id;
+        }
+
+        public bool IsInRole(User user, string roleName)
+        {
+            return user.Role.Name.Equals(roleName, StringComparison.OrdinalIgnoreCase);
+        }
+
+        public bool ChangeRole(string username, string roleName)
+        {
+            var user = dbContext.Users.SingleOrDefault(u => u.UserName.Equals(username, StringComparison.OrdinalIgnoreCase));
+            if (user != null)
+            {
+                user.Role = dbContext.Roles.SingleOrDefault(r => r.Name.Equals(roleName, StringComparison.OrdinalIgnoreCase));
+                if (user.Role != null)
+                {
+                    dbContext.SaveChanges();
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool ChangePassword(string username, string oldPassword, string newPassword)
+        {
+            if (Validate(username, oldPassword))
+            {
+                User user = dbContext.Users
+                            .Where(u => u.UserName == username)
+                            .FirstOrDefault();
+
+                if (user is null) return false;
+
+                user.PasswordHash = GetPasswordHash(newPassword);
+
+                dbContext.SaveChanges();
+
+                return true;
+            }
+            return false;
         }
 
         private string GetPasswordHash(string password)
