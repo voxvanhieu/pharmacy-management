@@ -108,6 +108,8 @@ namespace PharmacyManagement.Views
                     lblAddress.Text = user.Address;
                     lblBirthDay.Text = user.Birthday.ToString("D");
                     lblRole.Text = user.Role.Name;
+                    picAvatar.Image = (user.Gender) ? global::PharmacyManagement.Properties.Resources._016_man
+                                                    : global::PharmacyManagement.Properties.Resources._015_woman;
                 }
                 else
                 {
@@ -180,6 +182,25 @@ namespace PharmacyManagement.Views
         private void barbtnChangeRole_ItemClick(object sender, ItemClickEventArgs e)
         {
             var result = new frmChangeUserRole().ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                userGridControl?.RefillGrid();
+            }
+        }
+
+        private void barbtnNewRole_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            new frmNewRole().ShowDialog();
+        }
+
+        private void barbtnListRoles_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            new frmListAllRole().ShowDialog();      
+        }
+
+        private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var result = new frmEditUser().ShowDialog();
             if (result == DialogResult.OK)
             {
                 userGridControl?.RefillGrid();
