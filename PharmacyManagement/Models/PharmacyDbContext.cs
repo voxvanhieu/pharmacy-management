@@ -12,6 +12,8 @@ namespace PharmacyManagement.Models
     {
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
+        public virtual DbSet<Commodity> Commodities { get; set; }
+        public virtual DbSet<CommodityType> CommodityTypes { get; set; }
 
         public PharmacyDbContext()
             : base("DefaultDb")

@@ -20,30 +20,12 @@
 
             //base.Seed(context);
 
-            //context.Roles.AddRange(new List<Role>
-            //{
-            //    new Role{Name = "Admin"},
-            //    new Role{Name = "Staff"}
-            //});
-
-            //context.Users.AddRange(new List<User>
-            //{
-            //    new User
-            //    {
-            //        UserName = "voxvanhieu",
-            //        FullName = "Võ Văn Hiếu",
-            //        Address = "Quảng Nam",
-            //        Gender = true
-            //    }
-            //});
-
-            //context.SaveChanges();
-
-            if (!context.Roles.Any())
+            if (!context.Users.Any())
                 using (UserIdentity identityService = new UserIdentity())
                 {
                     var roleAdmin = identityService.CreateRole("Admin");
                     var roleStaff = identityService.CreateRole("Staff");
+
                     identityService.RegisterUser(
                         password: "123@123a", roleName: "Admin",
                         user: new User
@@ -69,6 +51,32 @@
                             RoleId = roleAdmin,
                         });
                 }
+
+            if (!context.Commodities.Any())
+            {
+                CommodityType typeMedicine;
+
+                if (!context.CommodityTypes.Any())
+                {
+                    typeMedicine = context.CommodityTypes.Add(new CommodityType { Name = "Medicine" });
+                }
+                else
+                {
+                    typeMedicine = context.CommodityTypes.First(t => t.Name.Equals("Medicine", StringComparison.OrdinalIgnoreCase));
+                }
+                context.Commodities.Add(new Commodity
+                {
+                    Name = "Augclamox 250",
+                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitPrice = 5000,
+                    Provider = "Công ty cổ phần dược phẩm Hà Tây",
+                    Description = "Amoxicilin (dưới dạng Amoxicilin trihydrat); Acid clavulanic (dưới dạng Kali clavulanat)",
+                    Type = typeMedicine,
+                    ReferenceLink = "https://drugbank.vn/thuoc/Augclamox-250&VD-21647-14"
+                });
+
+                context.SaveChanges();
+            }
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data.
