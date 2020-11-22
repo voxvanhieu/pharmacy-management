@@ -1,5 +1,4 @@
-﻿using PharmacyManagement.Migrations;
-using PharmacyManagement.Models;
+﻿using PharmacyManagement.Models;
 using PharmacyManagement.Views;
 using System;
 using System.Collections.Generic;

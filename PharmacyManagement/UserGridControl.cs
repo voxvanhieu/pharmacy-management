@@ -33,6 +33,7 @@ namespace PharmacyManagement
 
         private void btnReload_Click(object sender, EventArgs e)
         {
+            RefillGrid();
         }
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
