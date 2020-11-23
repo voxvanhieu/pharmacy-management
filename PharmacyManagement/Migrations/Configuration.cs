@@ -1,7 +1,10 @@
 ﻿namespace PharmacyManagement.Migrations
 {
     using PharmacyManagement.Models;
+    using PharmacyManagement.Models.ViewModels;
+    using PharmacyManagement.Services;
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -30,11 +33,9 @@
                 context.Database.ExecuteSqlCommand(@"CREATE VIEW [dbo].[V_Invoice] AS"
                                                    + " SELECT [Invoices].Id, [Users].UserName, [InvoiceTypes].Name AS 'Invoice Type', [Commodities].Name AS 'Commodities', [Commodities].Description, [Commodities].Provider, [InvoiceCommodities].SaleUnit, [InvoiceCommodities].SalePrice, [InvoiceCommodities].CommodityQuantity, [Invoices].Note, [Invoices].Created"
                                                    + " FROM [Commodities] INNER JOIN"
-                                                   + " [CommodityTypes] ON [Commodities].Type_Id = [CommodityTypes].Id INNER JOIN"
                                                    + " [InvoiceCommodities] ON [Commodities].Id = [InvoiceCommodities].CommodityId INNER JOIN"
                                                    + " [Invoices] ON [InvoiceCommodities].InvoiceID = [Invoices].Id INNER JOIN"
                                                    + " [InvoiceTypes] ON [Invoices].Type_Id = [InvoiceTypes].Id INNER JOIN"
-                                                   + " [SaleUnits] ON [Commodities].Id = [SaleUnits].CommodityId INNER JOIN"
                                                    + " [Users] ON [Invoices].User_Id = [Users].Id");
 
                 using (UserIdentity identityService = new UserIdentity())
@@ -497,6 +498,26 @@
                     });
 
                     context.SaveChanges();
+                }
+
+                using (var business = new PharmacyBusiness())
+                {
+                    var invoice = new InvoiceViewModel
+                    {
+                        Username = "Admin",
+                        Note = "New note",
+                        InvoiceType = "Sale",
+                        Commodities = new List<CommodityViewModel>()
+                    };
+
+                    invoice.Commodities.Add(new CommodityViewModel
+                    {
+                        Name = "Hà thủ ô",
+                        Quantity = 10,
+                        SalePrice = 5000,
+                        SaleUnit = "Hoopj"
+                    });
+                    business.NewInvoice(invoice);
                 }
             }
         }
