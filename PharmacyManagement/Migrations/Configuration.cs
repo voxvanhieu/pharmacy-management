@@ -23,8 +23,9 @@
             if (!context.Users.Any())
             {
                 context.Database.ExecuteSqlCommand(@"CREATE VIEW [dbo].[V_Comodity] AS"
-                            + @" SELECT [Commodities].Id, [Commodities].Name, [CommodityTypes].Name as Type, Description, Provider, TotalQuantity, BaseUnitName, BaseUnitPrice, ReferenceLink, Created"
-                            + @" FROM [Commodities], [CommodityTypes] WITH CHECK OPTION;");
+                                                   + " SELECT [Commodities].Id, [Commodities].Name, [CommodityTypes].Name as Type, Description, Provider, TotalQuantity, BaseUnitName, BaseUnitPrice, ReferenceLink, Created"
+                                                   + " FROM [Commodities] INNER JOIN [CommodityTypes] ON [Commodities].Type_Id = [CommodityTypes].Id"
+                                                   + " WITH CHECK OPTION;");
 
                 using (UserIdentity identityService = new UserIdentity())
                 {
@@ -59,21 +60,23 @@
 
                 if (!context.Commodities.Any())
                 {
-                    CommodityType typeMedicine;
+                    CommodityType typeMedicine, typeOther;
 
                     if (!context.CommodityTypes.Any())
                     {
                         typeMedicine = context.CommodityTypes.Add(new CommodityType { Name = "Medicine" });
+                        typeOther = context.CommodityTypes.Add(new CommodityType { Name = "Other" });
                     }
                     else
                     {
                         typeMedicine = context.CommodityTypes.First(t => t.Name.Equals("Medicine", StringComparison.OrdinalIgnoreCase));
+                        typeOther = context.CommodityTypes.First(t => t.Name.Equals("Other", StringComparison.OrdinalIgnoreCase));
                     }
                     context.Commodities.Add(new Commodity
                     {
                         Name = "Augclamox 250",
                         BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
+                        BaseUnitPrice = 10000,
                         Provider = "Công ty cổ phần dược phẩm Hà Tây",
                         Description = "Amoxicilin (dưới dạng Amoxicilin trihydrat); Acid clavulanic (dưới dạng Kali clavulanat)",
                         Type = typeMedicine,
@@ -83,7 +86,7 @@
                     {
                         Name = "Casoran",
                         BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
+                        BaseUnitPrice = 10000,
                         Provider = "Công ty cổ phần công nghệ cao Traphaco",
                         Description = "Cao hoa hòe (3:1) ; Cao dừa cạn (6:1) ; Cao tâm sen (4:1) ; Cao cúc hoa (3:1)",
                         Type = typeMedicine,
@@ -93,7 +96,7 @@
                     {
                         Name = "Docetaxel 20mg",
                         BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
+                        BaseUnitPrice = 10000,
                         Provider = "Teva Pharmaceutical Works Private Limited Company",
                         Description = "Docetaxel",
                         Type = typeMedicine,
@@ -103,7 +106,7 @@
                     {
                         Name = "Hà thủ ô",
                         BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
+                        BaseUnitPrice = 10000,
                         Provider = "Công ty cổ phần công nghệ cao Traphaco",
                         Description = "Cao đặc rễ hà thủ ô đỏ",
                         Type = typeMedicine,
@@ -113,7 +116,7 @@
                     {
                         Name = "1-AL",
                         BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
+                        BaseUnitPrice = 10000,
                         Provider = "FDC Limited",
                         Description = "Levocetirizine (dưới dạng Levocetirizine dihydrochloride)",
                         Type = typeMedicine,
@@ -193,7 +196,7 @@
                     {
                         Name = "4.2% w/v Sodium Bicarbonate",
                         BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
+                        BaseUnitPrice = 10000,
                         Provider = "B.Braun Melsungen AG",
                         Description = "Natri bicarbonat",
                         Type = typeMedicine,
@@ -203,7 +206,7 @@
                     {
                         Name = "5% Dextrose 500ml inj Infusion",
                         BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
+                        BaseUnitPrice = 10000,
                         Provider = "Dai Han Pharm. Co., Ltd.",
                         Description = "Dextrose",
                         Type = typeMedicine,
@@ -213,7 +216,7 @@
                     {
                         Name = "5-Fluorouracil \"Ebewe\"",
                         BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
+                        BaseUnitPrice = 10000,
                         Provider = "Ebewe Pharma Ges.m.b.H.Nfg.KG",
                         Description = "5-Fluorouracil",
                         Type = typeMedicine,
@@ -223,7 +226,7 @@
                     {
                         Name = "8 Horas",
                         BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
+                        BaseUnitPrice = 10000,
                         Provider = "Laboratorio Elea S.A.C.I.F.yA",
                         Description = "Eszopiclone",
                         Type = typeMedicine,
@@ -256,7 +259,7 @@
                         BaseUnitPrice = 5000,
                         Provider = "Công ty cổ phần dược phẩm IMEXPHARM",
                         Description = "Acetaminophen",
-                        Type = typeMedicine,
+                        Type = typeOther,
                         ReferenceLink = "https://drugbank.vn/thuoc/ABAB-500mg&VD-20748-14"
                     });
                     context.Commodities.Add(new Commodity
@@ -266,7 +269,7 @@
                         BaseUnitPrice = 5000,
                         Provider = "Lindopharm GmbH",
                         Description = "Acetylcystein",
-                        Type = typeMedicine,
+                        Type = typeOther,
                         ReferenceLink = "https://drugbank.vn/thuoc/ACC-200-mg&VN-19978-16"
                     });
                     context.Commodities.Add(new Commodity
@@ -276,7 +279,7 @@
                         BaseUnitPrice = 5000,
                         Provider = "Công ty cổ phần Dược phẩm 3/2",
                         Description = "Acenocoumarol",
-                        Type = typeMedicine,
+                        Type = typeOther,
                         ReferenceLink = "https://drugbank.vn/thuoc/ACM-Control-1&VD-25107-16"
                     });
                     context.Commodities.Add(new Commodity
@@ -286,7 +289,7 @@
                         BaseUnitPrice = 5000,
                         Provider = "Công ty cổ phần Dược phẩm 3/2",
                         Description = "Acenocoumarol",
-                        Type = typeMedicine,
+                        Type = typeOther,
                         ReferenceLink = "https://drugbank.vn/thuoc/ACM-Control-4&VD-25594-16"
                     });
                     context.Commodities.Add(new Commodity
@@ -296,24 +299,24 @@
                         BaseUnitPrice = 5000,
                         Provider = "Công ty cổ phần dược phẩm Agimexpharm",
                         Description = "Omeprazol (Dạng vi hạt bao tan trong ruột)",
-                        Type = typeMedicine,
+                        Type = typeOther,
                         ReferenceLink = "https://drugbank.vn/thuoc/AG-Ome&VD-20653-14"
                     });
                     context.Commodities.Add(new Commodity
                     {
                         Name = "AN KHỚP VƯƠNG",
                         BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
+                        BaseUnitPrice = 15000,
                         Provider = "Công ty cổ phần dược phẩm Hà Tây",
                         Description = "Độc hoạt, quế chi, phòng phong, đương quy, tế tân, xuyên khung, tần giao, bạch thược, tang ký sinh, can địa hoàng, đỗ trọng, đảng sâm, ngưu tất, bạch linh, cam thảo",
-                        Type = typeMedicine,
+                        Type = typeOther,
                         ReferenceLink = "https://drugbank.vn/thuoc/AN-KHOP-VUONG&VD-26141-17"
                     });
                     context.Commodities.Add(new Commodity
                     {
                         Name = "ATP",
                         BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
+                        BaseUnitPrice = 15000,
                         Provider = "Công ty cổ phần dược phẩm Hà Tây",
                         Description = "Dinatri adenosin triphosphat",
                         Type = typeMedicine,
@@ -323,7 +326,7 @@
                     {
                         Name = "Aarmol 100ml",
                         BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
+                        BaseUnitPrice = 15000,
                         Provider = "Shree Krishnakeshav Laboratories Limited",
                         Description = "Paracetamol",
                         Type = typeMedicine,
@@ -333,7 +336,7 @@
                     {
                         Name = "Abacavir Tablets USP 300mg",
                         BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
+                        BaseUnitPrice = 15000,
                         Provider = "Mylan Laboratories Limited",
                         Description = "Abacavir (dưới dạng Abacavir sulfat)",
                         Type = typeMedicine,
@@ -343,7 +346,7 @@
                     {
                         Name = "Abamune-L Baby",
                         BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
+                        BaseUnitPrice = 15000,
                         Provider = "Cipla Ltd.",
                         Description = "Abacavir; Lamivudin",
                         Type = typeMedicine,
@@ -353,7 +356,7 @@
                     {
                         Name = "Abbsin 200",
                         BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
+                        BaseUnitPrice = 15000,
                         Provider = "OU Vitale-XD (nơi sản xuất Vitale Pringi)",
                         Description = "Acetylcystein",
                         Type = typeMedicine,
@@ -363,7 +366,7 @@
                     {
                         Name = "Abbsin 600",
                         BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
+                        BaseUnitPrice = 15000,
                         Provider = "OU Vitale-XD (nơi sản xuất Vitale Pringi)",
                         Description = "Acetylcystein",
                         Type = typeMedicine,
@@ -373,7 +376,7 @@
                     {
                         Name = "Abernil 50mg",
                         BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
+                        BaseUnitPrice = 15000,
                         Provider = "Medochemie Ltd.",
                         Description = "Naltrexone hydroclorid",
                         Type = typeMedicine,
@@ -383,30 +386,30 @@
                     {
                         Name = "Abhigrel 75",
                         BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
+                        BaseUnitPrice = 15000,
                         Provider = "Medibios Laboratories Pvt., Ltd.",
                         Description = "Clopidogrel (dưới dạng Clopidogrel bisulphate)",
-                        Type = typeMedicine,
+                        Type = typeOther,
                         ReferenceLink = "https://drugbank.vn/thuoc/Abhigrel-75&VN-16372-13"
                     });
                     context.Commodities.Add(new Commodity
                     {
                         Name = "Abilify tablets 15mg",
                         BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
+                        BaseUnitPrice = 15000,
                         Provider = "Korea Otsuka Pharmaceutical Co., Ltd.",
                         Description = "Aripiprazol",
-                        Type = typeMedicine,
+                        Type = typeOther,
                         ReferenceLink = "https://drugbank.vn/thuoc/Abilify-tablets-15mg&VN3-82-18"
                     });
                     context.Commodities.Add(new Commodity
                     {
                         Name = "Abingem 200",
                         BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
+                        BaseUnitPrice = 15000,
                         Provider = "Naprod Life Sciences Pvt. Ltd.",
                         Description = "Gemcitabine",
-                        Type = typeMedicine,
+                        Type = typeOther,
                         ReferenceLink = "https://drugbank.vn/thuoc/Abingem-200&VN2-53-13"
                     });
                     context.Commodities.Add(new Commodity
@@ -416,7 +419,7 @@
                         BaseUnitPrice = 5000,
                         Provider = "Naprod Life Sciences Pvt. Ltd.",
                         Description = "Gemcitabine (dưới dạng Gemcitabine hydrochloride)",
-                        Type = typeMedicine,
+                        Type = typeOther,
                         ReferenceLink = "https://drugbank.vn/thuoc/Abingem-1gm&VN2-392-15"
                     });
                     context.Commodities.Add(new Commodity
@@ -468,166 +471,6 @@
                         Description = "Acarbose",
                         Type = typeMedicine,
                         ReferenceLink = "https://drugbank.vn/thuoc/Acabrose-Tablets-50mg&VN-21345-18"
-                    });
-                    context.Commodities.Add(new Commodity
-                    {
-                        Name = "Acc Pluzz 200",
-                        BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
-                        Provider = "Hermes Arzneimittel GmbH",
-                        Description = "Acetylcystein",
-                        Type = typeMedicine,
-                        ReferenceLink = "https://drugbank.vn/thuoc/Acc-Pluzz-200&VN-20830-17"
-                    });
-                    context.Commodities.Add(new Commodity
-                    {
-                        Name = "Acc Pluzz 600",
-                        BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
-                        Provider = "Hermes Arzneimittel GmbH",
-                        Description = "Acetylcystein",
-                        Type = typeMedicine,
-                        ReferenceLink = "https://drugbank.vn/thuoc/Acc-Pluzz-600&VN-20831-17"
-                    });
-                    context.Commodities.Add(new Commodity
-                    {
-                        Name = "Ace kid 150",
-                        BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
-                        Provider = "Công ty cổ phần dược phẩm Bidiphar 1",
-                        Description = "Paracetamol; vitamin C",
-                        Type = typeMedicine,
-                        ReferenceLink = "https://drugbank.vn/thuoc/Ace-kid-150&VD-17887-12"
-                    });
-                    context.Commodities.Add(new Commodity
-                    {
-                        Name = "Ace kid 325",
-                        BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
-                        Provider = "Công ty cổ phần dược phẩm Bidiphar 1",
-                        Description = "Paracetamol",
-                        Type = typeMedicine,
-                        ReferenceLink = "https://drugbank.vn/thuoc/Ace-kid-325&VD-18248-13"
-                    });
-                    context.Commodities.Add(new Commodity
-                    {
-                        Name = "Acebis - 1,5g",
-                        BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
-                        Provider = "Công ty cổ phần tập đoàn Merap",
-                        Description = "Cefoperazon; Sulbactam",
-                        Type = typeMedicine,
-                        ReferenceLink = "https://drugbank.vn/thuoc/Acebis---1,5g&VD-16364-12"
-                    });
-                    context.Commodities.Add(new Commodity
-                    {
-                        Name = "Acebis - 1g",
-                        BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
-                        Provider = "Công ty cổ phần tập đoàn Merap",
-                        Description = "Cefoperazon; Sulbactam",
-                        Type = typeMedicine,
-                        ReferenceLink = "https://drugbank.vn/thuoc/Acebis---1g&VD-16365-12"
-                    });
-                    context.Commodities.Add(new Commodity
-                    {
-                        Name = "Acebis - 2,25g",
-                        BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
-                        Provider = "Công ty cổ phần tập đoàn Merap",
-                        Description = "Cefoperazon; Sulbactam",
-                        Type = typeMedicine,
-                        ReferenceLink = "https://drugbank.vn/thuoc/Acebis---2,25g&VD-16366-12"
-                    });
-                    context.Commodities.Add(new Commodity
-                    {
-                        Name = "Aceclofenac Stada 100 mg",
-                        BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
-                        Provider = "Công ty TNHH LD Stada-Việt Nam.",
-                        Description = "Aceclofenac",
-                        Type = typeMedicine,
-                        ReferenceLink = "https://drugbank.vn/thuoc/Aceclofenac-Stada-100-mg&VD-20124-13"
-                    });
-                    context.Commodities.Add(new Commodity
-                    {
-                        Name = "Aceclofenac T/H",
-                        BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
-                        Provider = "Công ty cổ phần dược-vật tư y tế Thanh Hoá",
-                        Description = "Aceclofenac",
-                        Type = typeMedicine,
-                        ReferenceLink = "https://drugbank.vn/thuoc/Aceclofenac-T/H&VD-21705-14"
-                    });
-                    context.Commodities.Add(new Commodity
-                    {
-                        Name = "Aceclonac",
-                        BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
-                        Provider = "Rafarm S.A.",
-                        Description = "Aceclofenac",
-                        Type = typeMedicine,
-                        ReferenceLink = "https://drugbank.vn/thuoc/Aceclonac&VN-20696-17"
-                    });
-                    context.Commodities.Add(new Commodity
-                    {
-                        Name = "Acectum",
-                        BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
-                        Provider = "Karnataka Antibiotics & Pharmaceuticals Limited",
-                        Description = "Piperacillin (dưới dạng piperacillin natri) ; Tazobactam (dưới dạng Tazobactam natri)",
-                        Type = typeMedicine,
-                        ReferenceLink = "https://drugbank.vn/thuoc/Acectum&VN-21262-18"
-                    });
-                    context.Commodities.Add(new Commodity
-                    {
-                        Name = "Acecyst",
-                        BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
-                        Provider = "Chi nhánh công ty cổ phần dược phẩm Agimexpharm- Nhà máy sản xuất dược phẩm Agimexpharm",
-                        Description = "Acetylcystein",
-                        Type = typeMedicine,
-                        ReferenceLink = "https://drugbank.vn/thuoc/Acecyst&VD-25112-16"
-                    });
-                    context.Commodities.Add(new Commodity
-                    {
-                        Name = "Acedolflu",
-                        BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
-                        Provider = "Công ty cổ phần dược phẩm 2/9 TP HCM",
-                        Description = "Paracetamol; Clorpheniramin maleat",
-                        Type = typeMedicine,
-                        ReferenceLink = "https://drugbank.vn/thuoc/Acedolflu&VD-26076-17"
-                    });
-                    context.Commodities.Add(new Commodity
-                    {
-                        Name = "Acefalgan 150",
-                        BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
-                        Provider = "Công ty cổ phần Dược phẩm Euvipharm - Thành viên tập đoàn Valeant",
-                        Description = "Acetaminophen",
-                        Type = typeMedicine,
-                        ReferenceLink = "https://drugbank.vn/thuoc/Acefalgan-150&VD-23527-15"
-                    });
-                    context.Commodities.Add(new Commodity
-                    {
-                        Name = "Acefalgan 250",
-                        BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
-                        Provider = "Công ty cổ phần Dược phẩm Euvipharm - Thành viên tập đoàn Valeant",
-                        Description = "Paracetamol",
-                        Type = typeMedicine,
-                        ReferenceLink = "https://drugbank.vn/thuoc/Acefalgan-250&VD-25673-16"
-                    });
-                    context.Commodities.Add(new Commodity
-                    {
-                        Name = "Acefalgan 500",
-                        BaseUnitName = "Hộp 10 gói x 1,5g",
-                        BaseUnitPrice = 5000,
-                        Provider = "Công ty cổ phần Dược phẩm Euvipharm - Thành viên tập đoàn Valeant",
-                        Description = "Paracetamol",
-                        Type = typeMedicine,
-                        ReferenceLink = "https://drugbank.vn/thuoc/Acefalgan-500&VD-23528-15"
                     });
 
                     context.SaveChanges();

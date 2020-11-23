@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using PharmacyManagement.Models;
+using PharmacyManagement.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,23 +15,27 @@ namespace PharmacyManagement.Views
 {
     public partial class frmEditCommodity : DevExpress.XtraEditors.XtraForm
     {
-        private string recordId;
+        private int commodityId;
 
         private PharmacyDbContext context = PharmacyDbContext.Create();
+        private PharmacyBusiness business;
+
         private Commodity commodity;
         private List<string> saleUnit;
 
         public frmEditCommodity()
         {
             InitializeComponent();
+            business = new PharmacyBusiness(context);
         }
 
-        public frmEditCommodity(string recordId) : this() => this.recordId = recordId;
+        public frmEditCommodity(string recordId) : this() => this.commodityId = int.Parse(recordId);
+        public frmEditCommodity(int recordId) : this() => this.commodityId = recordId;
 
         private void frmEditCommodity_Load(object sender, EventArgs e)
         {
-            txbId.Text = "Id: " + recordId;
-            commodity = context.Commodities.First(c => recordId == c.Id.ToString());
+            txbId.Text = "Id: " + commodityId;
+            commodity = context.Commodities.First(c => commodityId == c.Id);
 
             txbName.Text = commodity.Name;
             txbProvider.Text = commodity.Provider;
@@ -40,49 +45,26 @@ namespace PharmacyManagement.Views
             txbBaseUnit.Text = commodity.BaseUnitName?.ToString();
             txbBasePrice.Text = commodity.BaseUnitPrice.ToString();
 
-            saleUnit = context.SaleUnits.Select(u => u.SaleUnitName)?.Distinct().ToList();
-            if (saleUnit.Count() > 0)
-            {
-                cmbSaleUnit.Properties.Items.AddRange(saleUnit);
-                cmbSaleUnit.Text = saleUnit[0];
-            }
+            saleUnit = business.GetListSaleUnitNameOfCommodity(commodityId);
+            cmbSaleUnit.Properties.Items.AddRange(saleUnit);
+            cmbSaleUnit.SelectedIndex = 0;
         }
 
         private void cmbSaleUnit_TextChanged(object sender, EventArgs e)
         {
-            if (saleUnit.Contains(cmbSaleUnit.Text))
-            {
-                var sUnit = context.Commodities
-                                        .First(c => recordId == c.Id.ToString())
-                                            .SaleUnits
-                                            .First(s => s.SaleUnitName.Equals(cmbSaleUnit.Text, StringComparison.OrdinalIgnoreCase));
-
-                txbSalePrice.Text = sUnit?.SaleUnitPrice.ToString();
-            }
+            txbSalePrice.Text = business.GetPriceOfSaleUnit(cmbSaleUnit.Text, commodityId).ToString();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
-                SaleUnit sUnit = context.SaleUnits
-                                    .FirstOrDefault(s => recordId.Equals(s.CommodityId.ToString()));
-
-                if(sUnit is null)
+                if (business.CommodityHaveSaleUnit(cmbSaleUnit.Text, commodityId))
                 {
                     var choice = XtraMessageBox.Show("Từ hồi tạo CSDL tới bây giờ, tôi chưa thấy cái %SaleUnit% nào như cái này. Tạo mới 1 cái nhớ?", "ERROR", MessageBoxButtons.YesNo);
                     if (choice == DialogResult.Yes)
-                    {
-                        sUnit = new SaleUnit
-                        {
-                            SaleUnitName = cmbSaleUnit.Text,
-                            SaleUnitPrice = decimal.Parse(txbSalePrice.Text),
-                            Commodity = commodity
-                        };
-                    }
+                        business.AddSaleUnitToCommodity(cmbSaleUnit.Text, decimal.Parse(txbSalePrice.Text), commodityId);
                 }
-
-                context.SaleUnits.Add(sUnit);
 
                 commodity.Name = txbName.Text;
                 commodity.Provider = txbProvider.Text;

@@ -84,6 +84,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PharmacyDbDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Services\PharmacyBusiness.cs" />
     <Compile Include="Views\frmChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
