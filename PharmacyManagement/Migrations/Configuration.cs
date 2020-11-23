@@ -27,6 +27,16 @@
                                                    + " FROM [Commodities] INNER JOIN [CommodityTypes] ON [Commodities].Type_Id = [CommodityTypes].Id"
                                                    + " WITH CHECK OPTION;");
 
+                context.Database.ExecuteSqlCommand(@"CREATE VIEW [dbo].[V_Invoice] AS"
+                                                   + " SELECT dbo.Users.UserName, dbo.InvoiceTypes.Name, dbo.Commodities.Name AS Commodities Name, dbo.Commodities.Description, dbo.Commodities.Provider, dbo.SaleUnits.SaleUnitName, dbo.SaleUnits.SaleUnitPrice, dbo.CommodityTypes.Name AS Type, dbo.InvoiceCommodities.CommodityQuantity, dbo.Invoices.Note, dbo.Invoices.Created"
+                                                   + " FROM dbo.Commodities INNER JOIN"
+                                                   + " dbo.CommodityTypes ON dbo.Commodities.Type_Id = dbo.CommodityTypes.Id INNER JOIN"
+                                                   + " dbo.InvoiceCommodities ON dbo.Commodities.Id = dbo.InvoiceCommodities.CommodityId INNER JOIN"
+                                                   + " dbo.Invoices ON dbo.InvoiceCommodities.InvoiceID = dbo.Invoices.Id INNER JOIN"
+                                                   + " dbo.InvoiceTypes ON dbo.Invoices.Type_Id = dbo.InvoiceTypes.Id INNER JOIN"
+                                                   + " dbo.SaleUnits ON dbo.Commodities.Id = dbo.SaleUnits.CommodityId INNER JOIN"
+                                                   + " dbo.Users ON dbo.Invoices.User_Id = dbo.Users.Id");
+
                 using (UserIdentity identityService = new UserIdentity())
                 {
                     var roleAdmin = identityService.CreateRole("Admin");
