@@ -135,6 +135,7 @@ namespace PharmacyManagement.Views
                 this.WindowState = FormWindowState.Maximized;
                 this.Enabled = true;
                 this.Show();
+                
 
                 // Clean resource
                 frmLogin.Dispose();
@@ -210,6 +211,18 @@ namespace PharmacyManagement.Views
         private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
         {
             new frmChangePassword().ShowDialog();
+        }
+
+        private void barButtonLogout_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (XtraMessageBox.Show("Do you want to logout?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.WindowState = FormWindowState.Minimized;
+                this.Enabled = false;
+                UserIdentity.SessionUser = null;
+
+                frmPharmacy_Load(sender, e);
+            }
         }
     }
 }
