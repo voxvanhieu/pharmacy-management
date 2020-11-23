@@ -252,7 +252,39 @@ namespace PharmacyManagement.Views
 
         private void barbtnNewInstrument_ItemClick(object sender, ItemClickEventArgs e)
         {
+            new frmNewInstrument().ShowDialog();
+        }
 
+        private void barButtonItem10_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (tabAllCommodity is null || tabAllCommodity.IsDisposed)
+            {
+                tabAllCommodity = new XtraUserControl();
+                tabAllCommodity.Name = "TabAllComodityControl";
+                tabAllCommodity.Text = "All Comodities";
+            }
+
+            if (commodityGridControl is null || commodityGridControl.IsDisposed)
+            {
+                commodityGridControl = new CommodityUserControl();
+
+                commodityGridControl.Dock = DockStyle.Fill;
+                commodityGridControl.Parent = tabAllCommodity;
+                //commodityGridControl.GridSelectedRowChanged += userGridControl_SelectedRowChanged;
+            }
+
+            tabbedView.AddDocument(tabAllCommodity);
+            tabbedView.ActivateDocument(tabAllCommodity);
+        }
+
+        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            new frmNewInvoice().ShowDialog();
+        }
+
+        private void barButtonItem9_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            new frmNewInstrument().ShowDialog();
         }
     }
 }
