@@ -4,6 +4,7 @@ using DevExpress.XtraBars.Navigation;
 using DevExpress.XtraEditors;
 using PharmacyManagement.Models;
 using PharmacyManagement.Models.ViewModels;
+using PharmacyManagement.Views.UserControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -199,7 +200,7 @@ namespace PharmacyManagement.Views
             new frmListAllRole().ShowDialog();      
         }
 
-        private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
+        private void barbtnChangeUSerInfo_ItemClick(object sender, ItemClickEventArgs e)
         {
             var result = new frmEditUser().ShowDialog();
             if (result == DialogResult.OK)
@@ -208,7 +209,7 @@ namespace PharmacyManagement.Views
             }
         }
 
-        private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
+        private void barbtnChangePassword_ItemClick(object sender, ItemClickEventArgs e)
         {
             new frmChangePassword().ShowDialog();
         }
@@ -223,6 +224,35 @@ namespace PharmacyManagement.Views
 
                 frmPharmacy_Load(sender, e);
             }
+        }
+
+        private CommodityUserControl commodityGridControl;
+        private XtraUserControl tabAllCommodity;
+        private void barbtnLookup_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (tabAllCommodity is null || tabAllCommodity.IsDisposed)
+            {
+                tabAllCommodity = new XtraUserControl();
+                tabAllCommodity.Name = "TabAllComodityControl";
+                tabAllCommodity.Text = "All Comodities";
+            }
+
+            if (commodityGridControl is null || commodityGridControl.IsDisposed)
+            {
+                commodityGridControl = new CommodityUserControl();
+
+                commodityGridControl.Dock = DockStyle.Fill;
+                commodityGridControl.Parent = tabAllCommodity;
+                //commodityGridControl.GridSelectedRowChanged += userGridControl_SelectedRowChanged;
+            }
+
+            tabbedView.AddDocument(tabAllCommodity);
+            tabbedView.ActivateDocument(tabAllCommodity);
+        }
+
+        private void barbtnNewInstrument_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
         }
     }
 }

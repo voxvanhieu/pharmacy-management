@@ -21,7 +21,6 @@ namespace PharmacyManagement.Models
         [Column(TypeName = "Money")]
         public decimal SaleUnitPrice { get; set; }
 
-        [Required]
         [ForeignKey("Commodity")]
         public int CommodityId { get; set; }
 

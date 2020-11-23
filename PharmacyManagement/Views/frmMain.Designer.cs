@@ -66,9 +66,9 @@ namespace PharmacyManagement.Views
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
             this.barbtnLookup = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.barbtnNewMedicine = new DevExpress.XtraBars.BarButtonItem();
+            this.barbtnNewInstrument = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonLogout = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -85,6 +85,7 @@ namespace PharmacyManagement.Views
             this.ribbonPageGroupNavigation = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.dockManager = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.hideContainerRight = new DevExpress.XtraBars.Docking.AutoHideContainer();
             this.dockpnlUser = new DevExpress.XtraBars.Docking.DockPanel();
@@ -104,7 +105,6 @@ namespace PharmacyManagement.Views
             this.customersAccordionControlElement = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.tabbedView = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.documentManager = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
-            this.barButtonLogout = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager)).BeginInit();
@@ -152,8 +152,8 @@ namespace PharmacyManagement.Views
             this.barSubItem1,
             this.barButtonItem12,
             this.barbtnLookup,
-            this.barButtonItem14,
-            this.barButtonItem15,
+            this.barbtnNewMedicine,
+            this.barbtnNewInstrument,
             this.barButtonLogout});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl.MaxItemId = 73;
@@ -297,7 +297,7 @@ namespace PharmacyManagement.Views
             this.barButtonItem2.Id = 59;
             this.barButtonItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
             this.barButtonItem2.Name = "barButtonItem2";
-            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnChangeUSerInfo_ItemClick);
             // 
             // barButtonItem3
             // 
@@ -305,7 +305,7 @@ namespace PharmacyManagement.Views
             this.barButtonItem3.Id = 61;
             this.barButtonItem3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem3.ImageOptions.SvgImage")));
             this.barButtonItem3.Name = "barButtonItem3";
-            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnChangePassword_ItemClick);
             // 
             // barButtonItem7
             // 
@@ -376,25 +376,32 @@ namespace PharmacyManagement.Views
             this.barbtnLookup.Id = 70;
             this.barbtnLookup.ImageOptions.SvgImage = global::PharmacyManagement.Properties.Resources.medical_record;
             this.barbtnLookup.Name = "barbtnLookup";
+            this.barbtnLookup.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnLookup_ItemClick);
             // 
-            // barButtonItem14
+            // barbtnNewMedicine
             // 
-            this.barButtonItem14.Caption = "New medicine";
-            this.barButtonItem14.Id = 71;
-            this.barButtonItem14.ImageOptions.SvgImage = global::PharmacyManagement.Properties.Resources.medical_records;
-            this.barButtonItem14.Name = "barButtonItem14";
+            this.barbtnNewMedicine.Caption = "New medicine";
+            this.barbtnNewMedicine.Id = 71;
+            this.barbtnNewMedicine.ImageOptions.SvgImage = global::PharmacyManagement.Properties.Resources.medical_records;
+            this.barbtnNewMedicine.Name = "barbtnNewMedicine";
             // 
-            // barButtonItem15
+            // barbtnNewInstrument
             // 
-            this.barButtonItem15.Caption = "New Instrument";
-            this.barButtonItem15.Id = 72;
-            this.barButtonItem15.ImageOptions.SvgImage = global::PharmacyManagement.Properties.Resources.stethoscope;
-            this.barButtonItem15.Name = "barButtonItem15";
+            this.barbtnNewInstrument.Caption = "New Instrument";
+            this.barbtnNewInstrument.Id = 72;
+            this.barbtnNewInstrument.ImageOptions.SvgImage = global::PharmacyManagement.Properties.Resources.stethoscope;
+            this.barbtnNewInstrument.Name = "barbtnNewInstrument";
+            this.barbtnNewInstrument.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnNewInstrument_ItemClick);
             // 
-            // popupMenu1
+            // barButtonLogout
             // 
-            this.popupMenu1.Name = "popupMenu1";
-            this.popupMenu1.Ribbon = this.ribbonControl;
+            this.barButtonLogout.Caption = "Logout";
+            this.barButtonLogout.Id = 76;
+            this.barButtonLogout.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonLogout.ImageOptions.Image")));
+            this.barButtonLogout.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonLogout.ImageOptions.LargeImage")));
+            this.barButtonLogout.Name = "barButtonLogout";
+            this.barButtonLogout.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
+            this.barButtonLogout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonLogout_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -430,8 +437,8 @@ namespace PharmacyManagement.Views
             // 
             // ribbonPageGroup7
             // 
-            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem14, true);
-            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem15);
+            this.ribbonPageGroup7.ItemLinks.Add(this.barbtnNewMedicine, true);
+            this.ribbonPageGroup7.ItemLinks.Add(this.barbtnNewInstrument);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "Medical Instruments";
             // 
@@ -512,6 +519,11 @@ namespace PharmacyManagement.Views
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
             this.ribbonStatusBar.Size = new System.Drawing.Size(904, 22);
+            // 
+            // popupMenu1
+            // 
+            this.popupMenu1.Name = "popupMenu1";
+            this.popupMenu1.Ribbon = this.ribbonControl;
             // 
             // dockManager
             // 
@@ -736,16 +748,6 @@ namespace PharmacyManagement.Views
             this.documentManager.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView});
             // 
-            // barButtonLogout
-            // 
-            this.barButtonLogout.Caption = "Logout";
-            this.barButtonLogout.Id = 76;
-            this.barButtonLogout.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
-            this.barButtonLogout.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.LargeImage")));
-            this.barButtonLogout.Name = "barButtonLogout";
-            this.barButtonLogout.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
-            this.barButtonLogout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonLogout_ItemClick);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -844,8 +846,8 @@ namespace PharmacyManagement.Views
         private DevExpress.XtraBars.BarSubItem barSubItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem12;
         private DevExpress.XtraBars.BarButtonItem barbtnLookup;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem14;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem15;
+        private DevExpress.XtraBars.BarButtonItem barbtnNewMedicine;
+        private DevExpress.XtraBars.BarButtonItem barbtnNewInstrument;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.PopupMenu popupMenu1;
         private DevExpress.XtraBars.BarButtonItem barButtonLogout;
