@@ -28,14 +28,14 @@
                                                    + " WITH CHECK OPTION;");
 
                 context.Database.ExecuteSqlCommand(@"CREATE VIEW [dbo].[V_Invoice] AS"
-                                                   + " SELECT dbo.Users.UserName, dbo.InvoiceTypes.Name, dbo.Commodities.Name AS Commodities Name, dbo.Commodities.Description, dbo.Commodities.Provider, dbo.SaleUnits.SaleUnitName, dbo.SaleUnits.SaleUnitPrice, dbo.CommodityTypes.Name AS Type, dbo.InvoiceCommodities.CommodityQuantity, dbo.Invoices.Note, dbo.Invoices.Created"
-                                                   + " FROM dbo.Commodities INNER JOIN"
-                                                   + " dbo.CommodityTypes ON dbo.Commodities.Type_Id = dbo.CommodityTypes.Id INNER JOIN"
-                                                   + " dbo.InvoiceCommodities ON dbo.Commodities.Id = dbo.InvoiceCommodities.CommodityId INNER JOIN"
-                                                   + " dbo.Invoices ON dbo.InvoiceCommodities.InvoiceID = dbo.Invoices.Id INNER JOIN"
-                                                   + " dbo.InvoiceTypes ON dbo.Invoices.Type_Id = dbo.InvoiceTypes.Id INNER JOIN"
-                                                   + " dbo.SaleUnits ON dbo.Commodities.Id = dbo.SaleUnits.CommodityId INNER JOIN"
-                                                   + " dbo.Users ON dbo.Invoices.User_Id = dbo.Users.Id");
+                                                   + " SELECT [Users].UserName, [InvoiceTypes].Name, [Commodities].Name AS 'Commodities Name', [Commodities].Description, [Commodities].Provider, [SaleUnits].SaleUnitName, [SaleUnits].SaleUnitPrice, [CommodityTypes].Name AS Type, [InvoiceCommodities].CommodityQuantity, [Invoices].Note, [Invoices].Created"
+                                                   + " FROM [Commodities] INNER JOIN"
+                                                   + " [CommodityTypes] ON [Commodities].Type_Id = [CommodityTypes].Id INNER JOIN"
+                                                   + " [InvoiceCommodities] ON [Commodities].Id = [InvoiceCommodities].CommodityId INNER JOIN"
+                                                   + " [Invoices] ON [InvoiceCommodities].InvoiceID = [Invoices].Id INNER JOIN"
+                                                   + " [InvoiceTypes] ON [Invoices].Type_Id = [InvoiceTypes].Id INNER JOIN"
+                                                   + " [SaleUnits] ON [Commodities].Id = [SaleUnits].CommodityId INNER JOIN"
+                                                   + " [Users] ON [Invoices].User_Id = [Users].Id");
 
                 using (UserIdentity identityService = new UserIdentity())
                 {
@@ -66,6 +66,19 @@
                             Image = "",
                             RoleId = roleAdmin,
                         });
+                }
+
+                if (!context.InvoiceTypes.Any())
+                {
+                    context.InvoiceTypes.Add(new InvoiceType
+                    {
+                        Name = "Import"
+                    });
+                    context.InvoiceTypes.Add(new InvoiceType
+                    {
+                        Name = "Sale"
+                    });
+                    context.SaveChanges();
                 }
 
                 if (!context.Commodities.Any())
