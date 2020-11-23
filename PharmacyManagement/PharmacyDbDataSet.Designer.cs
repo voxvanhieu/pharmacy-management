@@ -3636,6 +3636,8 @@ namespace PharmacyManagement {
             
             private global::System.Data.DataColumn columnInvoice_Type;
             
+            private global::System.Data.DataColumn columnTotalPrice;
+            
             private global::System.Data.DataColumn columnCommodities;
             
             private global::System.Data.DataColumn columnDescription;
@@ -3706,6 +3708,14 @@ namespace PharmacyManagement {
             public global::System.Data.DataColumn Invoice_TypeColumn {
                 get {
                     return this.columnInvoice_Type;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TotalPriceColumn {
+                get {
+                    return this.columnTotalPrice;
                 }
             }
             
@@ -3810,12 +3820,13 @@ namespace PharmacyManagement {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public V_InvoiceRow AddV_InvoiceRow(int Id, string UserName, string Invoice_Type, string Commodities, string Description, string Provider, string SaleUnit, decimal SalePrice, int CommodityQuantity, string Note, System.DateTime Created) {
+            public V_InvoiceRow AddV_InvoiceRow(int Id, string UserName, string Invoice_Type, decimal TotalPrice, string Commodities, string Description, string Provider, string SaleUnit, decimal SalePrice, int CommodityQuantity, string Note, System.DateTime Created) {
                 V_InvoiceRow rowV_InvoiceRow = ((V_InvoiceRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Id,
                         UserName,
                         Invoice_Type,
+                        TotalPrice,
                         Commodities,
                         Description,
                         Provider,
@@ -3856,6 +3867,7 @@ namespace PharmacyManagement {
                 this.columnId = base.Columns["Id"];
                 this.columnUserName = base.Columns["UserName"];
                 this.columnInvoice_Type = base.Columns["Invoice Type"];
+                this.columnTotalPrice = base.Columns["TotalPrice"];
                 this.columnCommodities = base.Columns["Commodities"];
                 this.columnDescription = base.Columns["Description"];
                 this.columnProvider = base.Columns["Provider"];
@@ -3875,6 +3887,8 @@ namespace PharmacyManagement {
                 base.Columns.Add(this.columnUserName);
                 this.columnInvoice_Type = new global::System.Data.DataColumn("Invoice Type", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnInvoice_Type);
+                this.columnTotalPrice = new global::System.Data.DataColumn("TotalPrice", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalPrice);
                 this.columnCommodities = new global::System.Data.DataColumn("Commodities", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCommodities);
                 this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
@@ -3899,6 +3913,7 @@ namespace PharmacyManagement {
                 this.columnUserName.MaxLength = 64;
                 this.columnInvoice_Type.AllowDBNull = false;
                 this.columnInvoice_Type.MaxLength = 255;
+                this.columnTotalPrice.AllowDBNull = false;
                 this.columnCommodities.AllowDBNull = false;
                 this.columnCommodities.MaxLength = 255;
                 this.columnDescription.MaxLength = 2147483647;
@@ -5060,6 +5075,17 @@ namespace PharmacyManagement {
                 }
                 set {
                     this[this.tableV_Invoice.Invoice_TypeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal TotalPrice {
+                get {
+                    return ((decimal)(this[this.tableV_Invoice.TotalPriceColumn]));
+                }
+                set {
+                    this[this.tableV_Invoice.TotalPriceColumn] = value;
                 }
             }
             
@@ -8790,6 +8816,7 @@ SELECT Id, SaleUnitName, SaleUnitPrice, CommodityId FROM SaleUnits WHERE (Id = @
             tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("UserName", "UserName");
             tableMapping.ColumnMappings.Add("Invoice Type", "Invoice Type");
+            tableMapping.ColumnMappings.Add("TotalPrice", "TotalPrice");
             tableMapping.ColumnMappings.Add("Commodities", "Commodities");
             tableMapping.ColumnMappings.Add("Description", "Description");
             tableMapping.ColumnMappings.Add("Provider", "Provider");
@@ -8814,8 +8841,8 @@ SELECT Id, SaleUnitName, SaleUnitPrice, CommodityId FROM SaleUnits WHERE (Id = @
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, UserName, [Invoice Type], Commodities, Description, Provider, SaleUnit" +
-                ", SalePrice, CommodityQuantity, Note, Created FROM dbo.V_Invoice";
+            this._commandCollection[0].CommandText = "SELECT Id, UserName, [Invoice Type], TotalPrice, Commodities, Description, Provid" +
+                "er, SaleUnit, SalePrice, CommodityQuantity, Note, Created FROM dbo.V_Invoice";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

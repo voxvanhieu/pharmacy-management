@@ -78,6 +78,7 @@ namespace PharmacyManagement.Services
 
             context.Invoices.Add(invoice);
 
+            decimal totalPrice = 0;
             foreach (CommodityViewModel item in newInvoice.Commodities)
             {
                 var commodity = context.Commodities.FirstOrDefault(c => c.Name.Equals(item.Name));
@@ -91,7 +92,11 @@ namespace PharmacyManagement.Services
                     SalePrice = item.SalePrice,
                     SaleUnit = item.SaleUnit
                 });
+
+                totalPrice += item.SalePrice;
             }
+
+            invoice.TotalPrice = totalPrice;
 
             context.SaveChanges();
         }

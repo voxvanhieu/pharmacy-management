@@ -15,6 +15,8 @@ namespace PharmacyManagement.Models
 
         public string Note { get; set; }
 
+        public decimal TotalPrice { get; set; }
+
         public virtual User User { get; set; }
 
         public virtual InvoiceType Type { get; set; }

@@ -31,8 +31,6 @@ namespace PharmacyManagement.Views.UserControls
         {
             this.components = new System.ComponentModel.Container();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.vComodityBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pharmacyDbDataSet = new PharmacyManagement.PharmacyDbDataSet();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -44,15 +42,17 @@ namespace PharmacyManagement.Views.UserControls
             this.colBaseUnitPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colReferenceLink = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCreated = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.v_ComodityTableAdapter = new PharmacyManagement.PharmacyDbDataSetTableAdapters.V_ComodityTableAdapter();
             this.btnReload = new DevExpress.XtraEditors.SimpleButton();
             this.btnRemove = new DevExpress.XtraEditors.SimpleButton();
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.hyperlink = new DevExpress.XtraEditors.HyperlinkLabelControl();
+            this.pharmacyDbDataSet = new PharmacyManagement.PharmacyDbDataSet();
+            this.vComodityBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.v_ComodityTableAdapter = new PharmacyManagement.PharmacyDbDataSetTableAdapters.V_ComodityTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vComodityBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pharmacyDbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pharmacyDbDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vComodityBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -68,16 +68,6 @@ namespace PharmacyManagement.Views.UserControls
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            // 
-            // vComodityBindingSource
-            // 
-            this.vComodityBindingSource.DataMember = "V_Comodity";
-            this.vComodityBindingSource.DataSource = this.pharmacyDbDataSet;
-            // 
-            // pharmacyDbDataSet
-            // 
-            this.pharmacyDbDataSet.DataSetName = "PharmacyDbDataSet";
-            this.pharmacyDbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridView1
             // 
@@ -166,10 +156,6 @@ namespace PharmacyManagement.Views.UserControls
             this.colCreated.Visible = true;
             this.colCreated.VisibleIndex = 9;
             // 
-            // v_ComodityTableAdapter
-            // 
-            this.v_ComodityTableAdapter.ClearBeforeFill = true;
-            // 
             // btnReload
             // 
             this.btnReload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -209,7 +195,21 @@ namespace PharmacyManagement.Views.UserControls
             this.hyperlink.TabIndex = 7;
             this.hyperlink.Text = "Tra cứu trên website của cục quản lý dược";
             // 
-            // CommodityUserControl
+            // pharmacyDbDataSet
+            // 
+            this.pharmacyDbDataSet.DataSetName = "PharmacyDbDataSet";
+            this.pharmacyDbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vComodityBindingSource
+            // 
+            this.vComodityBindingSource.DataMember = "V_Comodity";
+            this.vComodityBindingSource.DataSource = this.pharmacyDbDataSet;
+            // 
+            // v_ComodityTableAdapter
+            // 
+            this.v_ComodityTableAdapter.ClearBeforeFill = true;
+            // 
+            // CommodityGridUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -218,12 +218,12 @@ namespace PharmacyManagement.Views.UserControls
             this.Controls.Add(this.btnReload);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.gridControl1);
-            this.Name = "CommodityUserControl";
+            this.Name = "CommodityGridUserControl";
             this.Size = new System.Drawing.Size(698, 440);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vComodityBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pharmacyDbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pharmacyDbDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vComodityBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,8 +232,6 @@ namespace PharmacyManagement.Views.UserControls
         #endregion
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private System.Windows.Forms.BindingSource vComodityBindingSource;
-        private PharmacyDbDataSet pharmacyDbDataSet;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colName;
         private DevExpress.XtraGrid.Columns.GridColumn colType;
@@ -244,10 +242,12 @@ namespace PharmacyManagement.Views.UserControls
         private DevExpress.XtraGrid.Columns.GridColumn colBaseUnitPrice;
         private DevExpress.XtraGrid.Columns.GridColumn colReferenceLink;
         private DevExpress.XtraGrid.Columns.GridColumn colCreated;
-        private PharmacyDbDataSetTableAdapters.V_ComodityTableAdapter v_ComodityTableAdapter;
         private DevExpress.XtraEditors.SimpleButton btnReload;
         private DevExpress.XtraEditors.SimpleButton btnRemove;
         private DevExpress.XtraEditors.SimpleButton btnEdit;
         private DevExpress.XtraEditors.HyperlinkLabelControl hyperlink;
+        private System.Windows.Forms.BindingSource vComodityBindingSource;
+        private PharmacyDbDataSet pharmacyDbDataSet;
+        private PharmacyDbDataSetTableAdapters.V_ComodityTableAdapter v_ComodityTableAdapter;
     }
 }

@@ -316,5 +316,29 @@ namespace PharmacyManagement.Views
             tabbedView.AddDocument(tabAllInvoices);
             tabbedView.ActivateDocument(tabAllInvoices);
         }
+
+        private PrintPreviewUserControl printPreviewControl;
+        private XtraUserControl tabProductReport;
+        private void barbtnReportProduct_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (tabProductReport is null || tabProductReport.IsDisposed)
+            {
+                tabProductReport = new XtraUserControl();
+                tabProductReport.Name = "TabAllComodityControl";
+                tabProductReport.Text = "All Comodities";
+            }
+
+            if (printPreviewControl is null || printPreviewControl.IsDisposed)
+            {
+                printPreviewControl = new PrintPreviewUserControl();
+
+                printPreviewControl.Dock = DockStyle.Fill;
+                printPreviewControl.Parent = tabProductReport;
+                //invoicesGridControl.GridSelectedRowChanged += userGridControl_SelectedRowChanged;
+            }
+
+            tabbedView.AddDocument(tabProductReport);
+            tabbedView.ActivateDocument(tabProductReport);
+        }
     }
 }

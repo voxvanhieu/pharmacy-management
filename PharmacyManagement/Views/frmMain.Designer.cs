@@ -64,11 +64,14 @@ namespace PharmacyManagement.Views
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
+            this.barbtnReportProduct = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
             this.barbtnLookup = new DevExpress.XtraBars.BarButtonItem();
             this.barbtnNewMedicine = new DevExpress.XtraBars.BarButtonItem();
             this.barbtnNewInstrument = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonLogout = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -154,9 +157,12 @@ namespace PharmacyManagement.Views
             this.barbtnLookup,
             this.barbtnNewMedicine,
             this.barbtnNewInstrument,
-            this.barButtonLogout});
+            this.barButtonLogout,
+            this.barButtonItem4,
+            this.barbtnReportProduct,
+            this.barButtonItem8});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 73;
+            this.ribbonControl.MaxItemId = 76;
             this.ribbonControl.MdiMergeStyle = DevExpress.XtraBars.Ribbon.RibbonMdiMergeStyle.Always;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.barButtonLogout);
@@ -353,6 +359,9 @@ namespace PharmacyManagement.Views
             this.barSubItem1.Caption = "Report";
             this.barSubItem1.Id = 67;
             this.barSubItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barSubItem1.ImageOptions.SvgImage")));
+            this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barbtnReportProduct),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem8)});
             this.barSubItem1.Name = "barSubItem1";
             this.barSubItem1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
             toolTipItem1.Text = "Báo cáo tháng";
@@ -365,6 +374,19 @@ namespace PharmacyManagement.Views
             superToolTip1.Items.Add(toolTipSeparatorItem1);
             superToolTip1.Items.Add(toolTipItem4);
             this.barSubItem1.SuperTip = superToolTip1;
+            // 
+            // barbtnReportProduct
+            // 
+            this.barbtnReportProduct.Caption = "All products";
+            this.barbtnReportProduct.Id = 74;
+            this.barbtnReportProduct.Name = "barbtnReportProduct";
+            this.barbtnReportProduct.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnReportProduct_ItemClick);
+            // 
+            // barButtonItem8
+            // 
+            this.barButtonItem8.Caption = "barButtonItem8";
+            this.barButtonItem8.Id = 75;
+            this.barButtonItem8.Name = "barButtonItem8";
             // 
             // barButtonItem12
             // 
@@ -407,6 +429,12 @@ namespace PharmacyManagement.Views
             this.barButtonLogout.Name = "barButtonLogout";
             this.barButtonLogout.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
             this.barButtonLogout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonLogout_ItemClick);
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "barButtonItem4";
+            this.barButtonItem4.Id = 73;
+            this.barButtonItem4.Name = "barButtonItem4";
             // 
             // ribbonPage1
             // 
@@ -856,5 +884,8 @@ namespace PharmacyManagement.Views
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.PopupMenu popupMenu1;
         private DevExpress.XtraBars.BarButtonItem barButtonLogout;
+        private DevExpress.XtraBars.BarButtonItem barbtnReportProduct;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
     }
 }

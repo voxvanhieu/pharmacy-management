@@ -31,7 +31,7 @@
                                                    + " WITH CHECK OPTION;");
 
                 context.Database.ExecuteSqlCommand(@"CREATE VIEW [dbo].[V_Invoice] AS"
-                                                   + " SELECT [Invoices].Id, [Users].UserName, [InvoiceTypes].Name AS 'Invoice Type', [Commodities].Name AS 'Commodities', [Commodities].Description, [Commodities].Provider, [InvoiceCommodities].SaleUnit, [InvoiceCommodities].SalePrice, [InvoiceCommodities].CommodityQuantity, [Invoices].Note, [Invoices].Created"
+                                                   + " SELECT [Invoices].Id, [Users].UserName, [InvoiceTypes].Name AS 'Invoice Type', TotalPrice, [Commodities].Name AS 'Commodities', [Commodities].Description, [Commodities].Provider, [InvoiceCommodities].SaleUnit, [InvoiceCommodities].SalePrice, [InvoiceCommodities].CommodityQuantity, [Invoices].Note, [Invoices].Created"
                                                    + " FROM [Commodities] INNER JOIN"
                                                    + " [InvoiceCommodities] ON [Commodities].Id = [InvoiceCommodities].CommodityId INNER JOIN"
                                                    + " [Invoices] ON [InvoiceCommodities].InvoiceID = [Invoices].Id INNER JOIN"
@@ -505,7 +505,7 @@
                     var invoice = new InvoiceViewModel
                     {
                         Username = "Admin",
-                        Note = "New note",
+                        Note = "Khách mua mở hàng",
                         InvoiceType = "Sale",
                         Commodities = new List<CommodityViewModel>()
                     };
@@ -515,8 +515,42 @@
                         Name = "Hà thủ ô",
                         Quantity = 10,
                         SalePrice = 5000,
-                        SaleUnit = "Hoopj"
+                        SaleUnit = "Hộp"
                     });
+
+                    business.NewInvoice(invoice);
+
+
+                    invoice = new InvoiceViewModel
+                    {
+                        Username = "voxvanhieu",
+                        Note = "Bán thuốc cho chủ tịch tập đoàn Hiếu Đá",
+                        InvoiceType = "Sale",
+                        Commodities = new List<CommodityViewModel>()
+                    };
+
+                    invoice.Commodities.Add(new CommodityViewModel
+                    {
+                        Name = "3B-Medi tab",
+                        Quantity = 10,
+                        SalePrice = 5000,
+                        SaleUnit = "Viên"
+                    });
+                    invoice.Commodities.Add(new CommodityViewModel
+                    {
+                        Name = "Docetaxel 20mg",
+                        Quantity = 20,
+                        SalePrice = 15000,
+                        SaleUnit = "Vỉ"
+                    });
+                    invoice.Commodities.Add(new CommodityViewModel
+                    {
+                        Name = "Hà thủ ô",
+                        Quantity = 10,
+                        SalePrice = 5000,
+                        SaleUnit = "Hộp"
+                    });
+
                     business.NewInvoice(invoice);
                 }
             }

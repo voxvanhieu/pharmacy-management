@@ -27,7 +27,13 @@ namespace PharmacyManagement.Views.UserControls
 
         public void RefillGrid()
         {
-            v_InvoiceTableAdapter.Fill(pharmacyDbDataSet.V_Invoice);
+            try
+            {
+                v_InvoiceTableAdapter.Fill(pharmacyDbDataSet.V_Invoice);
+            }
+            catch (Exception)
+            {
+            }
         }
     }
 }

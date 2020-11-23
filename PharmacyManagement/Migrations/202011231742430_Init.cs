@@ -50,6 +50,7 @@
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Note = c.String(),
+                        TotalPrice = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Created = c.DateTime(nullable: false, storeType: "date"),
                         Type_Id = c.Int(),
                         User_Id = c.Int(),
