@@ -11,11 +11,6 @@ namespace PharmacyManagement.Models
 {
     public class User
     {
-        public User()
-        {
-            Created = DateTime.Now;
-        }
-
         [Key]
         public int Id { get; set; }
 
@@ -42,7 +37,8 @@ namespace PharmacyManagement.Models
         public DateTime Birthday { get; set; }
 
         [Required]
-        public DateTime Created { get; set; }
+        [Column(TypeName = "Date")]
+        public DateTime Created { get; set; } = DateTime.Now;
 
         [Required]
         [ForeignKey("Role")]

@@ -44,6 +44,12 @@
     <Reference Include="DevExpress.Utils.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -64,20 +70,116 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\202011230726563_Init.cs" />
+    <Compile Include="Migrations\202011230726563_Init.designer.cs">
+      <DependentUpon>202011230726563_Init.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Medicine.cs" />
+    <Compile Include="Models\Commodity.cs" />
+    <Compile Include="Models\CommodityType.cs" />
+    <Compile Include="Models\InvoiceCommodity.cs" />
+    <Compile Include="Models\SaleUnit.cs" />
+    <Compile Include="PharmacyDbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PharmacyDbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Invoice.cs" />
+    <Compile Include="Models\InvoiceType.cs" />
+    <Compile Include="Views\frmChangeUserRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmChangeUserRole.Designer.cs">
+      <DependentUpon>frmChangeUserRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmEditCommodity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmEditCommodity.Designer.cs">
+      <DependentUpon>frmEditCommodity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmEditUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmEditUser.Designer.cs">
+      <DependentUpon>frmEditUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmListAllRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmListAllRole.Designer.cs">
+      <DependentUpon>frmListAllRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\PharmacyDbContext.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\ViewModels\UserViewModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="frmMain.cs">
+    <Compile Include="Views\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.cs">
+    <Compile Include="Views\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmMain.resx">
+    <Compile Include="Views\frmNewInstrument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmNewInstrument.Designer.cs">
+      <DependentUpon>frmNewInstrument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmNewInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmNewInvoice.Designer.cs">
+      <DependentUpon>frmNewInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmNewRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmNewRole.Designer.cs">
+      <DependentUpon>frmNewRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmNewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmNewUser.Designer.cs">
+      <DependentUpon>frmNewUser.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Migrations\202011230726563_Init.resx">
+      <DependentUpon>202011230726563_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmChangeUserRole.resx">
+      <DependentUpon>frmChangeUserRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmEditCommodity.resx">
+      <DependentUpon>frmEditCommodity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmEditUser.resx">
+      <DependentUpon>frmEditUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmListAllRole.resx">
+      <DependentUpon>frmListAllRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
@@ -89,8 +191,38 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\frmNewInvoice.resx">
+      <DependentUpon>frmNewInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserControls\CommodityUserControl.resx">
+      <DependentUpon>CommodityUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserControls\UserGridControl.resx">
+      <DependentUpon>UserGridControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmNewInstrument.resx">
+      <DependentUpon>frmNewInstrument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmNewRole.resx">
+      <DependentUpon>frmNewRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmNewUser.resx">
+      <DependentUpon>frmNewUser.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="PharmacyDbDataSet.xsc">
+      <DependentUpon>PharmacyDbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PharmacyDbDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PharmacyDbDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="PharmacyDbDataSet.xss">
+      <DependentUpon>PharmacyDbDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -100,9 +232,41 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Views\UserControls\CommodityUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserControls\CommodityUserControl.Designer.cs">
+      <DependentUpon>CommodityUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\UserGridControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserControls\UserGridControl.Designer.cs">
+      <DependentUpon>UserGridControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\UserGridControl.Event.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\016-man.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\015-woman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pharmacy.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medical-records.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medical-record.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stethoscope.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
