@@ -70,15 +70,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202011230726563_Init.cs" />
-    <Compile Include="Migrations\202011230726563_Init.designer.cs">
-      <DependentUpon>202011230726563_Init.cs</DependentUpon>
+    <Compile Include="Migrations\202011231700471_Init.cs" />
+    <Compile Include="Migrations\202011231700471_Init.designer.cs">
+      <DependentUpon>202011231700471_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Commodity.cs" />
     <Compile Include="Models\CommodityType.cs" />
     <Compile Include="Models\InvoiceCommodity.cs" />
     <Compile Include="Models\SaleUnit.cs" />
+    <Compile Include="Models\ViewModels\CommodityViewModel.cs" />
+    <Compile Include="Models\ViewModels\InvoiceViewModel.cs" />
     <Compile Include="PharmacyDbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -159,8 +161,8 @@
     <Compile Include="Views\frmNewUser.Designer.cs">
       <DependentUpon>frmNewUser.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Migrations\202011230726563_Init.resx">
-      <DependentUpon>202011230726563_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202011231700471_Init.resx">
+      <DependentUpon>202011231700471_Init.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmChangePassword.resx">
       <DependentUpon>frmChangePassword.cs</DependentUpon>

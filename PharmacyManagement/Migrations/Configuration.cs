@@ -28,7 +28,7 @@
                                                    + " WITH CHECK OPTION;");
 
                 context.Database.ExecuteSqlCommand(@"CREATE VIEW [dbo].[V_Invoice] AS"
-                                                   + " SELECT [Invoices].Id, [Users].UserName, [InvoiceTypes].Name AS 'Invoice Type', [Commodities].Name AS 'Commodities', [Commodities].Description, [Commodities].Provider, [SaleUnits].SaleUnitName, [SaleUnits].SaleUnitPrice, [InvoiceCommodities].CommodityQuantity, [Invoices].Note, [Invoices].Created"
+                                                   + " SELECT [Invoices].Id, [Users].UserName, [InvoiceTypes].Name AS 'Invoice Type', [Commodities].Name AS 'Commodities', [Commodities].Description, [Commodities].Provider, [InvoiceCommodities].SaleUnit, [InvoiceCommodities].SalePrice, [InvoiceCommodities].CommodityQuantity, [Invoices].Note, [Invoices].Created"
                                                    + " FROM [Commodities] INNER JOIN"
                                                    + " [CommodityTypes] ON [Commodities].Type_Id = [CommodityTypes].Id INNER JOIN"
                                                    + " [InvoiceCommodities] ON [Commodities].Id = [InvoiceCommodities].CommodityId INNER JOIN"

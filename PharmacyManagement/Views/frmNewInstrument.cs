@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using PharmacyManagement.Models;
+using PharmacyManagement.Models.ViewModels;
 using PharmacyManagement.Services;
 using System;
 using System.Collections.Generic;

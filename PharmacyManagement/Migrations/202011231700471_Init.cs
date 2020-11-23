@@ -33,6 +33,8 @@
                     {
                         Id = c.Int(nullable: false, identity: true),
                         CommodityQuantity = c.Int(nullable: false),
+                        SaleUnit = c.String(),
+                        SalePrice = c.Decimal(nullable: false, precision: 18, scale: 2),
                         InvoiceID = c.Int(nullable: false),
                         CommodityId = c.Int(nullable: false),
                     })
@@ -104,7 +106,7 @@
                         Id = c.Int(nullable: false, identity: true),
                         SaleUnitName = c.String(nullable: false, maxLength: 255),
                         SaleUnitPrice = c.Decimal(nullable: false, storeType: "money"),
-                        CommodityId = c.Int(nullable: true),
+                        CommodityId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Commodities", t => t.CommodityId, cascadeDelete: true)

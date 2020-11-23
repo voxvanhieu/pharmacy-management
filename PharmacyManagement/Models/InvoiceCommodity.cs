@@ -14,6 +14,8 @@ namespace PharmacyManagement.Models
         public int Id { get; set; }
 
         public int CommodityQuantity { get; set; } = 0;
+        public string SaleUnit { get; set; }
+        public decimal SalePrice { get; set; }
 
         [Required]
         [ForeignKey("Invoice")]

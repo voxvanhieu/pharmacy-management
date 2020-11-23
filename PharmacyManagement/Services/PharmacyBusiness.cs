@@ -66,7 +66,7 @@ namespace PharmacyManagement.Services
             if (invoicedUser is null) throw new Exception($"Username {newInvoice.Username} not found.");
 
             InvoiceType invoiceType = context.InvoiceTypes.FirstOrDefault(u => u.Name.Equals(newInvoice.InvoiceType, StringComparison.OrdinalIgnoreCase));
-            if (invoiceType is null) throw new Exception($"Username {newInvoice.InvoiceType} not found.");
+            if (invoiceType is null) throw new Exception($"Invoice type {newInvoice.InvoiceType} not found.");
 
             var invoice = new Invoice
             {
@@ -76,10 +76,24 @@ namespace PharmacyManagement.Services
                 InvoiceCommodities = new List<InvoiceCommodity>()
             };
 
-            //foreach (InvoiceViewModel item in newInvoice.Commodities)
-            //{
+            context.Invoices.Add(invoice);
 
-            //}
+            foreach (CommodityViewModel item in newInvoice.Commodities)
+            {
+                var commodity = context.Commodities.FirstOrDefault(c => c.Name.Equals(item.Name));
+                if (commodity is null) throw new Exception($"Commodity {item.Name} not found.");
+
+                invoice.InvoiceCommodities.Add(new InvoiceCommodity
+                {
+                    Invoice = invoice,
+                    CommodityQuantity = item.Quantity,
+                    Commodity = commodity,
+                    SalePrice = item.SalePrice,
+                    SaleUnit = item.SaleUnit
+                });
+            }
+
+            context.SaveChanges();
         }
 
         public void AddSaleUnitToCommodity(string unitName, decimal unitPrice, int commodityId)
