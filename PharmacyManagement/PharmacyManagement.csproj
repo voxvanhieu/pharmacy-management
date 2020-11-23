@@ -70,9 +70,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202011230546411_Init.cs" />
-    <Compile Include="Migrations\202011230546411_Init.designer.cs">
-      <DependentUpon>202011230546411_Init.cs</DependentUpon>
+    <Compile Include="Migrations\202011230726563_Init.cs" />
+    <Compile Include="Migrations\202011230726563_Init.designer.cs">
+      <DependentUpon>202011230726563_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Commodity.cs" />
@@ -128,6 +128,12 @@
     <Compile Include="Views\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\frmNewInstrument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmNewInstrument.Designer.cs">
+      <DependentUpon>frmNewInstrument.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\frmNewRole.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,8 +146,8 @@
     <Compile Include="Views\frmNewUser.Designer.cs">
       <DependentUpon>frmNewUser.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Migrations\202011230546411_Init.resx">
-      <DependentUpon>202011230546411_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202011230726563_Init.resx">
+      <DependentUpon>202011230726563_Init.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmChangePassword.resx">
       <DependentUpon>frmChangePassword.cs</DependentUpon>
@@ -172,8 +178,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UserGridControl.resx">
+    <EmbeddedResource Include="Views\UserControls\CommodityUserControl.resx">
+      <DependentUpon>CommodityUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserControls\UserGridControl.resx">
       <DependentUpon>UserGridControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmNewInstrument.resx">
+      <DependentUpon>frmNewInstrument.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmNewRole.resx">
       <DependentUpon>frmNewRole.cs</DependentUpon>
@@ -202,13 +214,19 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="UserGridControl.cs">
+    <Compile Include="Views\UserControls\CommodityUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserGridControl.Designer.cs">
+    <Compile Include="Views\UserControls\CommodityUserControl.Designer.cs">
+      <DependentUpon>CommodityUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\UserGridControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserControls\UserGridControl.Designer.cs">
       <DependentUpon>UserGridControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserGridControl.Event.cs" />
+    <Compile Include="Views\UserControls\UserGridControl.Event.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -216,9 +234,7 @@
   <ItemGroup>
     <None Include="Resources\016-man.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\UserControl\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\015-woman.png" />
   </ItemGroup>

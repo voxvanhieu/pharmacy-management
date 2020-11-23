@@ -24,6 +24,7 @@
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.CommodityTypes", t => t.Type_Id)
+                .Index(t => t.Name, unique: true)
                 .Index(t => t.Type_Id);
             
             CreateTable(
@@ -140,6 +141,7 @@
             DropIndex("dbo.InvoiceCommodities", new[] { "CommodityId" });
             DropIndex("dbo.InvoiceCommodities", new[] { "InvoiceID" });
             DropIndex("dbo.Commodities", new[] { "Type_Id" });
+            DropIndex("dbo.Commodities", new[] { "Name" });
             DropTable("dbo.CommodityTypes");
             DropTable("dbo.SaleUnits");
             DropTable("dbo.Roles");

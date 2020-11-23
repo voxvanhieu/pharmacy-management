@@ -16,6 +16,7 @@ namespace PharmacyManagement.Models
 
         [Required]
         [StringLength(255)]
+        [Index(IsUnique = true)]
         public string Name { get; set; }
 
         public string Description { get; set; }
