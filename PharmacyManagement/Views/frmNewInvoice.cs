@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using PharmacyManagement.Models;
 using DevExpress.XtraEditors.DXErrorProvider;
+using PharmacyManagement.Models.ViewModels;
+using PharmacyManagement.Services;
 
 namespace PharmacyManagement.Views
 {
@@ -17,6 +19,8 @@ namespace PharmacyManagement.Views
     {
         PharmacyDbContext context = PharmacyDbContext.Create();
         UserIdentity userIdentity = new UserIdentity();
+        PharmacyBusiness pharmacyBusiness = new PharmacyBusiness();
+        private Decimal price { get; set; } = 0;
 
         public frmNewInvoice()
         {
@@ -72,8 +76,12 @@ namespace PharmacyManagement.Views
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txbQuantity.Text!=null&&!txbQuantity.Text.Equals(""))
-            listBox1.Items.Add(cmbCommodities.SelectedItem.ToString()+" | "+txbQuantity.Text);
+            if (txbQuantity.Text != null && !txbQuantity.Text.Equals("") && textEdit3.Text != null && !textEdit3.Text.Equals("")&&!textEdit2.Text.Equals(""))
+            {
+                listBox1.Items.Add(cmbCommodities.SelectedItem.ToString() + "|" + txbQuantity.Text + "|" + textEdit2.Text + "|" + textEdit3.Text);
+                price += Decimal.Parse(textEdit3.Text);
+                textEdit1.Text = "TOTAL: " + price;
+            }
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
@@ -84,6 +92,39 @@ namespace PharmacyManagement.Views
             }catch (Exception ex)
             {
                 //Not selected any
+            }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var invoice = new InvoiceViewModel
+                {
+                    Username = UserIdentity.SessionUser.UserName,
+                    Note = txtNote.Text,
+                    InvoiceType = cmbInvoideType.SelectedItem.ToString(),
+                    Commodities = new List<CommodityViewModel>(),
+                    Created=dateBirthday.DateTime
+                };
+
+                foreach (string i in listBox1.Items)
+                {
+                    string[] tmp = i.Split('|');
+                    invoice.Commodities.Add(new CommodityViewModel
+                    {
+                        Name = tmp[0],
+                        Quantity = int.Parse(tmp[1]),
+                        SaleUnit = tmp[2],
+                        SalePrice = Decimal.Parse(tmp[3]),
+                    });
+                }
+
+                pharmacyBusiness.NewInvoice(invoice);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }
