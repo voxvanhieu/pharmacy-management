@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0"
+  xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -70,9 +71,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202011221042211_Init.cs" />
-    <Compile Include="Migrations\202011221042211_Init.designer.cs">
-      <DependentUpon>202011221042211_Init.cs</DependentUpon>
+    <Compile Include="Migrations\202011230351515_Init.cs" />
+    <Compile Include="Migrations\202011230351515_Init.designer.cs">
+      <DependentUpon>202011230351515_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Commodity.cs" />
@@ -83,6 +84,8 @@
     <Compile Include="Views\frmChangePassword.Designer.cs">
       <DependentUpon>frmChangePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Invoice.cs" />
+    <Compile Include="Models\InvoiceType.cs" />
     <Compile Include="Views\frmChangeUserRole.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,8 +139,8 @@
     <Compile Include="Views\frmNewUser.Designer.cs">
       <DependentUpon>frmNewUser.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Migrations\202011221042211_Init.resx">
-      <DependentUpon>202011221042211_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202011230351515_Init.resx">
+      <DependentUpon>202011230351515_Init.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmChangePassword.resx">
       <DependentUpon>frmChangePassword.cs</DependentUpon>

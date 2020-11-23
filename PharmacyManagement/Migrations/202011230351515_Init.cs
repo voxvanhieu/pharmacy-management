@@ -37,13 +37,30 @@
                 .Index(t => t.Name, unique: true);
             
             CreateTable(
-                "dbo.Roles",
+                "dbo.Invoices",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(maxLength: 255),
+                        Note = c.String(),
+                        Created = c.DateTime(nullable: false, storeType: "date"),
+                        Type_Id = c.Int(),
+                        User_Id = c.Int(),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.InvoiceTypes", t => t.Type_Id)
+                .ForeignKey("dbo.Users", t => t.User_Id)
+                .Index(t => t.Type_Id)
+                .Index(t => t.User_Id);
+            
+            CreateTable(
+                "dbo.InvoiceTypes",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(nullable: false, maxLength: 255),
+                    })
+                .PrimaryKey(t => t.Id)
+                .Index(t => t.Name, unique: true);
             
             CreateTable(
                 "dbo.Users",
@@ -65,18 +82,34 @@
                 .Index(t => t.UserName, unique: true)
                 .Index(t => t.RoleId);
             
+            CreateTable(
+                "dbo.Roles",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(maxLength: 255),
+                    })
+                .PrimaryKey(t => t.Id);
+            
         }
         
         public override void Down()
         {
+            DropForeignKey("dbo.Invoices", "User_Id", "dbo.Users");
             DropForeignKey("dbo.Users", "RoleId", "dbo.Roles");
+            DropForeignKey("dbo.Invoices", "Type_Id", "dbo.InvoiceTypes");
             DropForeignKey("dbo.Commodities", "Type_Id", "dbo.CommodityTypes");
             DropIndex("dbo.Users", new[] { "RoleId" });
             DropIndex("dbo.Users", new[] { "UserName" });
+            DropIndex("dbo.InvoiceTypes", new[] { "Name" });
+            DropIndex("dbo.Invoices", new[] { "User_Id" });
+            DropIndex("dbo.Invoices", new[] { "Type_Id" });
             DropIndex("dbo.CommodityTypes", new[] { "Name" });
             DropIndex("dbo.Commodities", new[] { "Type_Id" });
-            DropTable("dbo.Users");
             DropTable("dbo.Roles");
+            DropTable("dbo.Users");
+            DropTable("dbo.InvoiceTypes");
+            DropTable("dbo.Invoices");
             DropTable("dbo.CommodityTypes");
             DropTable("dbo.Commodities");
         }

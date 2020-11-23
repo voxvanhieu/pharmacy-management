@@ -8,21 +8,19 @@ using System.Threading.Tasks;
 
 namespace PharmacyManagement.Models
 {
-    public partial class CommodityType
+    public partial class Invoice
     {
-        public CommodityType()
-        {
-            Commodities = new HashSet<Commodity>();
-        }
-
         [Key]
         public int Id { get; set; }
 
-        [Required]
-        [Index(IsUnique = true)]
-        [StringLength(255)]
-        public string Name { get; set; }
+        public string Note { get; set; }
 
-        public virtual ICollection<Commodity> Commodities { get; set; }
+        public virtual User User { get; set; }
+
+        public virtual InvoiceType Type { get; set; }
+
+        [Required]
+        [Column(TypeName = "Date")]
+        public DateTime Created { get; set; } = DateTime.Now;
     }
 }

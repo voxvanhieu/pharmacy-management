@@ -65,7 +65,7 @@ namespace PharmacyManagement.Views
             this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
+            this.barbtnLookup = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
@@ -151,13 +151,12 @@ namespace PharmacyManagement.Views
             this.barButtonItem11,
             this.barSubItem1,
             this.barButtonItem12,
-            this.barButtonItem13,
+            this.barbtnLookup,
             this.barButtonItem14,
             this.barButtonItem15,
             this.barButtonLogout});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ribbonControl.MaxItemId = 77;
+            this.ribbonControl.MaxItemId = 73;
             this.ribbonControl.MdiMergeStyle = DevExpress.XtraBars.Ribbon.RibbonMdiMergeStyle.Always;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.barButtonLogout);
@@ -169,7 +168,7 @@ namespace PharmacyManagement.Views
             this.ribbonPage});
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(1055, 196);
+            this.ribbonControl.Size = new System.Drawing.Size(904, 160);
             this.ribbonControl.StatusBar = this.ribbonStatusBar;
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
@@ -371,12 +370,12 @@ namespace PharmacyManagement.Views
             this.barButtonItem12.Name = "barButtonItem12";
             this.barButtonItem12.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
             // 
-            // barButtonItem13
+            // barbtnLookup
             // 
-            this.barButtonItem13.Caption = "Lookup";
-            this.barButtonItem13.Id = 70;
-            this.barButtonItem13.ImageOptions.SvgImage = global::PharmacyManagement.Properties.Resources.medical_record;
-            this.barButtonItem13.Name = "barButtonItem13";
+            this.barbtnLookup.Caption = "Lookup";
+            this.barbtnLookup.Id = 70;
+            this.barbtnLookup.ImageOptions.SvgImage = global::PharmacyManagement.Properties.Resources.medical_record;
+            this.barbtnLookup.Name = "barbtnLookup";
             // 
             // barButtonItem14
             // 
@@ -438,7 +437,7 @@ namespace PharmacyManagement.Views
             // 
             // ribbonPageGroup8
             // 
-            this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem13);
+            this.ribbonPageGroup8.ItemLinks.Add(this.barbtnLookup);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
             // 
             // ribbonPageHumanManager
@@ -509,11 +508,10 @@ namespace PharmacyManagement.Views
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 801);
-            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 580);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1055, 28);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(904, 22);
             // 
             // dockManager
             // 
@@ -537,10 +535,9 @@ namespace PharmacyManagement.Views
             this.hideContainerRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.hideContainerRight.Controls.Add(this.dockpnlUser);
             this.hideContainerRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.hideContainerRight.Location = new System.Drawing.Point(1022, 196);
-            this.hideContainerRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.hideContainerRight.Location = new System.Drawing.Point(877, 160);
             this.hideContainerRight.Name = "hideContainerRight";
-            this.hideContainerRight.Size = new System.Drawing.Size(33, 605);
+            this.hideContainerRight.Size = new System.Drawing.Size(27, 420);
             // 
             // dockpnlUser
             // 
@@ -548,12 +545,11 @@ namespace PharmacyManagement.Views
             this.dockpnlUser.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
             this.dockpnlUser.ID = new System.Guid("2c167bcd-bc1e-40f3-947c-e2e8bc570987");
             this.dockpnlUser.Location = new System.Drawing.Point(0, 0);
-            this.dockpnlUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dockpnlUser.Name = "dockpnlUser";
             this.dockpnlUser.OriginalSize = new System.Drawing.Size(233, 200);
             this.dockpnlUser.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Right;
             this.dockpnlUser.SavedIndex = 1;
-            this.dockpnlUser.Size = new System.Drawing.Size(233, 605);
+            this.dockpnlUser.Size = new System.Drawing.Size(200, 463);
             this.dockpnlUser.Text = "User Information";
             this.dockpnlUser.Visibility = DevExpress.XtraBars.Docking.DockVisibility.AutoHide;
             // 
@@ -565,10 +561,9 @@ namespace PharmacyManagement.Views
             this.dockPanel1_Container.Controls.Add(this.picAvatar);
             this.dockPanel1_Container.Controls.Add(this.lblUsername);
             this.dockPanel1_Container.Controls.Add(this.lblFullName);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(6, 56);
-            this.dockPanel1_Container.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(5, 43);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(223, 545);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(191, 417);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // lblBirthDay
@@ -581,10 +576,9 @@ namespace PharmacyManagement.Views
             this.lblBirthDay.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblBirthDay.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.lblBirthDay.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblBirthDay.Location = new System.Drawing.Point(7, 306);
-            this.lblBirthDay.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lblBirthDay.Location = new System.Drawing.Point(6, 234);
             this.lblBirthDay.Name = "lblBirthDay";
-            this.lblBirthDay.Size = new System.Drawing.Size(222, 43);
+            this.lblBirthDay.Size = new System.Drawing.Size(190, 33);
             this.lblBirthDay.TabIndex = 5;
             this.lblBirthDay.Text = "Birthday";
             // 
@@ -598,10 +592,9 @@ namespace PharmacyManagement.Views
             this.lblRole.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblRole.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.lblRole.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblRole.Location = new System.Drawing.Point(7, 357);
-            this.lblRole.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lblRole.Location = new System.Drawing.Point(6, 273);
             this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(222, 34);
+            this.lblRole.Size = new System.Drawing.Size(190, 26);
             this.lblRole.TabIndex = 4;
             this.lblRole.Text = "Role";
             // 
@@ -615,10 +608,9 @@ namespace PharmacyManagement.Views
             this.lblAddress.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblAddress.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.lblAddress.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblAddress.Location = new System.Drawing.Point(0, 242);
-            this.lblAddress.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lblAddress.Location = new System.Drawing.Point(0, 185);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(220, 56);
+            this.lblAddress.Size = new System.Drawing.Size(189, 43);
             this.lblAddress.TabIndex = 3;
             this.lblAddress.Text = "Address";
             // 
@@ -627,10 +619,9 @@ namespace PharmacyManagement.Views
             this.picAvatar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.picAvatar.Image = global::PharmacyManagement.Properties.Resources._016_man;
-            this.picAvatar.Location = new System.Drawing.Point(7, 0);
-            this.picAvatar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picAvatar.Location = new System.Drawing.Point(6, 0);
             this.picAvatar.Name = "picAvatar";
-            this.picAvatar.Size = new System.Drawing.Size(213, 158);
+            this.picAvatar.Size = new System.Drawing.Size(183, 121);
             this.picAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAvatar.TabIndex = 4;
             this.picAvatar.TabStop = false;
@@ -645,10 +636,9 @@ namespace PharmacyManagement.Views
             this.lblUsername.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblUsername.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.lblUsername.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblUsername.Location = new System.Drawing.Point(3, 166);
-            this.lblUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lblUsername.Location = new System.Drawing.Point(3, 127);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(220, 34);
+            this.lblUsername.Size = new System.Drawing.Size(189, 26);
             this.lblUsername.TabIndex = 2;
             this.lblUsername.Text = "username";
             // 
@@ -662,10 +652,9 @@ namespace PharmacyManagement.Views
             this.lblFullName.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblFullName.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.lblFullName.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblFullName.Location = new System.Drawing.Point(3, 200);
-            this.lblFullName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lblFullName.Location = new System.Drawing.Point(3, 153);
             this.lblFullName.Name = "lblFullName";
-            this.lblFullName.Size = new System.Drawing.Size(220, 34);
+            this.lblFullName.Size = new System.Drawing.Size(189, 26);
             this.lblFullName.TabIndex = 1;
             this.lblFullName.Text = "Full name";
             // 
@@ -674,10 +663,9 @@ namespace PharmacyManagement.Views
             this.hideContainerLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.hideContainerLeft.Controls.Add(this.dockPanel);
             this.hideContainerLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.hideContainerLeft.Location = new System.Drawing.Point(0, 196);
-            this.hideContainerLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.hideContainerLeft.Location = new System.Drawing.Point(0, 160);
             this.hideContainerLeft.Name = "hideContainerLeft";
-            this.hideContainerLeft.Size = new System.Drawing.Size(33, 605);
+            this.hideContainerLeft.Size = new System.Drawing.Size(27, 420);
             // 
             // dockPanel
             // 
@@ -685,22 +673,20 @@ namespace PharmacyManagement.Views
             this.dockPanel.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left;
             this.dockPanel.ID = new System.Guid("a045df26-1503-4d9a-99c1-a531310af22b");
             this.dockPanel.Location = new System.Drawing.Point(0, 0);
-            this.dockPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dockPanel.Name = "dockPanel";
             this.dockPanel.OriginalSize = new System.Drawing.Size(200, 200);
             this.dockPanel.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Left;
             this.dockPanel.SavedIndex = 0;
-            this.dockPanel.Size = new System.Drawing.Size(233, 591);
+            this.dockPanel.Size = new System.Drawing.Size(200, 452);
             this.dockPanel.Text = "Navigation";
             this.dockPanel.Visibility = DevExpress.XtraBars.Docking.DockVisibility.AutoHide;
             // 
             // dockPanel_Container
             // 
             this.dockPanel_Container.Controls.Add(this.accordionControl);
-            this.dockPanel_Container.Location = new System.Drawing.Point(3, 60);
-            this.dockPanel_Container.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dockPanel_Container.Location = new System.Drawing.Point(3, 46);
             this.dockPanel_Container.Name = "dockPanel_Container";
-            this.dockPanel_Container.Size = new System.Drawing.Size(225, 527);
+            this.dockPanel_Container.Size = new System.Drawing.Size(193, 403);
             this.dockPanel_Container.TabIndex = 0;
             // 
             // accordionControl
@@ -710,9 +696,8 @@ namespace PharmacyManagement.Views
             this.accordionControl.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.mainAccordionGroup});
             this.accordionControl.Location = new System.Drawing.Point(0, 0);
-            this.accordionControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.accordionControl.Name = "accordionControl";
-            this.accordionControl.Size = new System.Drawing.Size(225, 527);
+            this.accordionControl.Size = new System.Drawing.Size(193, 403);
             this.accordionControl.TabIndex = 0;
             this.accordionControl.Text = "accordionControl";
             this.accordionControl.SelectedElementChanged += new DevExpress.XtraBars.Navigation.SelectedElementChangedEventHandler(this.accordionControl_SelectedElementChanged);
@@ -763,16 +748,15 @@ namespace PharmacyManagement.Views
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1055, 829);
+            this.ClientSize = new System.Drawing.Size(904, 602);
             this.Controls.Add(this.hideContainerLeft);
             this.Controls.Add(this.hideContainerRight);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbonControl);
             this.Enabled = false;
             this.IconOptions.SvgImage = global::PharmacyManagement.Properties.Resources.pharmacy;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmMain";
             this.Ribbon = this.ribbonControl;
             this.StatusBar = this.ribbonStatusBar;
@@ -859,7 +843,7 @@ namespace PharmacyManagement.Views
         private DevExpress.XtraBars.Docking.AutoHideContainer hideContainerLeft;
         private DevExpress.XtraBars.BarSubItem barSubItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem12;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem13;
+        private DevExpress.XtraBars.BarButtonItem barbtnLookup;
         private DevExpress.XtraBars.BarButtonItem barButtonItem14;
         private DevExpress.XtraBars.BarButtonItem barButtonItem15;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;

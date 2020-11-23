@@ -8,21 +8,21 @@ using System.Threading.Tasks;
 
 namespace PharmacyManagement.Models
 {
-    public partial class CommodityType
+    public class InvoiceType
     {
-        public CommodityType()
+        public InvoiceType()
         {
-            Commodities = new HashSet<Commodity>();
+            Invoices = new HashSet<Invoice>();
         }
 
         [Key]
         public int Id { get; set; }
 
         [Required]
-        [Index(IsUnique = true)]
         [StringLength(255)]
+        [Index(IsUnique = true)]
         public string Name { get; set; }
 
-        public virtual ICollection<Commodity> Commodities { get; set; }
+        public virtual ICollection<Invoice> Invoices { get; set; }
     }
 }
