@@ -292,5 +292,10 @@ namespace PharmacyManagement.Views
             new frmNewInstrument("Medicine").ShowDialog();
             //new frmNewMedicine().ShowDialog();
         }
+
+        private void barButtonItem8_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            
+        }
     }
 }
