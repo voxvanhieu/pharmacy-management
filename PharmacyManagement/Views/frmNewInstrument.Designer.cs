@@ -246,7 +246,7 @@ namespace PharmacyManagement.Views
             // 
             this.groupControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl3.Controls.Add(this.cmbTypeInstrument);
-            this.groupControl3.Location = new System.Drawing.Point(333, 10);
+            this.groupControl3.Location = new System.Drawing.Point(333, 12);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(165, 60);
             this.groupControl3.TabIndex = 20;

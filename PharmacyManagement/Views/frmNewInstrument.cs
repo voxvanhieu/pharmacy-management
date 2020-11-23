@@ -22,6 +22,13 @@ namespace PharmacyManagement.Views
             InitializeComponent();
         }
 
+        public frmNewInstrument(string instrumentType) : this()
+        {
+            this.Text = "New Medicine";
+            cmbTypeInstrument.Text = instrumentType;
+            cmbTypeInstrument.Enabled = false;
+        }
+
         private void frmNewInstrument_Load(object sender, EventArgs e)
         {
             cmbTypeInstrument.Properties.Items.AddRange(business.GetAllCommodityType());
