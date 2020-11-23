@@ -1,7 +1,7 @@
 ﻿
 namespace PharmacyManagement.Views.UserControls
 {
-    partial class CommodityUserControl
+    partial class CommodityGridUserControl
     {
         /// <summary> 
         /// Required designer variable.

@@ -1,7 +1,7 @@
 ﻿
 namespace PharmacyManagement.Views.UserControls
 {
-    partial class UserGridControl
+    partial class UserGridUserControl
     {
         /// <summary> 
         /// Required designer variable.

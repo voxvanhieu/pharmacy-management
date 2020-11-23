@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace PharmacyManagement.Views.UserControls
 {
-    public partial class UserGridControl : DevExpress.XtraEditors.XtraUserControl
+    public partial class UserGridUserControl : DevExpress.XtraEditors.XtraUserControl
     {
-        public UserGridControl()
+        public UserGridUserControl()
         {
             InitializeComponent();
             RefillGrid();

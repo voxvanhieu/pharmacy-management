@@ -199,11 +199,14 @@
     <EmbeddedResource Include="Views\frmNewInvoice.resx">
       <DependentUpon>frmNewInvoice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\UserControls\CommodityUserControl.resx">
-      <DependentUpon>CommodityUserControl.cs</DependentUpon>
+    <EmbeddedResource Include="Views\UserControls\CommodityGridUserControl.resx">
+      <DependentUpon>CommodityGridUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\UserControls\UserGridControl.resx">
-      <DependentUpon>UserGridControl.cs</DependentUpon>
+    <EmbeddedResource Include="Views\UserControls\InvoiceGridUserControl.resx">
+      <DependentUpon>InvoiceGridUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserControls\UserGridUserControl.resx">
+      <DependentUpon>UserGridUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmNewInstrument.resx">
       <DependentUpon>frmNewInstrument.cs</DependentUpon>
@@ -235,17 +238,23 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Views\UserControls\CommodityUserControl.cs">
+    <Compile Include="Views\UserControls\CommodityGridUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\UserControls\CommodityUserControl.Designer.cs">
-      <DependentUpon>CommodityUserControl.cs</DependentUpon>
+    <Compile Include="Views\UserControls\CommodityGridUserControl.Designer.cs">
+      <DependentUpon>CommodityGridUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\UserControls\UserGridControl.cs">
+    <Compile Include="Views\UserControls\InvoiceGridUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\UserControls\UserGridControl.Designer.cs">
-      <DependentUpon>UserGridControl.cs</DependentUpon>
+    <Compile Include="Views\UserControls\InvoiceGridUserControl.Designer.cs">
+      <DependentUpon>InvoiceGridUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\UserGridUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserControls\UserGridUserControl.Designer.cs">
+      <DependentUpon>UserGridUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\UserControls\UserGridControl.Event.cs" />
   </ItemGroup>

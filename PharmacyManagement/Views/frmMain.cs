@@ -148,7 +148,7 @@ namespace PharmacyManagement.Views
             }
         }
 
-        private UserGridControl userGridControl;
+        private UserGridUserControl userGridControl;
         private XtraUserControl tabAllUsers;
         private void barbtbAllUsers_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -161,7 +161,7 @@ namespace PharmacyManagement.Views
 
             if (userGridControl is null || userGridControl.IsDisposed)
             {
-                userGridControl = new UserGridControl();
+                userGridControl = new UserGridUserControl();
 
                 userGridControl.Dock = DockStyle.Fill;
                 userGridControl.Parent = tabAllUsers;
@@ -226,7 +226,7 @@ namespace PharmacyManagement.Views
             }
         }
 
-        private CommodityUserControl commodityGridControl;
+        private CommodityGridUserControl commodityGridControl;
         private XtraUserControl tabAllCommodity;
         private void barbtnLookup_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -239,7 +239,7 @@ namespace PharmacyManagement.Views
 
             if (commodityGridControl is null || commodityGridControl.IsDisposed)
             {
-                commodityGridControl = new CommodityUserControl();
+                commodityGridControl = new CommodityGridUserControl();
 
                 commodityGridControl.Dock = DockStyle.Fill;
                 commodityGridControl.Parent = tabAllCommodity;
@@ -266,7 +266,7 @@ namespace PharmacyManagement.Views
 
             if (commodityGridControl is null || commodityGridControl.IsDisposed)
             {
-                commodityGridControl = new CommodityUserControl();
+                commodityGridControl = new CommodityGridUserControl();
 
                 commodityGridControl.Dock = DockStyle.Fill;
                 commodityGridControl.Parent = tabAllCommodity;
@@ -293,9 +293,28 @@ namespace PharmacyManagement.Views
             //new frmNewMedicine().ShowDialog();
         }
 
-        private void barButtonItem8_ItemClick(object sender, ItemClickEventArgs e)
+        private InvoiceGridUserControl invoicesGridControl;
+        private XtraUserControl tabAllInvoices;
+        private void barbtnEnvoice_ItemClick(object sender, ItemClickEventArgs e)
         {
-            
+            if (tabAllInvoices is null || tabAllInvoices.IsDisposed)
+            {
+                tabAllInvoices = new XtraUserControl();
+                tabAllInvoices.Name = "TabAllComodityControl";
+                tabAllInvoices.Text = "All Comodities";
+            }
+
+            if (invoicesGridControl is null || invoicesGridControl.IsDisposed)
+            {
+                invoicesGridControl = new InvoiceGridUserControl();
+
+                invoicesGridControl.Dock = DockStyle.Fill;
+                invoicesGridControl.Parent = tabAllInvoices;
+                //invoicesGridControl.GridSelectedRowChanged += userGridControl_SelectedRowChanged;
+            }
+
+            tabbedView.AddDocument(tabAllInvoices);
+            tabbedView.ActivateDocument(tabAllInvoices);
         }
     }
 }

@@ -11,7 +11,7 @@ namespace PharmacyManagement.Views.UserControls
         public string UserName { get; set; }
     }
 
-    public partial class UserGridControl
+    public partial class UserGridUserControl
     {
         // declaring an event using built-in EventHandler
         public event EventHandler<HieuVVCustomSelectedRowChangedEventArgs> GridSelectedRowChanged;
