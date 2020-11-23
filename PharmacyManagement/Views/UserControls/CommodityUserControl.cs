@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using PharmacyManagement.Models;
+using PharmacyManagement.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,21 +48,9 @@ namespace PharmacyManagement.Views.UserControls
             var choice = XtraMessageBox.Show("Sure want to delete this record?", "?? :D ??", MessageBoxButtons.YesNo);
             if (choice == DialogResult.Yes)
             {
-                try
+                using (var business = new PharmacyBusiness())
                 {
-                    using (var context = PharmacyDbContext.Create())
-                    {
-                        var commodity = new Commodity { Id = int.Parse(recordId) };
-                        context.Commodities.Attach(commodity);
-                        context.Commodities.Remove(commodity);
-                        context.SaveChanges();
-                    }
-                    XtraMessageBox.Show("Remove successfully", "Pharmacy management");
-                    RefillGrid();
-                }
-                catch (Exception ex)
-                {
-                    XtraMessageBox.Show($"Some error occured\nDetails:\n{ex.Message}", "Xome Pug Found");
+                    business.RemoveCommodity(int.Parse(recordId));
                 }
             }
         }

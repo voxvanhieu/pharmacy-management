@@ -48,7 +48,7 @@ namespace PharmacyManagement.Views.UserControls
             this.btnReload = new DevExpress.XtraEditors.SimpleButton();
             this.btnRemove = new DevExpress.XtraEditors.SimpleButton();
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
-            this.hyperlinkLabelControl1 = new DevExpress.XtraEditors.HyperlinkLabelControl();
+            this.hyperlink = new DevExpress.XtraEditors.HyperlinkLabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vComodityBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pharmacyDbDataSet)).BeginInit();
@@ -200,19 +200,20 @@ namespace PharmacyManagement.Views.UserControls
             this.btnEdit.Text = "Edit";
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // hyperlinkLabelControl1
+            // hyperlink
             // 
-            this.hyperlinkLabelControl1.Location = new System.Drawing.Point(3, 417);
-            this.hyperlinkLabelControl1.Name = "hyperlinkLabelControl1";
-            this.hyperlinkLabelControl1.Size = new System.Drawing.Size(215, 13);
-            this.hyperlinkLabelControl1.TabIndex = 7;
-            this.hyperlinkLabelControl1.Text = "Tra cứu trên website của cục quản lý dược";
+            this.hyperlink.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.hyperlink.Location = new System.Drawing.Point(3, 417);
+            this.hyperlink.Name = "hyperlink";
+            this.hyperlink.Size = new System.Drawing.Size(215, 13);
+            this.hyperlink.TabIndex = 7;
+            this.hyperlink.Text = "Tra cứu trên website của cục quản lý dược";
             // 
             // CommodityUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.hyperlinkLabelControl1);
+            this.Controls.Add(this.hyperlink);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnReload);
             this.Controls.Add(this.btnRemove);
@@ -247,6 +248,6 @@ namespace PharmacyManagement.Views.UserControls
         private DevExpress.XtraEditors.SimpleButton btnReload;
         private DevExpress.XtraEditors.SimpleButton btnRemove;
         private DevExpress.XtraEditors.SimpleButton btnEdit;
-        private DevExpress.XtraEditors.HyperlinkLabelControl hyperlinkLabelControl1;
+        private DevExpress.XtraEditors.HyperlinkLabelControl hyperlink;
     }
 }

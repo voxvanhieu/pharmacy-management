@@ -45,7 +45,7 @@ namespace PharmacyManagement.Views
             txbBaseUnit.Text = commodity.BaseUnitName?.ToString();
             txbBasePrice.Text = commodity.BaseUnitPrice.ToString();
 
-            saleUnit = business.GetListSaleUnitNameOfCommodity(commodityId);
+            saleUnit = business.GetAllSaleUnitNameOfCommodity(commodityId);
             cmbSaleUnit.Properties.Items.AddRange(saleUnit);
             cmbSaleUnit.SelectedIndex = 0;
         }
@@ -59,7 +59,7 @@ namespace PharmacyManagement.Views
         {
             try
             {
-                if (business.CommodityHaveSaleUnit(cmbSaleUnit.Text, commodityId))
+                if (!string.IsNullOrWhiteSpace(cmbSaleUnit.Text) && business.CommodityHaveSaleUnit(cmbSaleUnit.Text, commodityId))
                 {
                     var choice = XtraMessageBox.Show("Từ hồi tạo CSDL tới bây giờ, tôi chưa thấy cái %SaleUnit% nào như cái này. Tạo mới 1 cái nhớ?", "ERROR", MessageBoxButtons.YesNo);
                     if (choice == DialogResult.Yes)
