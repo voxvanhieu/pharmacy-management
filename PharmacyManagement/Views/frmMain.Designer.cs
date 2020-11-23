@@ -388,6 +388,7 @@ namespace PharmacyManagement.Views
             this.barbtnNewMedicine.Id = 71;
             this.barbtnNewMedicine.ImageOptions.SvgImage = global::PharmacyManagement.Properties.Resources.medical_records;
             this.barbtnNewMedicine.Name = "barbtnNewMedicine";
+            this.barbtnNewMedicine.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnNewMedicine_ItemClick);
             // 
             // barbtnNewInstrument
             // 
