@@ -29,71 +29,77 @@
         private void InitializeComponent()
         {
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
-            this.txbSalePrice = new DevExpress.XtraEditors.TextEdit();
+            this.txbQuantity = new DevExpress.XtraEditors.TextEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.cmbInvoideType = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.comboBoxEdit2 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.cmbCommodities = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txbName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.dateBirthday = new DevExpress.XtraEditors.DateEdit();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.textEditTypeOfInstrucment = new DevExpress.XtraEditors.TextEdit();
+            this.dateBirthday = new DevExpress.XtraEditors.DateEdit();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            ((System.ComponentModel.ISupportInitialize)(this.txbSalePrice.Properties)).BeginInit();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            ((System.ComponentModel.ISupportInitialize)(this.txbQuantity.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbInvoideType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbCommodities.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txbName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditTypeOfInstrucment.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateBirthday.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateBirthday.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditTypeOfInstrucment.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSave
             // 
             this.btnSave.Appearance.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.btnSave.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnSave.Appearance.Options.UseFont = true;
             this.btnSave.Appearance.Options.UseForeColor = true;
-            this.btnSave.Location = new System.Drawing.Point(193, 240);
+            this.btnSave.Location = new System.Drawing.Point(51, 203);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(129, 31);
+            this.btnSave.Size = new System.Drawing.Size(150, 41);
             this.btnSave.TabIndex = 27;
-            this.btnSave.Text = "Add to database";
+            this.btnSave.Text = "Add to cart";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // txbSalePrice
+            // txbQuantity
             // 
-            this.txbSalePrice.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txbQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txbSalePrice.Location = new System.Drawing.Point(35, 106);
-            this.txbSalePrice.Name = "txbSalePrice";
-            this.txbSalePrice.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbSalePrice.Properties.Appearance.Options.UseFont = true;
-            this.txbSalePrice.Size = new System.Drawing.Size(93, 26);
-            this.txbSalePrice.TabIndex = 18;
+            this.txbQuantity.Location = new System.Drawing.Point(51, 139);
+            this.txbQuantity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txbQuantity.Name = "txbQuantity";
+            this.txbQuantity.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.txbQuantity.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbQuantity.Properties.Appearance.Options.UseFont = true;
+            this.txbQuantity.Size = new System.Drawing.Size(150, 32);
+            this.txbQuantity.TabIndex = 18;
+            this.txbQuantity.Validating += new System.ComponentModel.CancelEventHandler(this.txbQuantity_Validating);
             // 
             // labelControl9
             // 
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(51, 86);
+            this.labelControl9.Location = new System.Drawing.Point(91, 110);
+            this.labelControl9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(48, 17);
+            this.labelControl9.Size = new System.Drawing.Size(66, 23);
             this.labelControl9.TabIndex = 17;
             this.labelControl9.Text = "Quantity";
             this.labelControl9.Click += new System.EventHandler(this.labelControl9_Click);
@@ -102,22 +108,25 @@
             // 
             this.cmbInvoideType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbInvoideType.Location = new System.Drawing.Point(97, 110);
+            this.cmbInvoideType.Location = new System.Drawing.Point(428, 98);
+            this.cmbInvoideType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbInvoideType.Name = "cmbInvoideType";
             this.cmbInvoideType.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbInvoideType.Properties.Appearance.Options.UseFont = true;
             this.cmbInvoideType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbInvoideType.Size = new System.Drawing.Size(155, 26);
+            this.cmbInvoideType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cmbInvoideType.Size = new System.Drawing.Size(191, 32);
             this.cmbInvoideType.TabIndex = 16;
             // 
             // labelControl8
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(5, 112);
+            this.labelControl8.Location = new System.Drawing.Point(321, 101);
+            this.labelControl8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(72, 17);
+            this.labelControl8.Size = new System.Drawing.Size(95, 23);
             this.labelControl8.TabIndex = 15;
             this.labelControl8.Text = "Invoice Type";
             // 
@@ -125,36 +134,56 @@
             // 
             this.groupControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupControl2.Controls.Add(this.comboBoxEdit2);
+            this.groupControl2.Controls.Add(this.simpleButton2);
+            this.groupControl2.Controls.Add(this.cmbCommodities);
             this.groupControl2.Controls.Add(this.labelControl2);
-            this.groupControl2.Controls.Add(this.txbSalePrice);
+            this.groupControl2.Controls.Add(this.btnSave);
+            this.groupControl2.Controls.Add(this.txbQuantity);
             this.groupControl2.Controls.Add(this.labelControl9);
-            this.groupControl2.Location = new System.Drawing.Point(333, 73);
+            this.groupControl2.Location = new System.Drawing.Point(428, 181);
+            this.groupControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(165, 157);
+            this.groupControl2.Size = new System.Drawing.Size(244, 303);
             this.groupControl2.TabIndex = 26;
             this.groupControl2.Text = "Commodities";
             // 
-            // comboBoxEdit2
+            // simpleButton2
             // 
-            this.comboBoxEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton2.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.Appearance.Options.UseForeColor = true;
+            this.simpleButton2.Location = new System.Drawing.Point(51, 252);
+            this.simpleButton2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(150, 41);
+            this.simpleButton2.TabIndex = 28;
+            this.simpleButton2.Text = "Remove from cart";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
+            // cmbCommodities
+            // 
+            this.cmbCommodities.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit2.Location = new System.Drawing.Point(4, 47);
-            this.comboBoxEdit2.Name = "comboBoxEdit2";
-            this.comboBoxEdit2.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxEdit2.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cmbCommodities.Location = new System.Drawing.Point(27, 64);
+            this.cmbCommodities.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbCommodities.Name = "cmbCommodities";
+            this.cmbCommodities.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCommodities.Properties.Appearance.Options.UseFont = true;
+            this.cmbCommodities.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit2.Size = new System.Drawing.Size(155, 26);
-            this.comboBoxEdit2.TabIndex = 18;
+            this.cmbCommodities.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cmbCommodities.Size = new System.Drawing.Size(197, 32);
+            this.cmbCommodities.TabIndex = 18;
             // 
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(13, 29);
+            this.labelControl2.Location = new System.Drawing.Point(43, 36);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(125, 17);
+            this.labelControl2.Size = new System.Drawing.Size(163, 23);
             this.labelControl2.TabIndex = 17;
             this.labelControl2.Text = "Choose Commodities";
             // 
@@ -162,9 +191,10 @@
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(5, 77);
+            this.labelControl3.Location = new System.Drawing.Point(321, 56);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(75, 17);
+            this.labelControl3.Size = new System.Drawing.Size(98, 23);
             this.labelControl3.TabIndex = 5;
             this.labelControl3.Text = "Date created";
             // 
@@ -172,11 +202,13 @@
             // 
             this.txbName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txbName.Location = new System.Drawing.Point(97, 38);
+            this.txbName.Enabled = false;
+            this.txbName.Location = new System.Drawing.Point(113, 50);
+            this.txbName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbName.Name = "txbName";
             this.txbName.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbName.Properties.Appearance.Options.UseFont = true;
-            this.txbName.Size = new System.Drawing.Size(201, 26);
+            this.txbName.Size = new System.Drawing.Size(167, 32);
             this.txbName.TabIndex = 1;
             // 
             // labelControl1
@@ -184,9 +216,10 @@
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.labelControl1.Location = new System.Drawing.Point(7, 41);
+            this.labelControl1.Location = new System.Drawing.Point(12, 101);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(31, 19);
+            this.labelControl1.Size = new System.Drawing.Size(40, 25);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Note";
             // 
@@ -195,25 +228,52 @@
             this.groupControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupControl1.Controls.Add(this.labelControl4);
+            this.groupControl1.Controls.Add(this.textEditTypeOfInstrucment);
             this.groupControl1.Controls.Add(this.dateBirthday);
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.txbName);
             this.groupControl1.Controls.Add(this.cmbInvoideType);
             this.groupControl1.Controls.Add(this.labelControl8);
             this.groupControl1.Controls.Add(this.labelControl1);
-            this.groupControl1.Location = new System.Drawing.Point(24, 73);
+            this.groupControl1.Location = new System.Drawing.Point(33, 13);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(303, 157);
+            this.groupControl1.Size = new System.Drawing.Size(639, 160);
             this.groupControl1.TabIndex = 25;
             this.groupControl1.Text = "Basic information";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.labelControl4.Location = new System.Drawing.Point(12, 54);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(81, 25);
+            this.labelControl4.TabIndex = 21;
+            this.labelControl4.Text = "Making by";
+            // 
+            // textEditTypeOfInstrucment
+            // 
+            this.textEditTypeOfInstrucment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textEditTypeOfInstrucment.Enabled = false;
+            this.textEditTypeOfInstrucment.Location = new System.Drawing.Point(113, 98);
+            this.textEditTypeOfInstrucment.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textEditTypeOfInstrucment.Name = "textEditTypeOfInstrucment";
+            this.textEditTypeOfInstrucment.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textEditTypeOfInstrucment.Properties.Appearance.Options.UseFont = true;
+            this.textEditTypeOfInstrucment.Size = new System.Drawing.Size(167, 32);
+            this.textEditTypeOfInstrucment.TabIndex = 20;
             // 
             // dateBirthday
             // 
             this.dateBirthday.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dateBirthday.EditValue = null;
-            this.dateBirthday.Location = new System.Drawing.Point(97, 74);
-            this.dateBirthday.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateBirthday.Location = new System.Drawing.Point(428, 50);
             this.dateBirthday.Name = "dateBirthday";
             this.dateBirthday.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateBirthday.Properties.Appearance.Options.UseFont = true;
@@ -223,105 +283,88 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateBirthday.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Vista;
             this.dateBirthday.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.True;
-            this.dateBirthday.Size = new System.Drawing.Size(201, 26);
+            this.dateBirthday.Size = new System.Drawing.Size(191, 32);
             this.dateBirthday.TabIndex = 15;
             // 
-            // comboBoxEdit1
+            // simpleButton1
             // 
-            this.comboBoxEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit1.Location = new System.Drawing.Point(5, 64);
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(464, 20);
-            this.comboBoxEdit1.TabIndex = 16;
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Appearance.Options.UseForeColor = true;
+            this.simpleButton1.Location = new System.Drawing.Point(233, 443);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(150, 41);
+            this.simpleButton1.TabIndex = 29;
+            this.simpleButton1.Text = "Checkout";
             // 
-            // labelControl12
+            // listBox1
             // 
-            this.labelControl12.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(5, 93);
-            this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(28, 17);
-            this.labelControl12.TabIndex = 17;
-            this.labelControl12.Text = "Price";
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit1.Location = new System.Drawing.Point(18, 116);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(451, 20);
-            this.textEdit1.TabIndex = 18;
-            // 
-            // labelControl11
-            // 
-            this.labelControl11.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.Location = new System.Drawing.Point(5, 116);
-            this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(7, 17);
-            this.labelControl11.TabIndex = 19;
-            this.labelControl11.Text = "$";
-            // 
-            // textEditTypeOfInstrucment
-            // 
-            this.textEditTypeOfInstrucment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEditTypeOfInstrucment.Enabled = false;
-            this.textEditTypeOfInstrucment.Location = new System.Drawing.Point(14, 29);
-            this.textEditTypeOfInstrucment.Name = "textEditTypeOfInstrucment";
-            this.textEditTypeOfInstrucment.Size = new System.Drawing.Size(201, 20);
-            this.textEditTypeOfInstrucment.TabIndex = 20;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 17;
+            this.listBox1.Location = new System.Drawing.Point(12, 36);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(353, 208);
+            this.listBox1.TabIndex = 30;
             // 
             // groupControl3
             // 
             this.groupControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupControl3.Controls.Add(this.textEditTypeOfInstrucment);
-            this.groupControl3.Controls.Add(this.labelControl11);
-            this.groupControl3.Controls.Add(this.textEdit1);
-            this.groupControl3.Controls.Add(this.labelControl12);
-            this.groupControl3.Controls.Add(this.comboBoxEdit1);
-            this.groupControl3.Location = new System.Drawing.Point(24, 10);
+            this.groupControl3.Controls.Add(this.listBox1);
+            this.groupControl3.Location = new System.Drawing.Point(33, 181);
+            this.groupControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(473, 57);
+            this.groupControl3.Size = new System.Drawing.Size(380, 254);
             this.groupControl3.TabIndex = 28;
-            this.groupControl3.Text = "Invoice making by current logined account";
+            this.groupControl3.Text = "Cart";
+            // 
+            // textEdit1
+            // 
+            this.textEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textEdit1.EditValue = "TOTAL: 0";
+            this.textEdit1.Enabled = false;
+            this.textEdit1.Location = new System.Drawing.Point(48, 447);
+            this.textEdit1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.textEdit1.Properties.Appearance.Options.UseFont = true;
+            this.textEdit1.Properties.Appearance.Options.UseForeColor = true;
+            this.textEdit1.Size = new System.Drawing.Size(167, 34);
+            this.textEdit1.TabIndex = 22;
             // 
             // frmNewInvoice
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(521, 283);
-            this.Controls.Add(this.btnSave);
+            this.ClientSize = new System.Drawing.Size(705, 497);
+            this.Controls.Add(this.textEdit1);
+            this.Controls.Add(this.groupControl3);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
-            this.Controls.Add(this.groupControl3);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmNewInvoice";
             this.Text = "New Invoice";
             this.Load += new System.EventHandler(this.frmNewInvoice_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.txbSalePrice.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txbQuantity.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbInvoideType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbCommodities.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txbName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditTypeOfInstrucment.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateBirthday.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateBirthday.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditTypeOfInstrucment.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
-            this.groupControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -329,7 +372,7 @@
         #endregion
 
         private DevExpress.XtraEditors.SimpleButton btnSave;
-        private DevExpress.XtraEditors.TextEdit txbSalePrice;
+        private DevExpress.XtraEditors.TextEdit txbQuantity;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.ComboBoxEdit cmbInvoideType;
         private DevExpress.XtraEditors.LabelControl labelControl8;
@@ -338,14 +381,15 @@
         private DevExpress.XtraEditors.TextEdit txbName;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit2;
+        private DevExpress.XtraEditors.ComboBoxEdit cmbCommodities;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.DateEdit dateBirthday;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
-        private DevExpress.XtraEditors.LabelControl labelControl12;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.TextEdit textEditTypeOfInstrucment;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private System.Windows.Forms.ListBox listBox1;
         private DevExpress.XtraEditors.GroupControl groupControl3;
+        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
     }
 }
