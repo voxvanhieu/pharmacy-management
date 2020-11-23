@@ -1,4 +1,5 @@
 ﻿using PharmacyManagement.Models;
+using PharmacyManagement.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,6 +58,28 @@ namespace PharmacyManagement.Services
             type.Commodities.Add(commodity);
 
             context.SaveChanges();
+        }
+
+        public void NewInvoice(InvoiceViewModel newInvoice)
+        {
+            User invoicedUser = context.Users.FirstOrDefault(u => u.UserName.Equals(newInvoice.Username, StringComparison.OrdinalIgnoreCase));
+            if (invoicedUser is null) throw new Exception($"Username {newInvoice.Username} not found.");
+
+            InvoiceType invoiceType = context.InvoiceTypes.FirstOrDefault(u => u.Name.Equals(newInvoice.InvoiceType, StringComparison.OrdinalIgnoreCase));
+            if (invoiceType is null) throw new Exception($"Username {newInvoice.InvoiceType} not found.");
+
+            var invoice = new Invoice
+            {
+                Note = newInvoice.Note,
+                User = invoicedUser,
+                Type = invoiceType,
+                InvoiceCommodities = new List<InvoiceCommodity>()
+            };
+
+            //foreach (InvoiceViewModel item in newInvoice.Commodities)
+            //{
+
+            //}
         }
 
         public void AddSaleUnitToCommodity(string unitName, decimal unitPrice, int commodityId)
