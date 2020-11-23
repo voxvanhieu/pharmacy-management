@@ -22,5 +22,7 @@ namespace PharmacyManagement.Models
         [Required]
         [Column(TypeName = "Date")]
         public DateTime Created { get; set; } = DateTime.Now;
+
+        public virtual ICollection<InvoiceCommodity> InvoiceCommodities { get; set; }
     }
 }

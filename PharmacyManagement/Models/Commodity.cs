@@ -28,7 +28,7 @@ namespace PharmacyManagement.Models
 
         [Required]
         [StringLength(255)]
-        public string BaseUnit { get; set; }
+        public string BaseUnitName { get; set; }
 
         [Required]
         [Column(TypeName = "Money")]
@@ -42,5 +42,9 @@ namespace PharmacyManagement.Models
         public DateTime Created { get; set; } = DateTime.Now;
 
         public virtual CommodityType Type { get; set; }
+
+        public virtual ICollection<SaleUnit> SaleUnits { get; set; }
+
+        public virtual ICollection<InvoiceCommodity> InvoiceCommodities { get; set; }
     }
 }

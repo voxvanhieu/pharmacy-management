@@ -13,7 +13,7 @@ namespace PharmacyManagement.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202011230351515_Init"; }
+            get { return "202011230546411_Init"; }
         }
         
         string IMigrationMetadata.Source

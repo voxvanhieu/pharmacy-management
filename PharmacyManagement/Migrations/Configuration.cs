@@ -67,7 +67,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Augclamox 250",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược phẩm Hà Tây",
                     Description = "Amoxicilin (dưới dạng Amoxicilin trihydrat); Acid clavulanic (dưới dạng Kali clavulanat)",
@@ -77,7 +77,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Casoran",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần công nghệ cao Traphaco",
                     Description = "Cao hoa hòe (3:1) ; Cao dừa cạn (6:1) ; Cao tâm sen (4:1) ; Cao cúc hoa (3:1)",
@@ -87,7 +87,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Docetaxel 20mg",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Teva Pharmaceutical Works Private Limited Company",
                     Description = "Docetaxel",
@@ -97,7 +97,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Hà thủ ô",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần công nghệ cao Traphaco",
                     Description = "Cao đặc rễ hà thủ ô đỏ",
@@ -107,7 +107,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "1-AL",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "FDC Limited",
                     Description = "Levocetirizine (dưới dạng Levocetirizine dihydrochloride)",
@@ -117,7 +117,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "1-AL",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "FDC Limited",
                     Description = "Levocetirizine Dihydrochloride",
@@ -127,7 +127,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "20% Fat Emulsion Injection",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Guangdong Otsuka Pharmaceutical Co., Ltd.",
                     Description = "Soybean oil",
@@ -137,7 +137,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "3B-Medi",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược phẩm Me Di Sun",
                     Description = "Vitamin B1; Vitamin B6; Vitamin B12",
@@ -147,7 +147,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "3B-Medi tab",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược phẩm Me Di Sun",
                     Description = "Vitamin B1 (Thiamin mononitrat) ; Vitamin B6 (Pyridoxin hydroclorid) ; Vitamin B12 (Cyanocobalamin)",
@@ -157,7 +157,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "3BTP",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược phẩm Hà Tây",
                     Description = "Vitamin B1 (Thiamin nitrat) ; Vitamin B6 (Pyridoxin hydroclorid) ; Vitamin B12 (Cyanocobalamin)",
@@ -167,7 +167,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "3Bpluzs F",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần Dược phẩm Phương Đông",
                     Description = "Vitamin B1; Vitamin B6 ; Vitamin B12; Sắt sulfat",
@@ -177,7 +177,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "3Bvit ando",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược phẩm Hà Tây",
                     Description = "Vitamin B1; Vitamin B6; Vitamin B12; Vitamin B2; Vitamin PP",
@@ -187,7 +187,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "4-Epeedo-50",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Naprod Life Sciences Pvt. Ltd.",
                     Description = "Epirubicin hydrochloride",
@@ -197,7 +197,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "4.2% w/v Sodium Bicarbonate",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "B.Braun Melsungen AG",
                     Description = "Natri bicarbonat",
@@ -207,7 +207,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "5% Dextrose 500ml inj Infusion",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Dai Han Pharm. Co., Ltd.",
                     Description = "Dextrose",
@@ -217,7 +217,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "5-Fluorouracil \"Ebewe\"",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Ebewe Pharma Ges.m.b.H.Nfg.KG",
                     Description = "5-Fluorouracil",
@@ -227,7 +227,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "8 Horas",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Laboratorio Elea S.A.C.I.F.yA",
                     Description = "Eszopiclone",
@@ -237,7 +237,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "8 Horas",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Laboratorio Elea S.A.C.I.F.yA",
                     Description = "Eszopiclone",
@@ -247,7 +247,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "9PM",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Cipla Ltd",
                     Description = "Latanoprost",
@@ -257,7 +257,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "A9 - Cerebrazel",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược TW Mediplantex",
                     Description = "Meclofenoxat hydroclorid",
@@ -267,7 +267,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "ABAB 500mg",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược phẩm IMEXPHARM",
                     Description = "Acetaminophen",
@@ -277,7 +277,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "ABAB 500mg",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược phẩm IMEXPHARM",
                     Description = "Acetaminophen",
@@ -287,7 +287,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "ACC 200 mg",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Lindopharm GmbH",
                     Description = "Acetylcystein",
@@ -297,7 +297,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "ACM Control 1",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần Dược phẩm 3/2",
                     Description = "Acenocoumarol",
@@ -307,7 +307,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "ACM Control 4",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần Dược phẩm 3/2",
                     Description = "Acenocoumarol",
@@ -317,7 +317,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "AG-Ome",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược phẩm Agimexpharm",
                     Description = "Omeprazol (Dạng vi hạt bao tan trong ruột)",
@@ -327,7 +327,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "AN KHỚP VƯƠNG",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược phẩm Hà Tây",
                     Description = "Độc hoạt, quế chi, phòng phong, đương quy, tế tân, xuyên khung, tần giao, bạch thược, tang ký sinh, can địa hoàng, đỗ trọng, đảng sâm, ngưu tất, bạch linh, cam thảo",
@@ -337,7 +337,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "ATP",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược phẩm Hà Tây",
                     Description = "Dinatri adenosin triphosphat",
@@ -347,7 +347,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "ATP",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược TW Mediplantex",
                     Description = "Dinatri adenosin triphosphat",
@@ -357,7 +357,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Aarmol 100ml",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Shree Krishnakeshav Laboratories Limited",
                     Description = "Paracetamol",
@@ -367,7 +367,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Abacavir Tablets USP 300mg",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Mylan Laboratories Limited",
                     Description = "Abacavir (dưới dạng Abacavir sulfat)",
@@ -377,7 +377,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Abamune-L Baby",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Cipla Ltd.",
                     Description = "Abacavir; Lamivudin",
@@ -387,7 +387,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Abbsin 200",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "OU Vitale-XD (nơi sản xuất Vitale Pringi)",
                     Description = "Acetylcystein",
@@ -397,7 +397,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Abbsin 600",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "OU Vitale-XD (nơi sản xuất Vitale Pringi)",
                     Description = "Acetylcystein",
@@ -407,7 +407,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Abernil 50mg",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Medochemie Ltd.",
                     Description = "Naltrexone hydroclorid",
@@ -417,7 +417,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Abhigrel 75",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Medibios Laboratories Pvt., Ltd.",
                     Description = "Clopidogrel (dưới dạng Clopidogrel bisulphate)",
@@ -427,7 +427,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Abilify tablets 15mg",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Korea Otsuka Pharmaceutical Co., Ltd.",
                     Description = "Aripiprazol",
@@ -437,7 +437,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Abingem 200",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Naprod Life Sciences Pvt. Ltd.",
                     Description = "Gemcitabine",
@@ -447,7 +447,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Abingem-1gm",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Naprod Life Sciences Pvt. Ltd.",
                     Description = "Gemcitabine (dưới dạng Gemcitabine hydrochloride)",
@@ -457,7 +457,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Abitrax",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Laboratorio Farmaceutico C.T.s.r.l.",
                     Description = "Ceftriaxone (dưới dạng Ceftriaxone natri)",
@@ -467,7 +467,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Abivina",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Viện Dược liệu",
                     Description = "Cao khô bồ bồ ; Tinh dầu bồ bồ",
@@ -477,7 +477,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Abochlorphe",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Chi nhánh công ty TNHH SX-TM dược phẩm Thành Nam",
                     Description = "Chlorpheniramin maleat",
@@ -487,7 +487,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Abrocto",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược-vật tư y tế Thanh Hoá",
                     Description = "Ambroxol HCl",
@@ -497,7 +497,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acabrose Tablets 50mg",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Standard Chem. & Pharm. Co., Ltd.",
                     Description = "Acarbose",
@@ -507,7 +507,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acarfar",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược phẩm dược liệu Pharmedic",
                     Description = "Acarbose",
@@ -517,7 +517,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acc Pluzz 200",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Hermes Arzneimittel GmbH",
                     Description = "Acetylcystein",
@@ -527,7 +527,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acc Pluzz 600",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Hermes Arzneimittel GmbH",
                     Description = "Acetylcystein",
@@ -537,7 +537,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Ace kid 150",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược phẩm Bidiphar 1",
                     Description = "Paracetamol; vitamin C",
@@ -547,7 +547,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Ace kid 325",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược phẩm Bidiphar 1",
                     Description = "Paracetamol",
@@ -557,7 +557,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acebis - 1,5g",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần tập đoàn Merap",
                     Description = "Cefoperazon; Sulbactam",
@@ -567,7 +567,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acebis - 1g",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần tập đoàn Merap",
                     Description = "Cefoperazon; Sulbactam",
@@ -577,7 +577,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acebis - 2,25g",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần tập đoàn Merap",
                     Description = "Cefoperazon; Sulbactam",
@@ -587,7 +587,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Aceclofenac Stada 100 mg",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty TNHH LD Stada-Việt Nam.",
                     Description = "Aceclofenac",
@@ -597,7 +597,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Aceclofenac T/H",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược-vật tư y tế Thanh Hoá",
                     Description = "Aceclofenac",
@@ -607,7 +607,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Aceclonac",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Rafarm S.A.",
                     Description = "Aceclofenac",
@@ -617,7 +617,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acectum",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Karnataka Antibiotics & Pharmaceuticals Limited",
                     Description = "Piperacillin (dưới dạng piperacillin natri) ; Tazobactam (dưới dạng Tazobactam natri)",
@@ -627,7 +627,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acecyst",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Chi nhánh công ty cổ phần dược phẩm Agimexpharm- Nhà máy sản xuất dược phẩm Agimexpharm",
                     Description = "Acetylcystein",
@@ -637,7 +637,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acedolflu",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược phẩm 2/9 TP HCM",
                     Description = "Paracetamol; Clorpheniramin maleat",
@@ -647,7 +647,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acefalgan 150",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần Dược phẩm Euvipharm - Thành viên tập đoàn Valeant",
                     Description = "Acetaminophen",
@@ -657,7 +657,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acefalgan 250",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần Dược phẩm Euvipharm - Thành viên tập đoàn Valeant",
                     Description = "Paracetamol",
@@ -667,7 +667,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acefalgan 500",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần Dược phẩm Euvipharm - Thành viên tập đoàn Valeant",
                     Description = "Paracetamol",
@@ -677,7 +677,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acefalgan 500",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần Dược phẩm Euvipharm - Thành viên tập đoàn Valeant",
                     Description = "Acetaminophen",
@@ -687,7 +687,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acefalgan Codein",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần Dược phẩm Euvipharm - Thành viên tập đoàn Valeant",
                     Description = "Paracetamol; Codein phosphat hemihydrat",
@@ -697,7 +697,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acehasan 100",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty TNHH Ha san - Dermapharm",
                     Description = "Acetylcystein",
@@ -707,7 +707,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acehasan 200",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty TNHH Ha san - Dermapharm",
                     Description = "Acetylcystein",
@@ -717,7 +717,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acehasan 200",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty TNHH Ha san - Dermapharm",
                     Description = "Acetylcystein",
@@ -727,7 +727,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acemetin",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược phẩm Hà Tây",
                     Description = "Acetylcystein",
@@ -737,7 +737,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acemol fort",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược phẩm 2/9 TP HCM",
                     Description = "Acetaminophen",
@@ -747,7 +747,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acemuc",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty TNHH Sanofi-Aventis Việt Nam",
                     Description = "Acetylcystein",
@@ -757,7 +757,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acenac 100",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược phẩm Cửu Long",
                     Description = "Aceclofenac",
@@ -767,7 +767,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acepron 250 mg",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược phẩm Cửu Long",
                     Description = "Paracetamol",
@@ -777,7 +777,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acepron 325 mg",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược phẩm Cửu Long",
                     Description = "Paracetamol",
@@ -787,7 +787,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acepron 325mg",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược phẩm Cửu Long",
                     Description = "Paracetamol",
@@ -797,7 +797,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acepron 500 mg",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược phẩm Cửu Long",
                     Description = "Paracetamol",
@@ -807,7 +807,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acepron 650",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược phẩm Cửu Long",
                     Description = "Paracetamol",
@@ -817,7 +817,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acepron Codein",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược phẩm Cửu Long",
                     Description = "Paracetamol; Codein phosphat hemihydrat",
@@ -827,7 +827,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acetab 325",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược phẩm Agimexpharm",
                     Description = "Paracetamol",
@@ -837,7 +837,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acetab 650",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Chi nhánh công ty cổ phần dược phẩm Agimexpharm- Nhà máy sản xuất dược phẩm Agimexpharm",
                     Description = "Paracetamol",
@@ -847,7 +847,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acetalvic codein 30",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược phẩm trung ương VIDIPHA",
                     Description = "Paracetamol; Codein phosphat",
@@ -857,7 +857,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acetaphen 500",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược phẩm OPV",
                     Description = "Acetaminophen",
@@ -867,7 +867,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acethepharm",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược-vật tư y tế Thanh Hoá",
                     Description = "Acetylcystein",
@@ -877,7 +877,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acethepharm",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược-vật tư y tế Thanh Hoá",
                     Description = "Acetylcystein",
@@ -887,7 +887,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acetydona 200 mg",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần sản xuất - thương mại Dược phẩm Đông Nam",
                     Description = "Acetylcystein",
@@ -897,7 +897,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acetyl Cystein",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược phẩm Hà Tây",
                     Description = "Acetylcystein",
@@ -907,7 +907,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acetyl Max",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược vật tư y tế Thanh Hoá",
                     Description = "Acetylcystein",
@@ -917,7 +917,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acetylcystein",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược phẩm 2/9 - Nadyphar",
                     Description = "Acetylcystein",
@@ -927,7 +927,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acetylcystein",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược phẩm TV. Pharm",
                     Description = "Acetylcystein",
@@ -937,7 +937,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acetylcystein",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Chi nhánh công ty TNHH SX-TM dược phẩm Thành Nam",
                     Description = "Acetylcystein",
@@ -947,7 +947,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acetylcystein",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần Dược phẩm 3/2",
                     Description = "Acetylcystein",
@@ -957,7 +957,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acetylcystein 200 mg",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần Dược Minh Hải",
                     Description = "Acetylcystein",
@@ -967,7 +967,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acetylcystein 200 mg",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty CP liên doanh dược phẩm Medipharco Tenamyd BR s.r.l",
                     Description = "Acetylcystein",
@@ -977,7 +977,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acetylcystein 200 mg",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược Đồng Nai.",
                     Description = "Acetylcystein",
@@ -987,7 +987,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acetylcystein 200mg",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Chi nhánh công ty cổ phần dược phẩm trung ương Vidipha tại Bình Dương",
                     Description = "Acetylcystein",
@@ -997,7 +997,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acetylcysteine 200mg",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần hoá-dược phẩm Mekophar.",
                     Description = "Acetylcysteine",
@@ -1007,7 +1007,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Aciclovir",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược phẩm dược liệu Pharmedic",
                     Description = "Aciclovir",
@@ -1017,7 +1017,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Aciclovir 200 mg",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần Dược Minh Hải",
                     Description = "Acyclovir",
@@ -1027,7 +1027,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Aciclovir 400 mg",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần Dược Minh Hải",
                     Description = "Aciclovir",
@@ -1037,7 +1037,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Aciclovir 5%",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần dược vật tư y tế Hải Dương",
                     Description = "Aciclovir",
@@ -1047,7 +1047,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Aciclovir Tablets BP",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Brawn Laboratories Ltd",
                     Description = "Acyclovir",
@@ -1057,7 +1057,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acid Folic 5 mg",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần Dược phẩm 3/2..",
                     Description = "acid folic",
@@ -1067,7 +1067,7 @@
                 context.Commodities.Add(new Commodity
                 {
                     Name = "Acid folic MKP",
-                    BaseUnit = "Hộp 10 gói x 1,5g",
+                    BaseUnitName = "Hộp 10 gói x 1,5g",
                     BaseUnitPrice = 5000,
                     Provider = "Công ty cổ phần hoá-dược phẩm Mekophar.",
                     Description = "Acid folic",
