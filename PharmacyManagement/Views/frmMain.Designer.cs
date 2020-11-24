@@ -108,6 +108,7 @@ namespace PharmacyManagement.Views
             this.customersAccordionControlElement = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.tabbedView = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.documentManager = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
+            this.barbtnMyInformation = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager)).BeginInit();
@@ -160,9 +161,10 @@ namespace PharmacyManagement.Views
             this.barButtonLogout,
             this.barButtonItem4,
             this.barbtnReportProduct,
-            this.barButtonItem8});
+            this.barButtonItem8,
+            this.barbtnMyInformation});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 76;
+            this.ribbonControl.MaxItemId = 77;
             this.ribbonControl.MdiMergeStyle = DevExpress.XtraBars.Ribbon.RibbonMdiMergeStyle.Always;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.barButtonLogout);
@@ -384,7 +386,7 @@ namespace PharmacyManagement.Views
             // 
             // barButtonItem8
             // 
-            this.barButtonItem8.Caption = "barButtonItem8";
+            this.barButtonItem8.Caption = "Cái này cũng để cho đẹp";
             this.barButtonItem8.Id = 75;
             this.barButtonItem8.Name = "barButtonItem8";
             // 
@@ -513,6 +515,7 @@ namespace PharmacyManagement.Views
             // 
             // ribbonPageGroup5
             // 
+            this.ribbonPageGroup5.ItemLinks.Add(this.barbtnMyInformation);
             this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem2);
             this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem3);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
@@ -781,6 +784,14 @@ namespace PharmacyManagement.Views
             this.documentManager.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView});
             // 
+            // barbtnMyInformation
+            // 
+            this.barbtnMyInformation.Caption = "My Information";
+            this.barbtnMyInformation.Id = 76;
+            this.barbtnMyInformation.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem5.ImageOptions.SvgImage")));
+            this.barbtnMyInformation.Name = "barbtnMyInformation";
+            this.barbtnMyInformation.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnMyInformation_ItemClick);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -887,5 +898,6 @@ namespace PharmacyManagement.Views
         private DevExpress.XtraBars.BarButtonItem barbtnReportProduct;
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem barbtnMyInformation;
     }
 }

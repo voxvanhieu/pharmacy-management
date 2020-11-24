@@ -80,7 +80,6 @@ namespace PharmacyManagement.Views
         private void userGridControl_SelectedRowChanged(object sender, HieuVVCustomSelectedRowChangedEventArgs e)
         {
             UpdateUserDetails(e.UserName);
-            //dockpnlUser.ShowSliding();
             dockpnlUser.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Visible;
         }
 
@@ -133,10 +132,14 @@ namespace PharmacyManagement.Views
                 employeesUserControl = CreateUserControl("Employees");
                 customersUserControl = CreateUserControl("Customers");
                 accordionControl.SelectedElement = employeesAccordionControlElement;
+
                 this.WindowState = FormWindowState.Maximized;
                 this.Enabled = true;
                 this.Show();
-                
+
+                UpdateUserDetails(UserIdentity.SessionUser.UserName);
+                dockpnlUser.ShowSliding();
+
 
                 // Clean resource
                 frmLogin.Dispose();
@@ -243,7 +246,6 @@ namespace PharmacyManagement.Views
 
                 commodityGridControl.Dock = DockStyle.Fill;
                 commodityGridControl.Parent = tabAllCommodity;
-                //commodityGridControl.GridSelectedRowChanged += userGridControl_SelectedRowChanged;
             }
 
             tabbedView.AddDocument(tabAllCommodity);
@@ -270,7 +272,6 @@ namespace PharmacyManagement.Views
 
                 commodityGridControl.Dock = DockStyle.Fill;
                 commodityGridControl.Parent = tabAllCommodity;
-                //commodityGridControl.GridSelectedRowChanged += userGridControl_SelectedRowChanged;
             }
 
             tabbedView.AddDocument(tabAllCommodity);
@@ -310,7 +311,6 @@ namespace PharmacyManagement.Views
 
                 invoicesGridControl.Dock = DockStyle.Fill;
                 invoicesGridControl.Parent = tabAllInvoices;
-                //invoicesGridControl.GridSelectedRowChanged += userGridControl_SelectedRowChanged;
             }
 
             tabbedView.AddDocument(tabAllInvoices);
@@ -334,11 +334,16 @@ namespace PharmacyManagement.Views
 
                 printPreviewControl.Dock = DockStyle.Fill;
                 printPreviewControl.Parent = tabProductReport;
-                //invoicesGridControl.GridSelectedRowChanged += userGridControl_SelectedRowChanged;
             }
 
             tabbedView.AddDocument(tabProductReport);
             tabbedView.ActivateDocument(tabProductReport);
+        }
+
+        private void barbtnMyInformation_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            UpdateUserDetails(UserIdentity.SessionUser.UserName);
+            dockpnlUser.ShowSliding();
         }
     }
 }
