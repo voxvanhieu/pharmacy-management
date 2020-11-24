@@ -34,6 +34,10 @@
             this.cmbInvoideType = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.txtUnitPrice = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.txtUnitName = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.cmbCommodities = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -48,14 +52,12 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txbQuantity.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbInvoideType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUnitPrice.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUnitName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCommodities.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txbName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -66,8 +68,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSave
@@ -76,10 +76,10 @@
             this.btnSave.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnSave.Appearance.Options.UseFont = true;
             this.btnSave.Appearance.Options.UseForeColor = true;
-            this.btnSave.Location = new System.Drawing.Point(51, 203);
+            this.btnSave.Location = new System.Drawing.Point(5, 246);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(150, 41);
+            this.btnSave.Size = new System.Drawing.Size(91, 41);
             this.btnSave.TabIndex = 27;
             this.btnSave.Text = "Add to cart";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -88,13 +88,13 @@
             // 
             this.txbQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txbQuantity.Location = new System.Drawing.Point(136, 64);
+            this.txbQuantity.Location = new System.Drawing.Point(177, 64);
             this.txbQuantity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbQuantity.Name = "txbQuantity";
             this.txbQuantity.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txbQuantity.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbQuantity.Properties.Appearance.Options.UseFont = true;
-            this.txbQuantity.Size = new System.Drawing.Size(88, 32);
+            this.txbQuantity.Size = new System.Drawing.Size(47, 32);
             this.txbQuantity.TabIndex = 18;
             this.txbQuantity.Validating += new System.ComponentModel.CancelEventHandler(this.txbQuantity_Validating);
             // 
@@ -102,7 +102,7 @@
             // 
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(149, 36);
+            this.labelControl9.Location = new System.Drawing.Point(157, 36);
             this.labelControl9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(66, 23);
@@ -140,9 +140,9 @@
             // 
             this.groupControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupControl2.Controls.Add(this.textEdit3);
+            this.groupControl2.Controls.Add(this.txtUnitPrice);
             this.groupControl2.Controls.Add(this.labelControl6);
-            this.groupControl2.Controls.Add(this.textEdit2);
+            this.groupControl2.Controls.Add(this.txtUnitName);
             this.groupControl2.Controls.Add(this.labelControl5);
             this.groupControl2.Controls.Add(this.simpleButton2);
             this.groupControl2.Controls.Add(this.cmbCommodities);
@@ -157,16 +157,67 @@
             this.groupControl2.TabIndex = 26;
             this.groupControl2.Text = "Commodities";
             // 
+            // txtUnitPrice
+            // 
+            this.txtUnitPrice.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtUnitPrice.Enabled = false;
+            this.txtUnitPrice.Location = new System.Drawing.Point(69, 177);
+            this.txtUnitPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtUnitPrice.Name = "txtUnitPrice";
+            this.txtUnitPrice.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.txtUnitPrice.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUnitPrice.Properties.Appearance.Options.UseFont = true;
+            this.txtUnitPrice.Size = new System.Drawing.Size(155, 32);
+            this.txtUnitPrice.TabIndex = 32;
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Location = new System.Drawing.Point(20, 180);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(37, 23);
+            this.labelControl6.TabIndex = 31;
+            this.labelControl6.Text = "Price";
+            this.labelControl6.Validating += new System.ComponentModel.CancelEventHandler(this.txbQuantity_Validating);
+            // 
+            // txtUnitName
+            // 
+            this.txtUnitName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtUnitName.Enabled = false;
+            this.txtUnitName.Location = new System.Drawing.Point(69, 125);
+            this.txtUnitName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtUnitName.Name = "txtUnitName";
+            this.txtUnitName.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.txtUnitName.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUnitName.Properties.Appearance.Options.UseFont = true;
+            this.txtUnitName.Size = new System.Drawing.Size(155, 32);
+            this.txtUnitName.TabIndex = 30;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Location = new System.Drawing.Point(20, 128);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(32, 23);
+            this.labelControl5.TabIndex = 29;
+            this.labelControl5.Text = "Unit";
+            // 
             // simpleButton2
             // 
             this.simpleButton2.Appearance.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton2.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.simpleButton2.Appearance.Options.UseFont = true;
             this.simpleButton2.Appearance.Options.UseForeColor = true;
-            this.simpleButton2.Location = new System.Drawing.Point(51, 252);
+            this.simpleButton2.Location = new System.Drawing.Point(109, 246);
             this.simpleButton2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(150, 41);
+            this.simpleButton2.Size = new System.Drawing.Size(130, 41);
             this.simpleButton2.TabIndex = 28;
             this.simpleButton2.Text = "Remove from cart";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
@@ -182,9 +233,10 @@
             this.cmbCommodities.Properties.Appearance.Options.UseFont = true;
             this.cmbCommodities.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbCommodities.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cmbCommodities.Size = new System.Drawing.Size(100, 32);
+            this.cmbCommodities.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.cmbCommodities.Size = new System.Drawing.Size(151, 32);
             this.cmbCommodities.TabIndex = 18;
+            this.cmbCommodities.SelectedIndexChanged += new System.EventHandler(this.cmbCommodities_SelectedIndexChanged);
             // 
             // labelControl2
             // 
@@ -269,10 +321,10 @@
             // 
             this.txtNote.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNote.Enabled = false;
             this.txtNote.Location = new System.Drawing.Point(113, 98);
             this.txtNote.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNote.Name = "txtNote";
+            this.txtNote.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtNote.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNote.Properties.Appearance.Options.UseFont = true;
             this.txtNote.Size = new System.Drawing.Size(167, 32);
@@ -347,55 +399,6 @@
             this.textEdit1.Size = new System.Drawing.Size(167, 34);
             this.textEdit1.TabIndex = 22;
             // 
-            // textEdit2
-            // 
-            this.textEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit2.Location = new System.Drawing.Point(20, 150);
-            this.textEdit2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.textEdit2.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEdit2.Properties.Appearance.Options.UseFont = true;
-            this.textEdit2.Size = new System.Drawing.Size(101, 32);
-            this.textEdit2.TabIndex = 30;
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(29, 120);
-            this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(83, 23);
-            this.labelControl5.TabIndex = 29;
-            this.labelControl5.Text = "Unit Name";
-            // 
-            // textEdit3
-            // 
-            this.textEdit3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit3.Location = new System.Drawing.Point(136, 150);
-            this.textEdit3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.textEdit3.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEdit3.Properties.Appearance.Options.UseFont = true;
-            this.textEdit3.Size = new System.Drawing.Size(88, 32);
-            this.textEdit3.TabIndex = 32;
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(142, 121);
-            this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(74, 23);
-            this.labelControl6.TabIndex = 31;
-            this.labelControl6.Text = "Unit Price";
-            this.labelControl6.Validating += new System.ComponentModel.CancelEventHandler(this.txbQuantity_Validating);
-            // 
             // frmNewInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -414,6 +417,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUnitPrice.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUnitName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCommodities.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txbName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
@@ -425,8 +430,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -453,9 +456,9 @@
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private DevExpress.XtraEditors.TextEdit textEdit1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
+        private DevExpress.XtraEditors.TextEdit txtUnitPrice;
         private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.TextEdit txtUnitName;
         private DevExpress.XtraEditors.LabelControl labelControl5;
     }
 }
