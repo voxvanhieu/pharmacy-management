@@ -127,6 +127,7 @@ namespace PharmacyManagement.Views
         {
             try
             {
+                if (listBox1.SelectedItem is null) return;
                 string[] temp = listBox1.SelectedItem.ToString().Split('|');
                 price -= Decimal.Parse(temp[3]) * Decimal.Parse(temp[1]);
                 listBox1.Items.RemoveAt(listBox1.SelectedIndex);

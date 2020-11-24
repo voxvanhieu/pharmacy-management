@@ -21,8 +21,17 @@ namespace PharmacyManagement.Views.UserControls
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            UpdateDatabase();
-            XtraMessageBox.Show("Saved to database successfully!", "Updated", MessageBoxButtons.OK);
+            // Bug khi sửa -> xoá -> lưu
+            try
+            {
+                UpdateDatabase();
+                XtraMessageBox.Show("Saved to database successfully!", "Updated", MessageBoxButtons.OK);
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show($"Vui lòng không sử rồi xoá sau đó lưu.\nLỗi:\n{ex.Message}", "ERROR");
+                RefillGrid();
+            }
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
